@@ -53,18 +53,18 @@ body.zhiyu-dark,
 /* Keep Obsidian's native translucency switch meaningful without changing the opaque default. */
 body.is-translucent.zhiyu-light,
 body.is-translucent.theme-light {
-  --background-primary: color-mix(in srgb, #faf9f5 78%, transparent);
-  --background-primary-alt: color-mix(in srgb, #ffffff 68%, transparent);
-  --background-secondary: color-mix(in srgb, #e8e6dc 64%, transparent);
-  --background-secondary-alt: color-mix(in srgb, #dedbd1 58%, transparent);
-  --modal-background: color-mix(in srgb, #fcfaf7 88%, transparent);
+  --background-primary: color-mix(in srgb, #faf9f5 45%, transparent);
+  --background-primary-alt: color-mix(in srgb, #ffffff 40%, transparent);
+  --background-secondary: color-mix(in srgb, #e8e6dc 32%, transparent);
+  --background-secondary-alt: color-mix(in srgb, #dedbd1 28%, transparent);
+  --modal-background: color-mix(in srgb, #fcfaf7 68%, transparent);
 }
 
 body.is-translucent.zhiyu-dark,
 body.is-translucent.theme-dark {
-  --background-primary: color-mix(in srgb, #141413 82%, transparent);
-  --background-primary-alt: color-mix(in srgb, #1e1e1c 76%, transparent);
-  --background-secondary: color-mix(in srgb, #242422 72%, transparent);
-  --background-secondary-alt: color-mix(in srgb, #3a3935 68%, transparent);
-  --modal-background: color-mix(in srgb, #1e1e1c 90%, transparent);
+  --background-primary: color-mix(in srgb, #141413 52%, transparent);
+  --background-primary-alt: color-mix(in srgb, #1e1e1c 48%, transparent);
+  --background-secondary: color-mix(in srgb, #242422 42%, transparent);
+  --background-secondary-alt: color-mix(in srgb, #3a3935 38%, transparent);
+  --modal-background: color-mix(in srgb, #1e1e1c 72%, transparent);
 }
