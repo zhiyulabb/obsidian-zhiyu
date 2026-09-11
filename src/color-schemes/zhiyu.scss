@@ -89,6 +89,78 @@ body.zhiyu-dark {
   --hr-color: #5d554e;
 }
 
+/* Semantic accents: warm primary colors inspired by Primary's color mapping. */
+body.zhiyu-light {
+  --link-color: #b28234;
+  --link-color-hover: #956d28;
+  --text-bold: #b14c3f;
+  --text-italic: #416990;
+  --interactive-normal: #ebe5dd;
+  --interactive-hover: #e2d8cd;
+  --interactive-accent-rgb: 210, 111, 82;
+  --background-modifier-form-field: #f7f4ef;
+  --background-modifier-success: #dce8d7;
+  --background-modifier-error: #f1d9d4;
+  --background-modifier-message: #e4edf4;
+  --tag-color: #567b93;
+  --tag-background: #e1eaf0;
+  --blockquote-border-color: #c59a4a;
+  --hr-color: #cfc4b8;
+  --code-background: #f0ede7;
+}
+
+body.zhiyu-dark {
+  --link-color: #cfaa60;
+  --link-color-hover: #e3c27e;
+  --text-bold: #d77b6c;
+  --text-italic: #7aa0be;
+  --interactive-normal: #393532;
+  --interactive-hover: #48413b;
+  --interactive-accent-rgb: 224, 137, 105;
+  --background-modifier-form-field: #302c29;
+  --background-modifier-success: #354532;
+  --background-modifier-error: #513532;
+  --background-modifier-message: #303f4c;
+  --tag-color: #9bbbd1;
+  --tag-background: #33434f;
+  --blockquote-border-color: #cfaa60;
+  --hr-color: #5d554e;
+  --code-background: #332f2c;
+}
+
+body:is(.zhiyu-light, .zhiyu-dark) .markdown-rendered strong,
+body:is(.zhiyu-light, .zhiyu-dark) .cm-strong {
+  color: var(--text-bold);
+}
+
+body:is(.zhiyu-light, .zhiyu-dark) .markdown-rendered em,
+body:is(.zhiyu-light, .zhiyu-dark) .cm-em {
+  color: var(--text-italic);
+}
+
+body:is(.zhiyu-light, .zhiyu-dark) .markdown-rendered a,
+body:is(.zhiyu-light, .zhiyu-dark) .cm-link,
+body:is(.zhiyu-light, .zhiyu-dark) .cm-hmd-internal-link {
+  color: var(--link-color);
+}
+
+body:is(.zhiyu-light, .zhiyu-dark) .markdown-rendered a:hover,
+body:is(.zhiyu-light, .zhiyu-dark) .cm-link:hover,
+body:is(.zhiyu-light, .zhiyu-dark) .cm-hmd-internal-link:hover {
+  color: var(--link-color-hover);
+}
+
+body:is(.zhiyu-light, .zhiyu-dark) .clickable-icon:hover,
+body:is(.zhiyu-light, .zhiyu-dark) .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+body:is(.zhiyu-light, .zhiyu-dark) .nav-file-title.is-active .nav-file-title-content {
+  color: var(--interactive-accent);
+}
+
+body:is(.zhiyu-light, .zhiyu-dark) mark,
+body:is(.zhiyu-light, .zhiyu-dark) .cm-highlight {
+  background: var(--text-highlight-bg);
+}
+
 body.zhiyu-light {
   --link-color: #b28234;
   --link-color-hover: #956d28;
