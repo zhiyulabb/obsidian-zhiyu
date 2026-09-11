@@ -25,6 +25,16 @@ body.zhiyu-light {
   --interactive-accent-hover: #bd6248;
   --text-on-accent: #ffffff;
   --text-selection: #d9775726;
+  --color-red-rgb: 185, 91, 78;
+  --color-orange-rgb: 217, 119, 87;
+  --color-yellow-rgb: 197, 154, 74;
+  --color-green-rgb: 120, 150, 107;
+  --color-blue-rgb: 92, 131, 166;
+  --text-success: #78966b;
+  --text-warning: #c59a4a;
+  --text-error: #b85c52;
+  --text-highlight-bg: #f0dfb8;
+  --code-background: #eae1d4;
 }
 
 .theme-dark,
@@ -45,4 +55,14 @@ body.zhiyu-dark {
   --interactive-accent-hover: #f0a082;
   --text-on-accent: #252321;
   --text-selection: #d9775730;
+  --color-red-rgb: 214, 112, 98;
+  --color-orange-rgb: 226, 138, 104;
+  --color-yellow-rgb: 213, 174, 99;
+  --color-green-rgb: 145, 174, 127;
+  --color-blue-rgb: 126, 163, 193;
+  --text-success: #91ae7f;
+  --text-warning: #d5ae63;
+  --text-error: #d67062;
+  --text-highlight-bg: #725b3a;
+  --code-background: #302c29;
 }
