@@ -9,32 +9,32 @@
 
 .theme-light,
 body.zhiyu-light {
-  --background-primary: #f3eee6;
-  --background-primary-alt: #faf8f3;
-  --background-secondary: #e8e0d6;
-  --background-secondary-alt: #ddd2c6;
-  --background-modifier-hover: #c9674818;
-  --background-modifier-border: #cfc3b7;
-  --background-modifier-border-hover: #b8a99b;
-  --background-modifier-border-focus: #c9674870;
-  --text-normal: #3b342e;
-  --text-muted: #756b63;
-  --text-faint: #9b8e83;
-  --text-accent: #a94f38;
-  --interactive-accent: #c96748;
-  --interactive-accent-hover: #ae543b;
+  --background-primary: #fbfaf7;
+  --background-primary-alt: #ffffff;
+  --background-secondary: #f3f1ec;
+  --background-secondary-alt: #ebe8e2;
+  --background-modifier-hover: #d977570b;
+  --background-modifier-border: #dedbd5;
+  --background-modifier-border-hover: #c9c5be;
+  --background-modifier-border-focus: #d9775755;
+  --text-normal: #302d2a;
+  --text-muted: #77736e;
+  --text-faint: #aaa59e;
+  --text-accent: #b9654e;
+  --interactive-accent: #d97757;
+  --interactive-accent-hover: #bd6248;
   --text-on-accent: #ffffff;
-  --text-selection: #d98a6338;
-  --color-red-rgb: 177, 76, 63;
-  --color-orange-rgb: 201, 103, 72;
-  --color-yellow-rgb: 178, 130, 52;
-  --color-green-rgb: 86, 126, 78;
-  --color-blue-rgb: 65, 105, 144;
-  --text-success: #567e4e;
-  --text-warning: #b28234;
-  --text-error: #b14c3f;
-  --text-highlight-bg: #ead1ac;
-  --code-background: #e4d9cc;
+  --text-selection: #d9775726;
+  --color-red-rgb: 188, 99, 86;
+  --color-orange-rgb: 210, 111, 82;
+  --color-yellow-rgb: 190, 145, 70;
+  --color-green-rgb: 106, 143, 97;
+  --color-blue-rgb: 83, 123, 161;
+  --text-success: #6a8f61;
+  --text-warning: #be9146;
+  --text-error: #bc6356;
+  --text-highlight-bg: #f5e8c9;
+  --code-background: #f0ede7;
 }
 
 .theme-dark,
