@@ -21,3 +21,9 @@
 - [Obsidian Baseline Theme Customization](https://github.com/bwya77/obsidian-baseline-customization) — 配色和 Block Properties 样式
 
 各项目的具体许可证以其原始仓库为准。分发对应代码或资源时，应同时遵守其许可证要求。
+
+## 设计参考
+
+- [Kami](https://github.com/tw93/kami) — 纸张背景、墨蓝强调色和编辑式排版方向
+
+纸予仅参考 Kami 的设计方向，未复制 Kami 的字体、图片或代码。Kami 代码和模板采用 MIT License；Kami 使用的字体可能有独立授权要求，本项目未引入 Kami 的专有字体资源。
