@@ -68,3 +68,20 @@ body.is-translucent.theme-dark {
   --background-secondary-alt: color-mix(in srgb, #3a3935 38%, transparent);
   --modal-background: color-mix(in srgb, #1e1e1c 72%, transparent);
 }
+
+/* Keep the note editor opaque; translucency remains available to the surrounding workspace. */
+body.is-translucent.zhiyu-light .mod-root,
+body.is-translucent.theme-light .mod-root {
+  --background-primary: #faf9f5;
+  --background-primary-alt: #ffffff;
+  --background-secondary: #e8e6dc;
+  --background-secondary-alt: #dedbd1;
+}
+
+body.is-translucent.zhiyu-dark .mod-root,
+body.is-translucent.theme-dark .mod-root {
+  --background-primary: #141413;
+  --background-primary-alt: #1e1e1c;
+  --background-secondary: #242422;
+  --background-secondary-alt: #3a3935;
+}
