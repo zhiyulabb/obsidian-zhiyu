@@ -1,10 +1,46 @@
-<div align="center">
+# 纸予 Zhiyu
 
-![](img/hero.png)
+一套面向中文用户的 Obsidian 主题，持续调整界面层次、阅读体验、中文字体和移动端适配。
 
-### The baseline of your thoughts.
+> 本主题基于 [Baseline](https://github.com/aaaaalexis/obsidian-baseline) 二次开发。
+> Baseline 及相关版权信息请见 [LICENSE.txt](LICENSE.txt) 和 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
 
-_From the creator of [Cupertino](https://github.com/aaaaalexis/obsidian-cupertino)_
+## 特性
+
+- 中文界面与字体适配
+- 明暗模式与多种配色方案
+- 可通过 Style Settings 自定义颜色、间距、圆角和字体
+- 支持 Obsidian 桌面端与移动端
+- 保留并持续整理 Baseline 提供的布局与内容增强能力
+
+## 安装
+
+### 手动安装
+
+1. 下载本仓库中的 `theme.css`、`manifest.json` 和主题预览图
+2. 在 Vault 中创建目录 `.obsidian/themes/纸予`
+3. 将文件复制到该目录
+4. 在 Obsidian 的「外观」设置中启用「纸予」
+
+### 开发
+
+源码位于 [`src/`](src)，编译产物为 [`theme.css`](theme.css)。
+
+## 配置
+
+安装并启用 Style Settings 插件后，可在设置中调整主题选项。
+
+## 来源与致谢
+
+本项目是 Baseline 的衍生主题。Baseline 的原作者、第三方主题、字体和功能来源请见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
+
+## 许可证
+
+本项目基于 MIT License 发布。原始版权声明和许可证文本保留在 [LICENSE.txt](LICENSE.txt) 中。
+
+## 反馈
+
+欢迎通过 [Issues](https://github.com/CuteMoment/obsidian-zhiyu/issues) 提交问题或建议。
 
 <a href="https://aaaaalexis.github.io/obsidian-baseline/install?name=Baseline"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/Open%20in-Obsidian.svg?size=default&amp;theme=violet&amp;mode=dark&amp;logo=obsidian&amp;labelGap=3"><img alt="badge" src="https://shieldcn.dev/badge/Open%20in-Obsidian.svg?size=default&amp;theme=violet&amp;mode=light&amp;logo=obsidian&amp;labelGap=3"></picture></a>
 <a href="https://buymeacoffee.com/svnaxis"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/Buy%20me%20a%20coffee.svg?size=default&amp;theme=amber&amp;mode=dark&amp;logo=buymeacoffee"><img alt="badge" src="https://shieldcn.dev/badge/Buy%20me%20a%20coffee.svg?size=default&amp;theme=amber&amp;mode=light&amp;logo=buymeacoffee"></picture></a>
@@ -12,7 +48,9 @@ _From the creator of [Cupertino](https://github.com/aaaaalexis/obsidian-cupertin
 
 </div>
 
-## Quick Start
+<!-- Original Baseline feature documentation is retained below during the initial fork cleanup. -->
+
+## Original Baseline feature reference
 
 ### Migrating from another theme?
 

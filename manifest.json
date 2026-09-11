@@ -1,8 +1,7 @@
 {
-  "name": "Baseline",
-  "version": "3.2.12",
+  "name": "纸予",
+  "version": "1.0.0",
   "minAppVersion": "1.13.4",
-  "author": "Alexis C",
-  "authorUrl": "https://github.com/aaaaalexis",
-  "fundingUrl": "https://www.buymeacoffee.com/sevenaxis"
+  "author": "CuteMoment",
+  "authorUrl": "https://github.com/CuteMoment"
 }
