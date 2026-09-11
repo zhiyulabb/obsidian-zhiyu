@@ -10,6 +10,7 @@ Inspired by Kami's warm paper and ink-blue palette.
   --accent-l: 28%;
 }
 
+body.zhiyu-light,
 .theme-light.zhiyu-light {
   --background-primary: #f5f4ed;
   --background-primary-alt: #fbfaf5;
@@ -29,6 +30,7 @@ Inspired by Kami's warm paper and ink-blue palette.
   --text-selection: #1b365d22;
 }
 
+body.zhiyu-dark,
 .theme-dark.zhiyu-dark {
   --background-primary: #202832;
   --background-primary-alt: #28323d;
