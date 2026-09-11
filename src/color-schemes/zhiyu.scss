@@ -1,7 +1,4 @@
-/*
-Zhiyu Paper
-Inspired by Kami's warm paper and ink-blue palette.
-*/
+/* Zhiyu Paper: warm paper and official Anthropic palette reference. */
 
 .theme-light.zhiyu-light.color-scheme-accent,
 .theme-dark.zhiyu-dark.color-scheme-accent {
@@ -10,8 +7,8 @@ Inspired by Kami's warm paper and ink-blue palette.
   --accent-l: 59%;
 }
 
-body.zhiyu-light,
-.theme-light {
+.theme-light,
+body.zhiyu-light {
   --background-primary: #faf9f5;
   --background-primary-alt: #ffffff;
   --background-secondary: #e8e6dc;
@@ -30,8 +27,8 @@ body.zhiyu-light,
   --text-selection: #d9775726;
 }
 
-body.zhiyu-dark,
-.theme-dark {
+.theme-dark,
+body.zhiyu-dark {
   --background-primary: #141413;
   --background-primary-alt: #1e1e1c;
   --background-secondary: #242422;
@@ -48,40 +45,4 @@ body.zhiyu-dark,
   --interactive-accent-hover: #eb9677;
   --text-on-accent: #141413;
   --text-selection: #d9775730;
-}
-
-/* Keep Obsidian's native translucency switch meaningful without changing the opaque default. */
-body.is-translucent.zhiyu-light,
-body.is-translucent.theme-light {
-  --background-primary: color-mix(in srgb, #faf9f5 45%, transparent);
-  --background-primary-alt: color-mix(in srgb, #ffffff 40%, transparent);
-  --background-secondary: color-mix(in srgb, #e8e6dc 32%, transparent);
-  --background-secondary-alt: color-mix(in srgb, #dedbd1 28%, transparent);
-  --modal-background: color-mix(in srgb, #fcfaf7 68%, transparent);
-}
-
-body.is-translucent.zhiyu-dark,
-body.is-translucent.theme-dark {
-  --background-primary: color-mix(in srgb, #141413 52%, transparent);
-  --background-primary-alt: color-mix(in srgb, #1e1e1c 48%, transparent);
-  --background-secondary: color-mix(in srgb, #242422 42%, transparent);
-  --background-secondary-alt: color-mix(in srgb, #3a3935 38%, transparent);
-  --modal-background: color-mix(in srgb, #1e1e1c 72%, transparent);
-}
-
-/* Keep the note editor opaque; translucency remains available to the surrounding workspace. */
-body.is-translucent.zhiyu-light .mod-root,
-body.is-translucent.theme-light .mod-root {
-  --background-primary: #faf9f5;
-  --background-primary-alt: #ffffff;
-  --background-secondary: #e8e6dc;
-  --background-secondary-alt: #dedbd1;
-}
-
-body.is-translucent.zhiyu-dark .mod-root,
-body.is-translucent.theme-dark .mod-root {
-  --background-primary: #141413;
-  --background-primary-alt: #1e1e1c;
-  --background-secondary: #242422;
-  --background-secondary-alt: #3a3935;
 }
