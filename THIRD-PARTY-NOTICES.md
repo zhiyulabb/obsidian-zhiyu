@@ -27,3 +27,7 @@
 - [Kami](https://github.com/tw93/kami) — 纸张背景、墨蓝强调色和编辑式排版方向
 
 纸予仅参考 Kami 的设计方向，未复制 Kami 的字体、图片或代码。Kami 代码和模板采用 MIT License；Kami 使用的字体可能有独立授权要求，本项目未引入 Kami 的专有字体资源。
+
+## 色彩参考
+
+纸予的暖米白、赤陶橙和暖棕灰配色参考了 Claude 产品的整体色彩关系，不使用 Claude 的 Logo、界面代码或品牌资产。
