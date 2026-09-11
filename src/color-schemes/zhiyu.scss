@@ -12,18 +12,18 @@ Inspired by Kami's warm paper and ink-blue palette.
 
 body.zhiyu-light,
 .theme-light {
-  --background-primary: #f7f3ee;
-  --background-primary-alt: #fcfaf7;
-  --background-secondary: #eee8e1;
-  --background-secondary-alt: #e6ded6;
+  --background-primary: #faf9f5;
+  --background-primary-alt: #ffffff;
+  --background-secondary: #e8e6dc;
+  --background-secondary-alt: #dedbd1;
   --background-modifier-hover: #d9775712;
-  --background-modifier-border: #e2d9d1;
-  --background-modifier-border-hover: #cfc1b7;
+  --background-modifier-border: #b0aea566;
+  --background-modifier-border-hover: #b0aea5;
   --background-modifier-border-focus: #d9775766;
-  --text-normal: #2d2926;
-  --text-muted: #756d66;
-  --text-faint: #a59a91;
-  --text-accent: #b85f45;
+  --text-normal: #141413;
+  --text-muted: #6f6d66;
+  --text-faint: #b0aea5;
+  --text-accent: #d97757;
   --interactive-accent: #d97757;
   --interactive-accent-hover: #bd6248;
   --text-on-accent: #ffffff;
@@ -32,20 +32,20 @@ body.zhiyu-light,
 
 body.zhiyu-dark,
 .theme-dark {
-  --background-primary: #2b2725;
-  --background-primary-alt: #342e2b;
-  --background-secondary: #211e1c;
-  --background-secondary-alt: #413934;
+  --background-primary: #141413;
+  --background-primary-alt: #1e1e1c;
+  --background-secondary: #242422;
+  --background-secondary-alt: #3a3935;
   --background-modifier-hover: #d9775718;
-  --background-modifier-border: #514741;
-  --background-modifier-border-hover: #6a5a51;
+  --background-modifier-border: #b0aea533;
+  --background-modifier-border-hover: #b0aea5;
   --background-modifier-border-focus: #d9775766;
-  --text-normal: #f1e9e1;
-  --text-muted: #b9aaa0;
-  --text-faint: #82756d;
-  --text-accent: #eea083;
+  --text-normal: #faf9f5;
+  --text-muted: #b0aea5;
+  --text-faint: #77766f;
+  --text-accent: #d97757;
   --interactive-accent: #d97757;
   --interactive-accent-hover: #eb9677;
-  --text-on-accent: #2b2725;
+  --text-on-accent: #141413;
   --text-selection: #d9775730;
 }
