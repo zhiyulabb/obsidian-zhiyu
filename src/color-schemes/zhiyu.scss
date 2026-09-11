@@ -35,6 +35,17 @@ body.zhiyu-light {
   --text-error: #bc6356;
   --text-highlight-bg: #f5e8c9;
   --code-background: #f0ede7;
+  --interactive-normal: #ebe5dd;
+  --interactive-hover: #e2d8cd;
+  --interactive-accent-rgb: 210, 111, 82;
+  --background-modifier-form-field: #f7f4ef;
+  --background-modifier-success: #dce8d7;
+  --background-modifier-error: #f1d9d4;
+  --background-modifier-message: #e4edf4;
+  --tag-color: #567b93;
+  --tag-background: #e1eaf0;
+  --blockquote-border-color: #c59a4a;
+  --hr-color: #cfc4b8;
 }
 
 .theme-dark,
@@ -65,4 +76,29 @@ body.zhiyu-dark {
   --text-error: #d77b6c;
   --text-highlight-bg: #67543e;
   --code-background: #332f2c;
+  --interactive-normal: #393532;
+  --interactive-hover: #48413b;
+  --interactive-accent-rgb: 224, 137, 105;
+  --background-modifier-form-field: #302c29;
+  --background-modifier-success: #354532;
+  --background-modifier-error: #513532;
+  --background-modifier-message: #303f4c;
+  --tag-color: #9bbbd1;
+  --tag-background: #33434f;
+  --blockquote-border-color: #cfaa60;
+  --hr-color: #5d554e;
+}
+
+body.zhiyu-light {
+  --link-color: #b28234;
+  --link-color-hover: #956d28;
+  --text-bold: #b14c3f;
+  --text-italic: #416990;
+}
+
+body.zhiyu-dark {
+  --link-color: #cfaa60;
+  --link-color-hover: #e3c27e;
+  --text-bold: #d77b6c;
+  --text-italic: #7aa0be;
 }
