@@ -2,9 +2,9 @@
 
 .theme-light.zhiyu-light.color-scheme-accent,
 .theme-dark.zhiyu-dark.color-scheme-accent {
-  --accent-h: 211;
-  --accent-s: 55%;
-  --accent-l: 28%;
+  --accent-h: 14;
+  --accent-s: 58%;
+  --accent-l: 59%;
 }
 
 .theme-light,
@@ -13,36 +13,36 @@ body.zhiyu-light {
   --background-primary-alt: #fbfaf5;
   --background-secondary: #ebe9df;
   --background-secondary-alt: #e3e1d7;
-  --background-modifier-hover: #1b365d0d;
+  --background-modifier-hover: #d977570d;
   --background-modifier-border: #d8d5ca;
   --background-modifier-border-hover: #c4c0b4;
-  --background-modifier-border-focus: #1b365d66;
+  --background-modifier-border-focus: #d9775766;
   --text-normal: #2d3338;
   --text-muted: #77756d;
   --text-faint: #a5a299;
-  --text-accent: #1b365d;
-  --interactive-accent: #1b365d;
-  --interactive-accent-hover: #284d78;
+  --text-accent: #b85f45;
+  --interactive-accent: #d97757;
+  --interactive-accent-hover: #bd6248;
   --text-on-accent: #ffffff;
-  --text-selection: #1b365d22;
+  --text-selection: #d9775726;
 }
 
 .theme-dark,
 body.zhiyu-dark {
-  --background-primary: #202832;
-  --background-primary-alt: #28323d;
-  --background-secondary: #19212a;
-  --background-secondary-alt: #303c48;
-  --background-modifier-hover: #a8bfd20f;
-  --background-modifier-border: #414a52;
-  --background-modifier-border-hover: #56636d;
-  --background-modifier-border-focus: #a8bfd266;
-  --text-normal: #e8e6df;
-  --text-muted: #a9aaa5;
-  --text-faint: #737b80;
-  --text-accent: #a8bfd2;
-  --interactive-accent: #a8bfd2;
-  --interactive-accent-hover: #c0d1df;
-  --text-on-accent: #202832;
-  --text-selection: #a8bfd222;
+  --background-primary: #252321;
+  --background-primary-alt: #302c29;
+  --background-secondary: #1d1b1a;
+  --background-secondary-alt: #403934;
+  --background-modifier-hover: #d9775718;
+  --background-modifier-border: #514943;
+  --background-modifier-border-hover: #6a5a51;
+  --background-modifier-border-focus: #d9775766;
+  --text-normal: #f5efe8;
+  --text-muted: #b9aaa0;
+  --text-faint: #82756d;
+  --text-accent: #e28a68;
+  --interactive-accent: #e28a68;
+  --interactive-accent-hover: #f0a082;
+  --text-on-accent: #252321;
+  --text-selection: #d9775730;
 }
