@@ -1,0 +1,121 @@
+/*
+ * Zhiyu screenshot palette and focused UI refinements.
+ * Keep these overrides at the end of the theme so they remain easy to tune
+ * without changing Baseline's component styles.
+ */
+
+body.theme-light {
+  --accent-h: 114;
+  --accent-s: 55%;
+  --accent-l: 64%;
+
+  /* Neutral system: warm grey canvas, ivory workspace, white cards. */
+  --color-base-00: #ffffff;
+  --color-base-05: #fcfbfa;
+  --color-base-10: #f6f5f3;
+  --color-base-20: #f1f1ef;
+  --color-base-25: #ecece9;
+  --color-base-30: #e8e8e6;
+  --color-base-35: #e1e0dc;
+  --color-base-40: #cbc9c4;
+  --color-base-50: #a1a19d;
+  --color-base-60: #8a8f89;
+  --color-base-70: #5f625e;
+  --color-base-100: #181a17;
+
+  --background-primary: #ffffff;
+  --background-primary-alt: #f6f5f3;
+  --background-secondary: #f6f5f3;
+  --background-secondary-alt: #e1e0dc;
+  --background-modifier-hover: rgba(24, 26, 23, 0.055);
+  --background-modifier-active-hover: rgba(24, 26, 23, 0.09);
+  --background-modifier-border: #e8e8e6;
+  --background-modifier-border-hover: #d8dad5;
+  --background-modifier-border-focus: #90db86;
+  --divider-color: #e8e8e6;
+  /* Preserve Obsidian's macOS translucency pipeline when enabled. */
+  --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-light-opacity));
+
+  /* Typography and interaction. */
+  --text-normal: #181a17;
+  --text-muted: #8a8f89;
+  --text-faint: #a1a19d;
+  --text-accent: #2e9f4f;
+  --text-accent-hover: #1e7f3b;
+  --text-on-accent: #181a17;
+  --text-on-accent-inverted: #ffffff;
+  --link-color: #2e9f4f;
+  --link-color-hover: #1e7f3b;
+  --interactive-normal: #ffffff;
+  --interactive-hover: #ecece9;
+  --interactive-accent: #7dd56f;
+  --interactive-accent-hover: #56c961;
+  --interactive-success: #2e9f4f;
+  --icon-color: #8a8f89;
+  --icon-color-hover: #181a17;
+  --icon-color-focused: #2e9f4f;
+  --text-selection: #d6f0ff;
+
+  /* Screenshot-derived status palette. */
+  --color-red-rgb: 229, 85, 73;
+  --color-orange-rgb: 231, 148, 50;
+  --color-yellow-rgb: 217, 177, 53;
+  --color-green-rgb: 46, 159, 79;
+  --color-cyan-rgb: 13, 159, 140;
+  --color-blue-rgb: 62, 123, 248;
+  --color-purple-rgb: 155, 116, 214;
+  --color-pink-rgb: 213, 90, 145;
+
+  /* Soft surfaces used by callouts, code, tags, and menus. */
+  --code-normal: #181a17;
+  --code-comment: #8a8f89;
+  --code-function: #2e9f4f;
+  --code-important: #e55549;
+  --code-keyword: #d55a91;
+  --code-property: #3e7bf8;
+  --code-punctuation: #5f625e;
+  --code-string: #0d9f8c;
+  --code-tag: #e79432;
+  --code-value: #9b74d6;
+  --code-background: #f6f5f3;
+  --tag-color: #2e9f4f;
+  --tag-color-hover: #1e7f3b;
+  --tag-background: #eaf7e5;
+  --tag-background-hover: #e1f0dd;
+  --blockquote-background-color: #f9f1dc;
+  --blockquote-border-color: #90db86;
+  --table-border-color: #e8e8e6;
+  --modal-background: #ffffff;
+  --menu-background: #ffffff;
+  --modal-border-color: #e8e8e6;
+
+  /* Use one smaller indentation step at every nested folder level. */
+  --nav-item-children-margin-start: 12px;
+  --nav-indentation-guide-width: 0px;
+  --nav-item-background-hover: #eaf7e5;
+  --nav-item-background-active: #7dd56f;
+  --nav-item-color-active: #181a17;
+}
+
+/* Let images keep their natural size while editing; preview remains untouched. */
+body .markdown-source-view.mod-cm6 .cm-content {
+  --img-line-width: auto;
+  --img-line-max-width: 100%;
+  --img-line-width-offset: 0;
+}
+
+body .markdown-source-view.mod-cm6 .cm-content .image-embed:not([width]),
+body .markdown-source-view.mod-cm6 .cm-content .image-embed:not([width]) > .image-wrapper {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  margin-inline: 0;
+  padding: 0;
+}
+
+body .markdown-source-view.mod-cm6 .cm-content .image-embed:not([width]) img:not(.cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]) {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+}
