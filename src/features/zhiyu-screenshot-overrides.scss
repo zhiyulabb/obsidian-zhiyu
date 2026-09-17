@@ -104,18 +104,12 @@ body .markdown-source-view.mod-cm6 .cm-content {
   --img-line-width-offset: 0;
 }
 
-body .markdown-source-view.mod-cm6 .cm-content .image-embed:not([width]),
-body .markdown-source-view.mod-cm6 .cm-content .image-embed:not([width]) > .image-wrapper {
-  display: inline-block;
-  width: auto;
-  max-width: 100%;
-  margin-inline: 0;
-  padding: 0;
+/* Keep regular image embeds inline; the block-width feature otherwise makes them full rows. */
+body .markdown-source-view.mod-cm6 .cm-content .image-embed:not([alt="banner"]),
+body .markdown-source-view.mod-cm6 .cm-content .image-embed:not([alt="banner"]) > .image-wrapper {
+  display: inline-flex !important;
 }
 
-body .markdown-source-view.mod-cm6 .cm-content .image-embed:not([width]) img:not(.cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]) {
-  width: auto;
+body .markdown-source-view.mod-cm6 .cm-content .image-embed:not([alt="banner"]) img:not(.cm-widgetBuffer, .link-favicon, .emoji) {
   max-width: 100%;
-  height: auto;
-  padding: 0;
 }
