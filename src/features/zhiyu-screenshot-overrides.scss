@@ -9,6 +9,16 @@ body.theme-light {
   --accent-s: 55%;
   --accent-l: 64%;
 
+  /* Obsidian's core aliases. Plugins and native controls consume these
+     names rather than the presentation variables below. */
+  --mono-rgb-0: 255, 255, 255;
+  --mono-rgb-100: 24, 26, 23;
+  --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+  --color-accent: hsl(var(--color-accent-hsl));
+  --color-accent-1: #2e9f4f;
+  --color-accent-2: #1e7f3b;
+  --interactive-accent-hsl: var(--color-accent-hsl);
+
   /* Neutral system: warm grey canvas, ivory workspace, white cards. */
   --color-base-00: #ffffff;
   --color-base-05: #fcfbfa;
@@ -129,6 +139,16 @@ body.theme-dark {
   --accent-s: 55%;
   --accent-l: 64%;
 
+  /* Obsidian's core aliases. Keep the same green identity in dark mode,
+     while the neutral and readable foreground palette changes below. */
+  --mono-rgb-0: 23, 26, 22;
+  --mono-rgb-100: 241, 245, 238;
+  --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+  --color-accent: hsl(var(--color-accent-hsl));
+  --color-accent-1: #8fe07f;
+  --color-accent-2: #b0eea4;
+  --interactive-accent-hsl: var(--color-accent-hsl);
+
   /* Keep the screenshot palette's warm neutral tone in dark mode. */
   --color-base-00: #171a16;
   --color-base-05: #1b1e1a;
@@ -236,6 +256,32 @@ body.theme-dark {
   --nav-item-background-active: #7dd56f;
   --nav-item-color-hover: #f1f5ee;
   --nav-item-color-active: #182017;
+}
+
+/*
+ * The Baseline settings layer intentionally falls back to monochrome when
+ * Interface accent is off:
+ *   body:not(.accented-interface) { --interactive-accent: var(--color-base-100); }
+ *
+ * Zhiyu's palette is the theme's own default identity, so its core accent
+ * aliases must win that fallback. These selectors stay at the document root
+ * and let every native view and variable-driven plugin inherit the same
+ * palette without plugin-specific rules.
+ */
+body.theme-light:not(.accented-interface) {
+  --interactive-accent: #7dd56f;
+  --interactive-accent-hover: #56c961;
+  --interactive-accent-hsl: var(--color-accent-hsl);
+  --text-on-accent: #181a17;
+  --text-on-accent-inverted: #ffffff;
+}
+
+body.theme-dark:not(.accented-interface) {
+  --interactive-accent: #7dd56f;
+  --interactive-accent-hover: #9be78d;
+  --interactive-accent-hsl: var(--color-accent-hsl);
+  --text-on-accent: #182017;
+  --text-on-accent-inverted: #ffffff;
 }
 
 /* Keep navigation hovers identical across the file tree, settings, and sidebar layouts. */
