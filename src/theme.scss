@@ -85,4 +85,5 @@
 
 // Keep Zhiyu's screenshot-derived defaults and focused editor/navigation
 // refinements last so they take precedence over the Baseline feature layers.
+@use "color-schemes/zhiyu.scss";
 @use "features/zhiyu-screenshot-overrides.scss";
