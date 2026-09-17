@@ -97,6 +97,100 @@ body.theme-light {
   --nav-item-color-active: #181a17;
 }
 
+body.theme-dark {
+  --accent-h: 114;
+  --accent-s: 55%;
+  --accent-l: 64%;
+
+  /* Keep the screenshot palette's warm neutral tone in dark mode. */
+  --color-base-00: #171a16;
+  --color-base-05: #1b1e1a;
+  --color-base-10: #20241f;
+  --color-base-20: #272c26;
+  --color-base-25: #2c322b;
+  --color-base-30: #333a31;
+  --color-base-35: #3c453a;
+  --color-base-40: #4c5749;
+  --color-base-50: #687565;
+  --color-base-60: #899789;
+  --color-base-70: #b0bbae;
+  --color-base-100: #f1f5ee;
+
+  --background-primary: #171a16;
+  --background-primary-alt: #20241f;
+  --background-secondary: #20241f;
+  --background-secondary-alt: #2c322b;
+  --background-modifier-hover: rgba(241, 245, 238, 0.07);
+  --background-modifier-active-hover: rgba(241, 245, 238, 0.12);
+  --background-modifier-border: #333a31;
+  --background-modifier-border-hover: #4c5749;
+  --background-modifier-border-focus: #6fbd68;
+  --divider-color: #333a31;
+  --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-dark-opacity));
+
+  --text-normal: #f1f5ee;
+  --text-muted: #aab5a7;
+  --text-faint: #7d897b;
+  --text-accent: #8fe07f;
+  --text-accent-hover: #b0eea4;
+  --text-on-accent: #182017;
+  --text-on-accent-inverted: #ffffff;
+  --link-color: #8fe07f;
+  --link-color-hover: #b0eea4;
+  --interactive-normal: #272c26;
+  --interactive-hover: #333a31;
+  --interactive-accent: #7dd56f;
+  --interactive-accent-hover: #9be78d;
+  --interactive-success: #62c875;
+  --icon-color: #aab5a7;
+  --icon-color-hover: #f1f5ee;
+  --icon-color-focused: #8fe07f;
+  --text-selection: #31513b;
+
+  /* Keep status hues consistent with the light palette, with dark surfaces. */
+  --color-red-rgb: 229, 85, 73;
+  --color-orange-rgb: 231, 148, 50;
+  --color-yellow-rgb: 217, 177, 53;
+  --color-green-rgb: 46, 159, 79;
+  --color-cyan-rgb: 13, 159, 140;
+  --color-blue-rgb: 62, 123, 248;
+  --color-purple-rgb: 155, 116, 214;
+  --color-pink-rgb: 213, 90, 145;
+
+  --code-normal: #f1f5ee;
+  --code-comment: #899789;
+  --code-function: #8fe07f;
+  --code-important: #ff8578;
+  --code-keyword: #ef82ac;
+  --code-property: #79a7ff;
+  --code-punctuation: #b0bbae;
+  --code-string: #4fd0bc;
+  --code-tag: #f0aa5a;
+  --code-value: #ba98ed;
+  --code-background: #20241f;
+  --tag-color: #8fe07f;
+  --tag-color-hover: #b0eea4;
+  --tag-background: #29432d;
+  --tag-background-hover: #355539;
+  --blockquote-background-color: #373521;
+  --blockquote-border-color: #6fbd68;
+  --table-border-color: #333a31;
+  --modal-background: #20241f;
+  --menu-background: #20241f;
+  --modal-border-color: #333a31;
+
+  /* Settings, style settings, and plugin dialogs use these same surfaces. */
+  --settings-background: #171a16;
+  --setting-items-background: #20241f;
+  --setting-items-border-color: #333a31;
+  --setting-items-border-width: 1px;
+  --setting-nav-icon-background: #4c5749;
+
+  --nav-item-background-hover: #29432d;
+  --nav-item-background-active: #7dd56f;
+  --nav-item-color-active: #182017;
+}
+
 /* Let images keep their natural size while editing; preview remains untouched. */
 body .markdown-source-view.mod-cm6 .cm-content {
   --img-line-width: auto;
