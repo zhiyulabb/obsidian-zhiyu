@@ -1,6 +1,11 @@
 /* Raw light/dark palette -> Obsidian semantic variables -> components/plugins. */
 
 body.theme-light {
+  /* Readable colored text uses deeper shades of the screenshot status hues. */
+  --zhiyu-ink-cyan: color-mix(in srgb, var(--color-cyan) 68%, var(--text-normal));
+  --zhiyu-ink-blue: color-mix(in srgb, var(--color-blue) 75%, var(--text-normal));
+  --zhiyu-ink-purple: color-mix(in srgb, var(--color-purple) 75%, var(--text-normal));
+  --zhiyu-ink-orange: color-mix(in srgb, var(--color-orange) 60%, var(--text-normal));
   /* Raw palette values: edit colors here. */
   --zhiyu-palette-mono-rgb-0: 255, 255, 255;
   --zhiyu-palette-mono-rgb-100: 24, 26, 23;
@@ -22,7 +27,9 @@ body.theme-light {
   --zhiyu-palette-background-modifier-box-shadow: rgba(24, 26, 23, 0.12);
   --zhiyu-palette-background-modifier-border-hover: #d8dad5;
   --zhiyu-palette-background-modifier-border-focus: #90db86;
-  --zhiyu-palette-text-accent: #2e9f4f;
+  --zhiyu-palette-text-accent: #247f3d;
+  --zhiyu-palette-text-muted: #5f6b5d;
+  --zhiyu-palette-text-faint: #697264;
   --zhiyu-palette-text-accent-hover: #1e7f3b;
   --zhiyu-palette-interactive-accent: #7dd56f;
   --zhiyu-palette-interactive-accent-hover: #56c961;
@@ -85,8 +92,8 @@ body.theme-light.input-cupertino.is-mobile {
   --divider-color: var(--background-modifier-border);
   --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-light-opacity));
   --text-normal: var(--zhiyu-palette-color-base-100);
-  --text-muted: var(--zhiyu-palette-color-base-60);
-  --text-faint: var(--zhiyu-palette-color-base-50);
+  --text-muted: var(--zhiyu-palette-text-muted);
+  --text-faint: var(--zhiyu-palette-text-faint);
   --text-accent: var(--zhiyu-palette-text-accent);
   --text-accent-hover: var(--zhiyu-palette-text-accent-hover);
   --text-on-accent: var(--zhiyu-palette-color-base-100);
@@ -187,6 +194,10 @@ body.theme-light.input-cupertino.is-mobile {
 }
 
 body.theme-dark {
+  --zhiyu-ink-cyan: var(--color-cyan);
+  --zhiyu-ink-blue: var(--color-blue);
+  --zhiyu-ink-purple: var(--color-purple);
+  --zhiyu-ink-orange: var(--color-orange);
   /* Raw palette values: edit colors here. */
   --zhiyu-palette-mono-rgb-0: 23, 26, 22;
   --zhiyu-palette-mono-rgb-100: 241, 245, 238;
@@ -208,7 +219,7 @@ body.theme-dark {
   --zhiyu-palette-background-modifier-box-shadow: rgba(0, 0, 0, 0.45);
   --zhiyu-palette-background-modifier-border-focus: #6fbd68;
   --zhiyu-palette-text-muted: #aab5a7;
-  --zhiyu-palette-text-faint: #7d897b;
+  --zhiyu-palette-text-faint: #929e8f;
   --zhiyu-palette-text-accent: #8fe07f;
   --zhiyu-palette-text-accent-hover: #b0eea4;
   --zhiyu-palette-text-on-accent: #182017;

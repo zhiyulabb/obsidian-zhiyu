@@ -1,0 +1,93 @@
+/* Functional colors derive from the palette; no component owns raw colors. */
+body:is(.theme-light, .theme-dark) {
+  --zhiyu-outline-color: var(--text-accent);
+  --zhiyu-tags-color: var(--zhiyu-ink-cyan);
+  --zhiyu-backlink-color: var(--zhiyu-ink-blue);
+  --zhiyu-outgoing-color: var(--zhiyu-ink-purple);
+  --metadata-label-text-color: var(--text-muted);
+  --metadata-input-text-color: var(--text-normal);
+  --metadata-label-text-color-hover: var(--text-normal);
+  --metadata-label-background-hover: var(--background-modifier-hover);
+  --metadata-input-background-active: var(--background-modifier-hover);
+  --metadata-border-color: var(--background-modifier-border);
+  --metadata-divider-color: var(--background-modifier-border);
+  --nav-item-color: var(--text-muted);
+  --nav-heading-color: var(--text-normal);
+  --nav-heading-color-hover: var(--text-accent);
+  --collapse-icon-color: var(--text-muted);
+  --collapse-icon-color-collapsed: var(--text-accent);
+  --tab-text-color: var(--text-muted);
+  --tab-text-color-active: var(--text-normal);
+  --tab-text-color-focused-active: var(--text-normal);
+  --inline-title-color: var(--text-normal);
+  --h1-color: var(--text-accent);
+  --h2-color: var(--zhiyu-ink-cyan);
+  --h3-color: var(--zhiyu-ink-blue);
+  --h4-color: var(--zhiyu-ink-purple);
+  --h5-color: var(--zhiyu-ink-orange);
+  --h6-color: var(--text-muted);
+  --tag-color: var(--zhiyu-tags-color);
+  --tag-color-hover: var(--text-normal);
+  --tag-background: color-mix(in srgb, var(--color-cyan) 12%, var(--background-primary));
+  --tag-background-hover: color-mix(in srgb, var(--color-cyan) 20%, var(--background-primary));
+  --tag-border-color: color-mix(in srgb, var(--color-cyan) 25%, transparent);
+  --tag-border-color-hover: var(--zhiyu-tags-color);
+  --pill-color: var(--text-normal);
+  --pill-color-remove: var(--text-muted);
+  --pill-background: var(--background-secondary);
+  --link-external-color: var(--zhiyu-outgoing-color);
+  --link-external-color-hover: var(--text-accent-hover);
+  --link-unresolved-color: var(--text-muted);
+  --search-result-background: var(--background-secondary);
+  --search-result-file-title-color: var(--text-normal);
+  --search-result-file-matched-text-color: var(--text-accent);
+  --graph-text: var(--text-normal);
+  --graph-node: var(--text-accent);
+  --graph-node-tag: var(--zhiyu-tags-color);
+  --graph-node-attachment: var(--zhiyu-outgoing-color);
+}
+
+/* Stable semantic identity, independent of sidebar tab ordering. */
+@each $view, $color in (outline: outline, tag: tags, backlinks: backlink, outgoing-link: outgoing, all-properties: outgoing) {
+  body .workspace-leaf-content[data-type="#{$view}"],
+  body .workspace-tab-header[data-type="#{$view}"] {
+    --icon-color: var(--zhiyu-#{$color}-color);
+    --icon-color-hover: var(--text-normal);
+    --icon-color-active: var(--zhiyu-#{$color}-color);
+    --icon-color-focused: var(--zhiyu-#{$color}-color);
+    --tab-text-color-focused-active: var(--zhiyu-#{$color}-color);
+  }
+  body .workspace-tab-header[data-type="#{$view}"] .workspace-tab-header-inner-icon {
+    /* Baseline declares color: inherit !important on this exact icon class. */
+    color: var(--zhiyu-#{$color}-color) !important;
+  }
+}
+
+body .mod-root .metadata-container .metadata-add-button {
+  color: var(--text-accent);
+  background-color: var(--background-modifier-hover);
+  &:hover { color: var(--text-accent-hover); background-color: var(--background-modifier-active-hover); }
+  &:active { color: var(--text-on-accent); background-color: var(--interactive-accent); }
+}
+
+body .metadata-property {
+  --metadata-property-icon-color: var(--text-accent);
+  .metadata-property-icon { color: var(--metadata-property-icon-color); }
+  &[data-property-type="number"] { --metadata-property-icon-color: var(--zhiyu-ink-orange); }
+  &[data-property-type="date"], &[data-property-type="datetime"] { --metadata-property-icon-color: var(--zhiyu-ink-blue); }
+  &[data-property-type="multitext"] { --metadata-property-icon-color: var(--zhiyu-ink-purple); }
+  &[data-property-type="tags"], &[data-property-key="tags"] { --metadata-property-icon-color: var(--zhiyu-tags-color); }
+}
+
+body .metadata-property[data-property-key="tags"] .multi-select-pill {
+  @each $index, $hue in (1: cyan, 2: blue, 0: purple) {
+    &:nth-child(3n + #{$index}) {
+      --pill-color: var(--zhiyu-ink-#{$hue});
+      --pill-background: color-mix(in srgb, var(--color-#{$hue}) 12%, var(--background-primary));
+      color: var(--pill-color);
+      background-color: var(--pill-background);
+      &:hover { background-color: color-mix(in srgb, var(--color-#{$hue}) 20%, var(--background-primary)); }
+      .multi-select-pill-remove-button { color: inherit; }
+    }
+  }
+}
