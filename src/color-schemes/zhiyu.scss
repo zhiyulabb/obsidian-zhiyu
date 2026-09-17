@@ -1,11 +1,26 @@
 /* Raw light/dark palette -> Obsidian semantic variables -> components/plugins. */
 
+/* Sidebar interaction palette: alternate warm/cool hues, keep equal saturation
+   and lightness per mode. Inactive icons continue to use neutral text-muted. */
+@each $mode, $lightness in (light: 36%, dark: 70%) {
+  body.theme-#{$mode} {
+    --zhiyu-tab-saturation: 30%;
+    --zhiyu-tab-lightness: #{$lightness};
+    @each $index, $hue in (1: 145, 2: 32, 3: 210, 4: 345, 5: 175, 6: 270, 7: 75, 8: 12, 9: 235, 10: 310) {
+      --zhiyu-tab-color-#{$index}: hsl(#{$hue} var(--zhiyu-tab-saturation) var(--zhiyu-tab-lightness));
+    }
+  }
+}
+
 body.theme-light {
   /* Readable colored text uses deeper shades of the screenshot status hues. */
-  --zhiyu-ink-cyan: color-mix(in srgb, var(--color-cyan) 68%, var(--text-normal));
+  --zhiyu-ink-cyan: color-mix(in srgb, var(--color-cyan) 65%, var(--text-normal));
   --zhiyu-ink-blue: color-mix(in srgb, var(--color-blue) 75%, var(--text-normal));
   --zhiyu-ink-purple: color-mix(in srgb, var(--color-purple) 75%, var(--text-normal));
   --zhiyu-ink-orange: color-mix(in srgb, var(--color-orange) 60%, var(--text-normal));
+  --zhiyu-ink-red: color-mix(in srgb, var(--color-red) 65%, var(--text-normal));
+  --zhiyu-ink-link-gold: #c65d0a;
+  --zhiyu-ink-link-gold-hover: #a94b05;
   /* Raw palette values: edit colors here. */
   --zhiyu-palette-mono-rgb-0: 255, 255, 255;
   --zhiyu-palette-mono-rgb-100: 24, 26, 23;
@@ -20,20 +35,26 @@ body.theme-light {
   --zhiyu-palette-color-base-50: #a1a19d;
   --zhiyu-palette-color-base-60: #8a8f89;
   --zhiyu-palette-color-base-70: #5f625e;
-  --zhiyu-palette-color-base-100: #181a17;
+  /* One text hue/saturation; only lightness changes between text levels. */
+  --zhiyu-text-hue: 100;
+  --zhiyu-text-saturation: 6%;
+  --zhiyu-text-primary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 22%);
+  --zhiyu-text-secondary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 38%);
+  --zhiyu-text-tertiary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 44%);
+  --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
   --zhiyu-palette-background-modifier-hover: #eaf7e5;
   --zhiyu-palette-background-modifier-active-hover: #e1f0dd;
   --zhiyu-palette-background-modifier-cover: rgba(24, 26, 23, 0.35);
   --zhiyu-palette-background-modifier-box-shadow: rgba(24, 26, 23, 0.12);
   --zhiyu-palette-background-modifier-border-hover: #d8dad5;
   --zhiyu-palette-background-modifier-border-focus: #90db86;
-  --zhiyu-palette-text-accent: #247f3d;
-  --zhiyu-palette-text-muted: #5f6b5d;
-  --zhiyu-palette-text-faint: #697264;
-  --zhiyu-palette-text-accent-hover: #1e7f3b;
+  --zhiyu-palette-text-accent: color-mix(in srgb, #247f3d 60%, var(--zhiyu-palette-interactive-accent));
+  --zhiyu-palette-text-muted: var(--zhiyu-text-secondary);
+  --zhiyu-palette-text-faint: var(--zhiyu-text-tertiary);
+  --zhiyu-palette-text-accent-hover: #247f3d;
   --zhiyu-palette-interactive-accent: #7dd56f;
   --zhiyu-palette-interactive-accent-hover: #56c961;
-  --zhiyu-palette-text-selection: #d6f0ff;
+  --zhiyu-palette-text-selection: color-mix(in srgb, var(--zhiyu-palette-text-accent) 22%, var(--background-primary));
   --zhiyu-palette-color-red-rgb: 229, 85, 73;
   --zhiyu-palette-color-orange-rgb: 231, 148, 50;
   --zhiyu-palette-color-yellow-rgb: 217, 177, 53;
@@ -42,7 +63,7 @@ body.theme-light {
   --zhiyu-palette-color-blue-rgb: 62, 123, 248;
   --zhiyu-palette-color-purple-rgb: 155, 116, 214;
   --zhiyu-palette-color-pink-rgb: 213, 90, 145;
-  --zhiyu-palette-blockquote-background-color: #f9f1dc;
+  --zhiyu-palette-blockquote-background-color: #f7f6f0;
 }
 
 body.theme-light,
@@ -198,6 +219,9 @@ body.theme-dark {
   --zhiyu-ink-blue: var(--color-blue);
   --zhiyu-ink-purple: var(--color-purple);
   --zhiyu-ink-orange: var(--color-orange);
+  --zhiyu-ink-red: var(--color-red);
+  --zhiyu-ink-link-gold: #ff943d;
+  --zhiyu-ink-link-gold-hover: #ffad68;
   /* Raw palette values: edit colors here. */
   --zhiyu-palette-mono-rgb-0: 23, 26, 22;
   --zhiyu-palette-mono-rgb-100: 241, 245, 238;
@@ -212,21 +236,31 @@ body.theme-dark {
   --zhiyu-palette-color-base-50: #687565;
   --zhiyu-palette-color-base-60: #899789;
   --zhiyu-palette-color-base-70: #b0bbae;
-  --zhiyu-palette-color-base-100: #f1f5ee;
-  --zhiyu-palette-background-modifier-hover: #29432d;
-  --zhiyu-palette-background-modifier-active-hover: #355539;
+  --zhiyu-text-hue: 100;
+  /* Mirror the light text lightness (100 - L), retaining its hue/saturation. */
+  --zhiyu-text-saturation: 6%;
+  --zhiyu-text-primary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 78%);
+  --zhiyu-text-secondary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 62%);
+  --zhiyu-text-tertiary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 56%);
+  --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
+  /* Dark accent ramp: same brand hue, softer saturation and luminance. */
+  --zhiyu-dark-accent-h: 111.764706;
+  --zhiyu-dark-accent-s: 48%;
+  --zhiyu-dark-accent-l: 62%;
+  --zhiyu-palette-background-modifier-hover: hsl(var(--zhiyu-dark-accent-h) 16% 21%);
+  --zhiyu-palette-background-modifier-active-hover: hsl(var(--zhiyu-dark-accent-h) 18% 27%);
   --zhiyu-palette-background-modifier-cover: rgba(0, 0, 0, 0.55);
   --zhiyu-palette-background-modifier-box-shadow: rgba(0, 0, 0, 0.45);
-  --zhiyu-palette-background-modifier-border-focus: #6fbd68;
-  --zhiyu-palette-text-muted: #aab5a7;
-  --zhiyu-palette-text-faint: #929e8f;
-  --zhiyu-palette-text-accent: #8fe07f;
-  --zhiyu-palette-text-accent-hover: #b0eea4;
+  --zhiyu-palette-background-modifier-border-focus: var(--zhiyu-palette-interactive-accent);
+  --zhiyu-palette-text-muted: var(--zhiyu-text-secondary);
+  --zhiyu-palette-text-faint: var(--zhiyu-text-tertiary);
+  --zhiyu-palette-text-accent: hsl(var(--zhiyu-dark-accent-h) var(--zhiyu-dark-accent-s) 70%);
+  --zhiyu-palette-text-accent-hover: hsl(var(--zhiyu-dark-accent-h) var(--zhiyu-dark-accent-s) 77%);
   --zhiyu-palette-text-on-accent: #182017;
   --zhiyu-palette-text-on-accent-inverted: #ffffff;
-  --zhiyu-palette-interactive-accent: #7dd56f;
-  --zhiyu-palette-interactive-accent-hover: #9be78d;
-  --zhiyu-palette-text-selection: #31513b;
+  --zhiyu-palette-interactive-accent: hsl(var(--zhiyu-dark-accent-h) var(--zhiyu-dark-accent-s) var(--zhiyu-dark-accent-l));
+  --zhiyu-palette-interactive-accent-hover: hsl(var(--zhiyu-dark-accent-h) var(--zhiyu-dark-accent-s) 64%);
+  --zhiyu-palette-text-selection: hsl(var(--zhiyu-dark-accent-h) 18% 27%);
   --zhiyu-palette-color-red-rgb: 255, 133, 120;
   --zhiyu-palette-color-orange-rgb: 240, 170, 90;
   --zhiyu-palette-color-yellow-rgb: 225, 198, 96;
@@ -242,9 +276,9 @@ body.theme-dark,
 body.theme-dark:is(.input-cupertino, .input-baseline, .input-fluent, .input-material, .input-tactile, .input-adwaita, .mod-macos, .is-mobile),
 body.theme-dark.input-cupertino.is-mobile {
   /* Public Obsidian variables inherited by native views and plugins. */
-  --accent-h: 111.764706;
-  --accent-s: 54.736842%;
-  --accent-l: 63.529412%;
+  --accent-h: var(--zhiyu-dark-accent-h);
+  --accent-s: var(--zhiyu-dark-accent-s);
+  --accent-l: var(--zhiyu-dark-accent-l);
   --mono-rgb-0: var(--zhiyu-palette-mono-rgb-0);
   --mono-rgb-100: var(--zhiyu-palette-mono-rgb-100);
   --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);

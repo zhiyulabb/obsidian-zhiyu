@@ -151,7 +151,7 @@ body:not(.is-mobile) {
 // Popout window
 .is-popout-window {
   --workspace-background-translucent: var(--background-secondary);
-  background-color: rgb(var(--mono-rgb-100));
+  background-color: var(--background-secondary);
 }
 
 // Title bar
