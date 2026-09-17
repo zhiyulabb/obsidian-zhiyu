@@ -98,8 +98,8 @@ body.theme-light.input-cupertino.is-mobile {
   --text-accent-hover: var(--zhiyu-palette-text-accent-hover);
   --text-on-accent: var(--zhiyu-palette-color-base-100);
   --text-on-accent-inverted: var(--zhiyu-palette-color-base-00);
-  --link-color: var(--text-accent);
-  --link-color-hover: var(--text-accent-hover);
+  --link-color: var(--text-normal);
+  --link-color-hover: var(--text-normal);
   --interactive-normal: var(--zhiyu-palette-color-base-00);
   --interactive-hover: var(--background-modifier-hover);
   --interactive-accent: var(--zhiyu-palette-interactive-accent);
@@ -130,8 +130,8 @@ body.theme-light.input-cupertino.is-mobile {
   --code-tag: var(--color-orange);
   --code-value: var(--color-purple);
   --code-background: var(--zhiyu-palette-color-base-10);
-  --tag-color: var(--text-accent);
-  --tag-color-hover: var(--text-accent-hover);
+  --tag-color: var(--text-muted);
+  --tag-color-hover: var(--text-normal);
   --tag-background: var(--background-modifier-hover);
   --tag-background-hover: var(--background-modifier-active-hover);
   --blockquote-background-color: var(--zhiyu-palette-blockquote-background-color);
@@ -176,8 +176,8 @@ body.theme-light.input-cupertino.is-mobile {
   --background-modifier-success-rgb: var(--color-green-rgb);
   --text-highlight-bg-rgb: var(--color-yellow-rgb);
   --icon-color-active: var(--text-accent);
-  --link-external-color: var(--text-accent);
-  --link-external-color-hover: var(--text-accent-hover);
+  --link-external-color: var(--text-normal);
+  --link-external-color-hover: var(--text-normal);
   --checkbox-color: var(--interactive-accent);
   --checkbox-marker-color: var(--text-on-accent);
   --checkbox-border-color: var(--background-modifier-border-hover);
@@ -291,8 +291,8 @@ body.theme-dark.input-cupertino.is-mobile {
   --text-accent-hover: var(--zhiyu-palette-text-accent-hover);
   --text-on-accent: var(--zhiyu-palette-text-on-accent);
   --text-on-accent-inverted: var(--zhiyu-palette-text-on-accent-inverted);
-  --link-color: var(--text-accent);
-  --link-color-hover: var(--text-accent-hover);
+  --link-color: var(--text-normal);
+  --link-color-hover: var(--text-normal);
   --interactive-normal: var(--zhiyu-palette-color-base-20);
   --interactive-hover: var(--background-modifier-hover);
   --interactive-accent: var(--zhiyu-palette-interactive-accent);
@@ -321,8 +321,8 @@ body.theme-dark.input-cupertino.is-mobile {
   --code-tag: var(--color-orange);
   --code-value: var(--color-purple);
   --code-background: var(--zhiyu-palette-color-base-10);
-  --tag-color: var(--text-accent);
-  --tag-color-hover: var(--text-accent-hover);
+  --tag-color: var(--text-muted);
+  --tag-color-hover: var(--text-normal);
   --tag-background: var(--background-modifier-hover);
   --tag-background-hover: var(--background-modifier-active-hover);
   --blockquote-background-color: var(--zhiyu-palette-blockquote-background-color);
@@ -366,8 +366,8 @@ body.theme-dark.input-cupertino.is-mobile {
   --background-modifier-success-rgb: var(--color-green-rgb);
   --text-highlight-bg-rgb: var(--color-yellow-rgb);
   --icon-color-active: var(--text-accent);
-  --link-external-color: var(--text-accent);
-  --link-external-color-hover: var(--text-accent-hover);
+  --link-external-color: var(--text-normal);
+  --link-external-color-hover: var(--text-normal);
   --checkbox-color: var(--interactive-accent);
   --checkbox-marker-color: var(--text-on-accent);
   --checkbox-border-color: var(--background-modifier-border-hover);

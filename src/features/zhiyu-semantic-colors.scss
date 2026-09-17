@@ -13,20 +13,20 @@ body:is(.theme-light, .theme-dark) {
   --metadata-divider-color: var(--background-modifier-border);
   --nav-item-color: var(--text-muted);
   --nav-heading-color: var(--text-normal);
-  --nav-heading-color-hover: var(--text-accent);
+  --nav-heading-color-hover: var(--text-normal);
   --collapse-icon-color: var(--text-muted);
   --collapse-icon-color-collapsed: var(--text-accent);
   --tab-text-color: var(--text-muted);
   --tab-text-color-active: var(--text-normal);
   --tab-text-color-focused-active: var(--text-normal);
   --inline-title-color: var(--text-normal);
-  --h1-color: var(--text-accent);
-  --h2-color: var(--zhiyu-ink-cyan);
-  --h3-color: var(--zhiyu-ink-blue);
-  --h4-color: var(--zhiyu-ink-purple);
-  --h5-color: var(--zhiyu-ink-orange);
+  --h1-color: var(--text-normal);
+  --h2-color: var(--text-normal);
+  --h3-color: var(--text-normal);
+  --h4-color: var(--text-normal);
+  --h5-color: var(--text-muted);
   --h6-color: var(--text-muted);
-  --tag-color: var(--zhiyu-tags-color);
+  --tag-color: var(--text-muted);
   --tag-color-hover: var(--text-normal);
   --tag-background: color-mix(in srgb, var(--color-cyan) 12%, var(--background-primary));
   --tag-background-hover: color-mix(in srgb, var(--color-cyan) 20%, var(--background-primary));
@@ -35,8 +35,10 @@ body:is(.theme-light, .theme-dark) {
   --pill-color: var(--text-normal);
   --pill-color-remove: var(--text-muted);
   --pill-background: var(--background-secondary);
-  --link-external-color: var(--zhiyu-outgoing-color);
-  --link-external-color-hover: var(--text-accent-hover);
+  --link-color: var(--text-normal);
+  --link-color-hover: var(--text-normal);
+  --link-external-color: var(--text-normal);
+  --link-external-color-hover: var(--text-normal);
   --link-unresolved-color: var(--text-muted);
   --search-result-background: var(--background-secondary);
   --search-result-file-title-color: var(--text-normal);
@@ -55,7 +57,7 @@ body:is(.theme-light, .theme-dark) {
     --icon-color-hover: var(--text-normal);
     --icon-color-active: var(--zhiyu-#{$color}-color);
     --icon-color-focused: var(--zhiyu-#{$color}-color);
-    --tab-text-color-focused-active: var(--zhiyu-#{$color}-color);
+    --tab-text-color-focused-active: var(--text-normal);
   }
   body .workspace-tab-header[data-type="#{$view}"] .workspace-tab-header-inner-icon {
     /* Baseline declares color: inherit !important on this exact icon class. */
@@ -64,9 +66,9 @@ body:is(.theme-light, .theme-dark) {
 }
 
 body .mod-root .metadata-container .metadata-add-button {
-  color: var(--text-accent);
+  color: var(--text-muted);
   background-color: var(--background-modifier-hover);
-  &:hover { color: var(--text-accent-hover); background-color: var(--background-modifier-active-hover); }
+  &:hover { color: var(--text-normal); background-color: var(--background-modifier-active-hover); }
   &:active { color: var(--text-on-accent); background-color: var(--interactive-accent); }
 }
 
@@ -82,7 +84,7 @@ body .metadata-property {
 body .metadata-property[data-property-key="tags"] .multi-select-pill {
   @each $index, $hue in (1: cyan, 2: blue, 0: purple) {
     &:nth-child(3n + #{$index}) {
-      --pill-color: var(--zhiyu-ink-#{$hue});
+      --pill-color: var(--text-normal);
       --pill-background: color-mix(in srgb, var(--color-#{$hue}) 12%, var(--background-primary));
       color: var(--pill-color);
       background-color: var(--pill-background);
