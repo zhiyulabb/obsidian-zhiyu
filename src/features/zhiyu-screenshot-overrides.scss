@@ -191,6 +191,12 @@ body.theme-dark {
   --nav-item-color-active: #182017;
 }
 
+/* Keep the settings sidebar hover identical to the main file sidebar. */
+body .modal.mod-settings .vertical-tab-nav-item:not(.is-active):hover {
+  background-color: var(--nav-item-background-hover);
+  color: var(--nav-item-color-hover, var(--text-normal));
+}
+
 /* Let images keep their natural size while editing; preview remains untouched. */
 body .markdown-source-view.mod-cm6 .cm-content {
   --img-line-width: auto;
