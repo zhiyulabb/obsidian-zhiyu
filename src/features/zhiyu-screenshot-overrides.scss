@@ -29,6 +29,15 @@ body.theme-light {
   --background-secondary-alt: #e1e0dc;
   --background-modifier-hover: rgba(24, 26, 23, 0.055);
   --background-modifier-active-hover: rgba(24, 26, 23, 0.09);
+  --background-modifier-cover: rgba(24, 26, 23, 0.35);
+  --background-modifier-box-shadow: rgba(24, 26, 23, 0.12);
+  --background-modifier-form-field: #ffffff;
+  --background-modifier-form-field-hover: #f1f1ef;
+  --background-modifier-error: rgba(229, 85, 73, 0.12);
+  --background-modifier-error-hover: rgba(229, 85, 73, 0.18);
+  --background-modifier-success: rgba(46, 159, 79, 0.12);
+  --background-modifier-success-hover: rgba(46, 159, 79, 0.18);
+  --background-modifier-message: rgba(62, 123, 248, 0.12);
   --background-modifier-border: #e8e8e6;
   --background-modifier-border-hover: #d8dad5;
   --background-modifier-border-focus: #90db86;
@@ -50,6 +59,8 @@ body.theme-light {
   --interactive-hover: #ecece9;
   --interactive-accent: #7dd56f;
   --interactive-accent-hover: #56c961;
+  --dropdown-background: #ffffff;
+  --dropdown-background-hover: #ecece9;
   --interactive-success: #2e9f4f;
   --icon-color: #8a8f89;
   --icon-color-hover: #181a17;
@@ -88,6 +99,21 @@ body.theme-light {
   --modal-background: #ffffff;
   --menu-background: #ffffff;
   --modal-border-color: #e8e8e6;
+  --raised-background: #ffffff;
+  --blur-background: #ffffff;
+  --settings-background: #ffffff;
+  --setting-items-background: #f6f5f3;
+  --setting-items-border-color: #e8e8e6;
+  --setting-items-border-width: 1px;
+  --setting-nav-icon-background: #a1a19d;
+  --modal-sidebar-background: #f6f5f3;
+  --mobile-sidebar-background: #ffffff;
+  --menu-item-background-hover: #eaf7e5;
+  --menu-item-background-selected: #7dd56f;
+  --nav-item-background-selected: #7dd56f;
+  --table-row-background-hover: rgba(24, 26, 23, 0.055);
+  --table-row-alt-background-hover: rgba(24, 26, 23, 0.055);
+  --checkbox-color-hover: #56c961;
 
   /* Use one smaller indentation step at every nested folder level. */
   --nav-item-children-margin-start: 12px;
@@ -123,6 +149,15 @@ body.theme-dark {
   --background-secondary-alt: #2c322b;
   --background-modifier-hover: rgba(241, 245, 238, 0.07);
   --background-modifier-active-hover: rgba(241, 245, 238, 0.12);
+  --background-modifier-cover: rgba(0, 0, 0, 0.55);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.45);
+  --background-modifier-form-field: #272c26;
+  --background-modifier-form-field-hover: #333a31;
+  --background-modifier-error: rgba(229, 85, 73, 0.2);
+  --background-modifier-error-hover: rgba(229, 85, 73, 0.3);
+  --background-modifier-success: rgba(98, 200, 117, 0.2);
+  --background-modifier-success-hover: rgba(98, 200, 117, 0.3);
+  --background-modifier-message: rgba(62, 123, 248, 0.2);
   --background-modifier-border: #333a31;
   --background-modifier-border-hover: #4c5749;
   --background-modifier-border-focus: #6fbd68;
@@ -179,6 +214,8 @@ body.theme-dark {
   --modal-background: #20241f;
   --menu-background: #20241f;
   --modal-border-color: #333a31;
+  --raised-background: #2c322b;
+  --blur-background: #20241f;
 
   /* Settings, style settings, and plugin dialogs use these same surfaces. */
   --settings-background: #171a16;
@@ -186,6 +223,14 @@ body.theme-dark {
   --setting-items-border-color: #333a31;
   --setting-items-border-width: 1px;
   --setting-nav-icon-background: #4c5749;
+  --modal-sidebar-background: #20241f;
+  --mobile-sidebar-background: #171a16;
+  --menu-item-background-hover: #29432d;
+  --menu-item-background-selected: #7dd56f;
+  --nav-item-background-selected: #7dd56f;
+  --table-row-background-hover: rgba(241, 245, 238, 0.07);
+  --table-row-alt-background-hover: rgba(241, 245, 238, 0.07);
+  --checkbox-color-hover: #9be78d;
 
   --nav-item-background-hover: #29432d;
   --nav-item-background-active: #7dd56f;
@@ -199,6 +244,18 @@ body .modal.mod-sidebar-layout .vertical-tab-nav-item:not(.is-active):hover {
   color: var(--nav-item-color-hover, var(--text-normal));
 }
 
+/* Beat Cupertino's more specific transparent rule for the desktop settings tree. */
+body.input-cupertino:not(.is-mobile) .modal.mod-settings .vertical-tab-nav-item:not(.is-active):hover {
+  background-color: var(--nav-item-background-hover) !important;
+  color: var(--nav-item-color-hover, var(--text-normal));
+}
+
+/* Keep the selected settings item green on desktop, tablet, and mobile. */
+body.input-cupertino .modal.mod-settings .vertical-tab-nav-item.is-active {
+  background-color: var(--nav-item-background-active) !important;
+  color: var(--nav-item-color-active, var(--text-on-accent)) !important;
+}
+
 /* Cupertino's macOS/Fusion strong-navigation preset resets this token to transparent. */
 body.theme-light .nav-files-container > div .tree-item-self:hover:not(.is-active) {
   background-color: #eaf7e5 !important;
@@ -208,6 +265,61 @@ body.theme-light .nav-files-container > div .tree-item-self:hover:not(.is-active
 body.theme-dark .nav-files-container > div .tree-item-self:hover:not(.is-active) {
   background-color: #29432d !important;
   color: #f1f5ee;
+}
+
+/* Match Cupertino's higher-specificity interaction layer to the same palette. */
+body.input-cupertino.theme-light {
+  --interactive-hover: #ecece9;
+  --background-modifier-border: #e8e8e6;
+  --background-modifier-border-hover: #d8dad5;
+  --background-modifier-border-focus: #90db86;
+  --background-modifier-form-field: #ffffff;
+  --blur-background: #ffffff;
+}
+
+body.input-cupertino.theme-dark {
+  --interactive-hover: #333a31;
+  --background-modifier-border: #333a31;
+  --background-modifier-border-hover: #4c5749;
+  --background-modifier-border-focus: #6fbd68;
+  --background-modifier-form-field: #272c26;
+  --blur-background: #20241f;
+}
+
+body.input-cupertino.is-mobile.theme-light {
+  --interactive-normal: #f6f5f3;
+  --interactive-hover: #ecece9;
+}
+
+body.input-cupertino.is-mobile.theme-dark {
+  --color-base-00: #171a16;
+  --color-base-10: #20241f;
+  --color-base-20: #272c26;
+  --interactive-normal: #272c26;
+  --interactive-hover: #333a31;
+  --settings-background: #171a16;
+  --setting-items-background: #20241f;
+}
+
+/* The settings icon grid had one legacy hard-coded dark tile. */
+body.input-cupertino .modal.mod-settings [data-setting-id="command-palette"] .vertical-tab-nav-item-icon {
+  --setting-nav-icon-background: var(--color-base-10);
+}
+
+/* Community plugin cards use the same settings surface and navigation feedback. */
+body .modal.mod-community-modal .community-item:not(.is-selected) {
+  background-color: var(--setting-items-background);
+  border-color: var(--setting-items-border-color);
+}
+
+body .modal.mod-community-modal .community-item:not(.is-selected):hover {
+  background-color: var(--nav-item-background-hover);
+  color: var(--nav-item-color-hover, var(--text-normal));
+}
+
+body .modal.mod-community-modal .community-item.is-selected {
+  background-color: var(--nav-item-background-active);
+  color: var(--nav-item-color-active, var(--text-on-accent));
 }
 
 /* Let images keep their natural size while editing; preview remains untouched. */
