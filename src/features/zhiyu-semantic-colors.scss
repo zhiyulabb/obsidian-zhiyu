@@ -10,7 +10,7 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light
   --text-accent-hover: var(--zhiyu-palette-text-accent-hover);
   --text-error: var(--zhiyu-ink-red);
   --text-warning: var(--zhiyu-ink-orange);
-  --text-success: var(--text-accent);
+  --text-success: var(--zhiyu-ink-green);
   --code-normal: var(--text-normal);
   --code-comment: var(--text-muted);
   --code-function: var(--text-normal);
@@ -106,7 +106,7 @@ body .markdown-rendered mark:has(em),
 body .markdown-rendered em mark { background-color: var(--italic-highlight-bg); }
 body .markdown-rendered mark :is(strong, em) { color: var(--text-normal); }
 
-/* Like Primary: positional cycle on sidebar tabs, revealed only on interaction. */
+/* Ten-color positional palette for sidebar tabs, revealed on interaction. */
 body :is(.mod-left-split, .mod-right-split) .workspace-tab-header {
   @for $index from 1 through 10 {
     &:nth-child(10n + #{$index}) {

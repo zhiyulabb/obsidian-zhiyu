@@ -1,13 +1,14 @@
 /* Raw light/dark palette -> Obsidian semantic variables -> components/plugins. */
 
-/* Sidebar interaction palette: alternate warm/cool hues, keep equal saturation
-   and lightness per mode. Inactive icons continue to use neutral text-muted. */
-@each $mode, $lightness in (light: 36%, dark: 70%) {
+/* Perceptually balanced tab colors: brighter in light mode while preserving
+   at least 3:1 against the sidebar; dark colors stay soft and high-contrast. */
+@each $mode, $colors in (
+  light: (1: #3a9962, 2: #b17e43, 3: #598cc0, 4: #c86d84, 5: #39968e, 6: #a176cb, 7: #7b9237, 8: #c37460, 9: #7c83cd, 10: #c567b6),
+  dark: (1: #9cc9af, 2: #c9b49c, 3: #9cb3c9, 4: #c99ca7, 5: #9cc9c6, 6: #b39cc9, 7: #bec99c, 8: #c9a59c, 9: #9c9fc9, 10: #c99cc2)
+) {
   body.theme-#{$mode} {
-    --zhiyu-tab-saturation: 30%;
-    --zhiyu-tab-lightness: #{$lightness};
-    @each $index, $hue in (1: 145, 2: 32, 3: 210, 4: 345, 5: 175, 6: 270, 7: 75, 8: 12, 9: 235, 10: 310) {
-      --zhiyu-tab-color-#{$index}: hsl(#{$hue} var(--zhiyu-tab-saturation) var(--zhiyu-tab-lightness));
+    @each $index, $color in $colors {
+      --zhiyu-tab-color-#{$index}: #{$color};
     }
   }
 }
@@ -18,14 +19,15 @@ body.theme-light {
   --accent-h: 140;
   --accent-s: 48%;
   --accent-l: 50%;
-  /* Readable colored text uses deeper shades of the screenshot status hues. */
-  --zhiyu-ink-cyan: color-mix(in srgb, var(--color-cyan) 65%, var(--text-normal));
-  --zhiyu-ink-blue: color-mix(in srgb, var(--color-blue) 75%, var(--text-normal));
-  --zhiyu-ink-purple: color-mix(in srgb, var(--color-purple) 75%, var(--text-normal));
-  --zhiyu-ink-orange: color-mix(in srgb, var(--color-orange) 60%, var(--text-normal));
-  --zhiyu-ink-red: color-mix(in srgb, var(--color-red) 65%, var(--text-normal));
-  --zhiyu-ink-link-gold: #c65d0a;
-  --zhiyu-ink-link-gold-hover: #a94b05;
+  /* Foreground colors are independently tuned to reach 4.5:1 on white. */
+  --zhiyu-ink-cyan: #0c7f71;
+  --zhiyu-ink-blue: #3d6fd5;
+  --zhiyu-ink-purple: #7e5dae;
+  --zhiyu-ink-orange: #a9651f;
+  --zhiyu-ink-red: #c65045;
+  --zhiyu-ink-green: #278249;
+  --zhiyu-ink-link-gold: #b4570b;
+  --zhiyu-ink-link-gold-hover: #a94f05;
   /* Raw palette values: edit colors here. */
   --zhiyu-palette-mono-rgb-0: 255, 255, 255;
   --zhiyu-palette-mono-rgb-100: 24, 26, 23;
@@ -53,10 +55,10 @@ body.theme-light {
   --zhiyu-palette-background-modifier-box-shadow: rgba(24, 26, 23, 0.12);
   --zhiyu-palette-background-modifier-border-hover: #d8dad5;
   --zhiyu-palette-background-modifier-border-focus: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 70%, var(--zhiyu-palette-color-base-00));
-  --zhiyu-palette-text-accent: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 72%, var(--text-normal));
+  --zhiyu-palette-text-accent: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 55%, var(--text-normal));
   --zhiyu-palette-text-muted: var(--zhiyu-text-secondary);
   --zhiyu-palette-text-faint: var(--zhiyu-text-tertiary);
-  --zhiyu-palette-text-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 58%, var(--text-normal));
+  --zhiyu-palette-text-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 45%, var(--text-normal));
   --zhiyu-palette-interactive-accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
   --zhiyu-palette-interactive-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 82%, var(--text-normal));
   --zhiyu-palette-text-selection: color-mix(in srgb, var(--zhiyu-palette-text-accent) 22%, var(--background-primary));
@@ -226,6 +228,7 @@ body.theme-dark {
   --zhiyu-ink-purple: var(--color-purple);
   --zhiyu-ink-orange: var(--color-orange);
   --zhiyu-ink-red: var(--color-red);
+  --zhiyu-ink-green: var(--color-green);
   --zhiyu-ink-link-gold: #ff943d;
   --zhiyu-ink-link-gold-hover: #ffad68;
   /* Raw palette values: edit colors here. */
