@@ -16,7 +16,9 @@ body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-b
   height: 200%;
   z-index: -1;
   pointer-events: none;
-  background: var(--background-primary);
+  // The expanded hover target must not paint an oversized surface behind the
+  // status details; keep only the content transition.
+  background: transparent;
 }
 body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar:not(:hover) {
   transform: scale(0.8);
@@ -24,15 +26,6 @@ body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-b
 }
 body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar:not(:hover)::before {
   opacity: 0;
-}
-
-// Keep the expanded status bar free of a backdrop in Obsidian's translucent
-// window mode. The regular status-bar appearance remains unchanged.
-body.is-translucent:not(.is-mobile):not(.status-bar-default, .status-bar-full, .status-bar-cupertino)
-  .status-bar::before {
-  background: transparent;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
 }
 
 body:is(body, .status-bar-default):not(.status-bar-full, .status-bar-cupertino) {
