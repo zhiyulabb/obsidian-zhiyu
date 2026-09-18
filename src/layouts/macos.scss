@@ -61,7 +61,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
   }
   &.is-translucent.layout-macos .mod-sidedock,
   &.is-translucent.layout-fusion .mod-sidedock.mod-left-split {
-    background-color: var(--background-primary) !important;
+    background-color: transparent !important;
   }
   .mod-sidedock {
     transition:
@@ -181,7 +181,7 @@ body.layout-macos .workspace-split.mod-root .workspace-tab-container {
 }
 body.layout-macos:not(.is-mobile) {
   &:not(.is-hidden-frameless) {
-    .titlebar {
+    &:not(.is-translucent) .titlebar {
       background-color: var(--background-primary);
     }
     .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
@@ -191,10 +191,10 @@ body.layout-macos:not(.is-mobile) {
 
   // Editor panel
   &.is-translucent .mod-root {
-    background-color: var(--background-primary) !important;
+    background-color: transparent !important;
   }
   &.is-translucent:not(.is-focused):not(.reduce-contrast-change) .workspace {
-    background-color: var(--background-primary);
+    background-color: transparent;
   }
   &:not(.is-translucent) .workspace {
     background-color: var(--background-primary);

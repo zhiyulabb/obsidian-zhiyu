@@ -56,7 +56,6 @@ body.theme-light {
   --zhiyu-heading-bg-4: #f2fbf5;
   --zhiyu-heading-bg-5: #f4faff;
   --zhiyu-heading-bg-6: #faf7ff;
-  --zhiyu-text-tertiary: #72788a;
   --zhiyu-ink-muted-purple: #817083;
   --zhiyu-highlight-yellow: #ffe7a3;
   --zhiyu-highlight-green: #d4ebd9;
@@ -66,6 +65,13 @@ body.theme-light {
   --zhiyu-surface-tag-hover: #f5f5f2;
   --zhiyu-control-border: #727d6c;
   --zhiyu-on-solid: #ffffff;
+  /* Context-inspector palette, contrast-adjusted for the light graph canvas. */
+  --zhiyu-graph-blue: #217ed1;
+  --zhiyu-graph-purple: #9d56d9;
+  --zhiyu-graph-pink: #d5458f;
+  --zhiyu-graph-yellow: #9a7500;
+  --zhiyu-graph-green: #008a62;
+  --zhiyu-graph-gray: #6d6963;
 }
 
 /* The same named colors feed article styles, status colors and sidebar icons. */
@@ -88,7 +94,7 @@ body.theme-dark {
   --zhiyu-reading-orange: #e7a875;
   --zhiyu-reading-muted: #aab1a6;
   --zhiyu-reading-tag-bg: #1c291f;
-  --zhiyu-codeblock-bg: #242319;
+  --zhiyu-codeblock-bg: #29251e;
   --zhiyu-palette-text-selection: #294c35;
   --zhiyu-heading-muted: #b1b9ad;
   --zhiyu-heading-bg-1: #30211f;
@@ -97,14 +103,20 @@ body.theme-dark {
   --zhiyu-heading-bg-4: #1c291f;
   --zhiyu-heading-bg-5: #1c2631;
   --zhiyu-heading-bg-6: #272330;
-  --zhiyu-text-tertiary: #9faabd;
   --zhiyu-ink-muted-purple: #bca4bf;
   --zhiyu-highlight-yellow: #594c20;
   --zhiyu-highlight-green: #234c36;
   --zhiyu-highlight-blue: #263f53;
-  --zhiyu-inline-code-bg: #352f1b;
-  --zhiyu-surface-tag: #272c26;
-  --zhiyu-surface-tag-hover: #30362e;
+  --zhiyu-inline-code-bg: #383021;
+  --zhiyu-surface-tag: var(--zhiyu-palette-color-base-20);
+  --zhiyu-surface-tag-hover: var(--zhiyu-palette-color-base-25);
   --zhiyu-control-border: #899789;
   --zhiyu-on-solid: #171a16;
+  /* Bright reference colors stay luminous on the dark graph canvas. */
+  --zhiyu-graph-blue: #3392ff;
+  --zhiyu-graph-purple: #c27bff;
+  --zhiyu-graph-pink: #fc64b6;
+  --zhiyu-graph-yellow: #fdc800;
+  --zhiyu-graph-green: #00d492;
+  --zhiyu-graph-gray: #413c36;
 }

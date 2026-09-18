@@ -30,8 +30,8 @@ body.theme-light {
   --zhiyu-text-secondary: #5c6458;
   --zhiyu-text-tertiary: #5f655a;
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
-  --zhiyu-palette-background-modifier-hover: #f7f6f4;
-  --zhiyu-palette-background-modifier-active-hover: #f5f5f2;
+  --zhiyu-palette-background-modifier-hover: #ecece9;
+  --zhiyu-palette-background-modifier-active-hover: #e8e8e6;
   --zhiyu-palette-background-modifier-cover: rgba(24, 26, 23, 0.35);
   --zhiyu-palette-background-modifier-box-shadow: rgba(24, 26, 23, 0.12);
   --zhiyu-palette-background-modifier-border-hover: #d8dad5;
@@ -203,16 +203,17 @@ body.theme-dark {
   --zhiyu-ink-red: var(--color-red);
   --zhiyu-ink-green: var(--color-green);
   /* Raw palette values: edit colors here. */
-  --zhiyu-palette-mono-rgb-0: 23, 26, 22;
+  --zhiyu-palette-mono-rgb-0: 28, 27, 25;
   --zhiyu-palette-mono-rgb-100: 241, 245, 238;
-  --zhiyu-palette-color-base-00: #171a16;
-  --zhiyu-palette-color-base-05: #1b1e1a;
-  --zhiyu-palette-color-base-10: #20241f;
-  --zhiyu-palette-color-base-20: #272c26;
-  --zhiyu-palette-color-base-25: #2c322b;
-  --zhiyu-palette-color-base-30: #333a31;
-  --zhiyu-palette-color-base-35: #3c453a;
-  --zhiyu-palette-color-base-40: #4c5749;
+  /* Warm paper neutrals; green belongs to semantic accents, not surfaces. */
+  --zhiyu-palette-color-base-00: #1c1b19;
+  --zhiyu-palette-color-base-05: #201f1c;
+  --zhiyu-palette-color-base-10: #242320;
+  --zhiyu-palette-color-base-20: #2d2b28;
+  --zhiyu-palette-color-base-25: #34312d;
+  --zhiyu-palette-color-base-30: #403c36;
+  --zhiyu-palette-color-base-35: #49443e;
+  --zhiyu-palette-color-base-40: #58524a;
   --zhiyu-palette-color-base-50: #687565;
   --zhiyu-palette-color-base-60: #899789;
   --zhiyu-palette-color-base-70: #b0bbae;
@@ -223,8 +224,8 @@ body.theme-dark {
   --zhiyu-text-secondary: #b1b9ad;
   --zhiyu-text-tertiary: #aab1a6;
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
-  --zhiyu-palette-background-modifier-hover: var(--zhiyu-palette-color-base-20);
-  --zhiyu-palette-background-modifier-active-hover: var(--zhiyu-palette-color-base-25);
+  --zhiyu-palette-background-modifier-hover: var(--zhiyu-palette-color-base-25);
+  --zhiyu-palette-background-modifier-active-hover: var(--zhiyu-palette-color-base-30);
   --zhiyu-palette-background-modifier-cover: rgba(0, 0, 0, 0.55);
   --zhiyu-palette-background-modifier-box-shadow: rgba(0, 0, 0, 0.45);
   --zhiyu-palette-background-modifier-border-focus: var(--zhiyu-palette-interactive-accent);

@@ -1384,19 +1384,19 @@ settings:
 		id: translucent-light-opacity
 		title: Light translucent window opacity
 		type: variable-number-slider
-		default: 50
+		default: 60
 		min: 0
 		max: 100
-		step: 10
+		step: 5
 		format: '%'
 	-
 		id: translucent-dark-opacity
 		title: Dark translucent window opacity
 		type: variable-number-slider
-		default: 50
+		default: 60
 		min: 0
 		max: 100
-		step: 10
+		step: 5
 		format: '%'
 	-
 		id: editor

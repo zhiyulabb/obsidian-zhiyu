@@ -18,10 +18,11 @@ body.input-cupertino .modal.mod-settings .vertical-tab-nav-item.is-active {
   color: var(--nav-item-color-active, var(--text-on-accent)) !important;
 }
 
-/* Resolve the file tree's local hover override through the shared palette. */
+/* Keep the file tree hover identical to the settings navigation hover. */
 body:is(.theme-light, .theme-dark) .nav-files-container > div .tree-item-self:hover:not(.is-active) {
-  background-color: var(--background-modifier-hover) !important;
-  color: var(--text-normal);
+  background-color: var(--nav-item-background-hover) !important;
+  color: var(--nav-item-color-hover, var(--text-normal));
+  border-radius: var(--radius-s);
 }
 
 /* Native file-info tooltips use accent text by default, but Zhiyu uses a light card surface. */

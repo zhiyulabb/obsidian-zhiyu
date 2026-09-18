@@ -25,6 +25,16 @@ body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-b
 body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar:not(:hover)::before {
   opacity: 0;
 }
+
+// Keep the expanded status bar free of a backdrop in Obsidian's translucent
+// window mode. The regular status-bar appearance remains unchanged.
+body.is-translucent:not(.is-mobile):not(.status-bar-default, .status-bar-full, .status-bar-cupertino)
+  .status-bar::before {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 body:is(body, .status-bar-default):not(.status-bar-full, .status-bar-cupertino) {
   .mod-sidedock.mod-right-split .workspace-tabs:last-of-type .node-insert-event {
     padding-bottom: 36px;

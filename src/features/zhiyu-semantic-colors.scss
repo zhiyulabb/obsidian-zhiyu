@@ -108,10 +108,18 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light
   --search-result-background: var(--background-secondary);
   --search-result-file-title-color: var(--text-normal);
   --search-result-file-matched-text-color: var(--text-normal);
-  --graph-text: var(--text-normal);
-  --graph-node: var(--text-accent);
-  --graph-node-tag: var(--zhiyu-tags-color);
-  --graph-node-attachment: var(--zhiyu-outgoing-color);
+  --graph-text: var(--text-muted);
+  --graph-line: var(--zhiyu-graph-gray);
+  --graph-node: var(--zhiyu-graph-green);
+  --graph-node-focused: var(--zhiyu-graph-yellow);
+  --graph-node-tag: var(--zhiyu-graph-green);
+  --graph-node-attachment: var(--zhiyu-graph-purple);
+  --graph-node-unresolved: var(--zhiyu-graph-pink);
+}
+
+/* Search result titles must use document text, not the white-on-accent active-nav color. */
+body:is(.theme-light, .theme-dark) .search-result-file-title {
+  color: var(--search-result-file-title-color) !important;
 }
 
 /* Stable semantic identity, independent of sidebar tab ordering. */
