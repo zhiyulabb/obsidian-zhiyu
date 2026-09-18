@@ -24,6 +24,12 @@ body:is(.theme-light, .theme-dark) .nav-files-container > div .tree-item-self:ho
   color: var(--text-normal);
 }
 
+/* Native file-info tooltips use accent text by default, but Zhiyu uses a light card surface. */
+body:is(.theme-light, .theme-dark) .tooltip {
+  --text-on-accent: var(--text-normal);
+  color: var(--text-normal);
+}
+
 /* The settings icon grid had one legacy hard-coded dark tile. */
 body.input-cupertino .modal.mod-settings [data-setting-id="command-palette"] .vertical-tab-nav-item-icon {
   --setting-nav-icon-background: var(--color-base-10);

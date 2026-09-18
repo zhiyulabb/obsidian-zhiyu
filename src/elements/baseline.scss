@@ -76,10 +76,6 @@ button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([dat
 }
 
 // Toggle
-body:not(.accented-interface) .checkbox-container {
-  --interactive-accent: var(--color-green);
-}
-
 body.obsidian-app .checkbox-container {
   transition: var(--anim-duration-moderate);
   box-shadow: none;

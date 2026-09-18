@@ -13,6 +13,11 @@
 }
 
 body.theme-light {
+  /* Theme fallback. Obsidian writes a user's custom accent inline on body,
+     so that value wins; Restore default removes it and reveals Zhiyu green. */
+  --accent-h: 140;
+  --accent-s: 48%;
+  --accent-l: 50%;
   /* Readable colored text uses deeper shades of the screenshot status hues. */
   --zhiyu-ink-cyan: color-mix(in srgb, var(--color-cyan) 65%, var(--text-normal));
   --zhiyu-ink-blue: color-mix(in srgb, var(--color-blue) 75%, var(--text-normal));
@@ -42,18 +47,18 @@ body.theme-light {
   --zhiyu-text-secondary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 38%);
   --zhiyu-text-tertiary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 44%);
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
-  --zhiyu-palette-background-modifier-hover: #eaf7e5;
-  --zhiyu-palette-background-modifier-active-hover: #e1f0dd;
+  --zhiyu-palette-background-modifier-hover: var(--zhiyu-palette-color-base-20);
+  --zhiyu-palette-background-modifier-active-hover: var(--zhiyu-palette-color-base-25);
   --zhiyu-palette-background-modifier-cover: rgba(24, 26, 23, 0.35);
   --zhiyu-palette-background-modifier-box-shadow: rgba(24, 26, 23, 0.12);
   --zhiyu-palette-background-modifier-border-hover: #d8dad5;
-  --zhiyu-palette-background-modifier-border-focus: #90db86;
-  --zhiyu-palette-text-accent: color-mix(in srgb, #247f3d 60%, var(--zhiyu-palette-interactive-accent));
+  --zhiyu-palette-background-modifier-border-focus: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 70%, var(--zhiyu-palette-color-base-00));
+  --zhiyu-palette-text-accent: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 72%, var(--text-normal));
   --zhiyu-palette-text-muted: var(--zhiyu-text-secondary);
   --zhiyu-palette-text-faint: var(--zhiyu-text-tertiary);
-  --zhiyu-palette-text-accent-hover: #247f3d;
-  --zhiyu-palette-interactive-accent: #7dd56f;
-  --zhiyu-palette-interactive-accent-hover: #56c961;
+  --zhiyu-palette-text-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 58%, var(--text-normal));
+  --zhiyu-palette-interactive-accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
+  --zhiyu-palette-interactive-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 82%, var(--text-normal));
   --zhiyu-palette-text-selection: color-mix(in srgb, var(--zhiyu-palette-text-accent) 22%, var(--background-primary));
   --zhiyu-palette-color-red-rgb: 229, 85, 73;
   --zhiyu-palette-color-orange-rgb: 231, 148, 50;
@@ -70,9 +75,6 @@ body.theme-light,
 body.theme-light:is(.input-cupertino, .input-baseline, .input-fluent, .input-material, .input-tactile, .input-adwaita, .mod-macos, .is-mobile),
 body.theme-light.input-cupertino.is-mobile {
   /* Public Obsidian variables inherited by native views and plugins. */
-  --accent-h: 111.764706;
-  --accent-s: 54.736842%;
-  --accent-l: 63.529412%;
   --mono-rgb-0: var(--zhiyu-palette-mono-rgb-0);
   --mono-rgb-100: var(--zhiyu-palette-mono-rgb-100);
   --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
@@ -215,6 +217,10 @@ body.theme-light.input-cupertino.is-mobile {
 }
 
 body.theme-dark {
+  /* Dark-mode fallback; a user-selected accent still wins as an inline value. */
+  --accent-h: 140;
+  --accent-s: 45%;
+  --accent-l: 64%;
   --zhiyu-ink-cyan: var(--color-cyan);
   --zhiyu-ink-blue: var(--color-blue);
   --zhiyu-ink-purple: var(--color-purple);
@@ -243,24 +249,20 @@ body.theme-dark {
   --zhiyu-text-secondary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 62%);
   --zhiyu-text-tertiary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 56%);
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
-  /* Dark accent ramp: same brand hue, softer saturation and luminance. */
-  --zhiyu-dark-accent-h: 111.764706;
-  --zhiyu-dark-accent-s: 48%;
-  --zhiyu-dark-accent-l: 62%;
-  --zhiyu-palette-background-modifier-hover: hsl(var(--zhiyu-dark-accent-h) 16% 21%);
-  --zhiyu-palette-background-modifier-active-hover: hsl(var(--zhiyu-dark-accent-h) 18% 27%);
+  --zhiyu-palette-background-modifier-hover: var(--zhiyu-palette-color-base-20);
+  --zhiyu-palette-background-modifier-active-hover: var(--zhiyu-palette-color-base-25);
   --zhiyu-palette-background-modifier-cover: rgba(0, 0, 0, 0.55);
   --zhiyu-palette-background-modifier-box-shadow: rgba(0, 0, 0, 0.45);
   --zhiyu-palette-background-modifier-border-focus: var(--zhiyu-palette-interactive-accent);
   --zhiyu-palette-text-muted: var(--zhiyu-text-secondary);
   --zhiyu-palette-text-faint: var(--zhiyu-text-tertiary);
-  --zhiyu-palette-text-accent: hsl(var(--zhiyu-dark-accent-h) var(--zhiyu-dark-accent-s) 70%);
-  --zhiyu-palette-text-accent-hover: hsl(var(--zhiyu-dark-accent-h) var(--zhiyu-dark-accent-s) 77%);
+  --zhiyu-palette-text-accent: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 82%, white);
+  --zhiyu-palette-text-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 70%, white);
   --zhiyu-palette-text-on-accent: #182017;
   --zhiyu-palette-text-on-accent-inverted: #ffffff;
-  --zhiyu-palette-interactive-accent: hsl(var(--zhiyu-dark-accent-h) var(--zhiyu-dark-accent-s) var(--zhiyu-dark-accent-l));
-  --zhiyu-palette-interactive-accent-hover: hsl(var(--zhiyu-dark-accent-h) var(--zhiyu-dark-accent-s) 64%);
-  --zhiyu-palette-text-selection: hsl(var(--zhiyu-dark-accent-h) 18% 27%);
+  --zhiyu-palette-interactive-accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
+  --zhiyu-palette-interactive-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 82%, white);
+  --zhiyu-palette-text-selection: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 22%, var(--zhiyu-palette-color-base-00));
   --zhiyu-palette-color-red-rgb: 255, 133, 120;
   --zhiyu-palette-color-orange-rgb: 240, 170, 90;
   --zhiyu-palette-color-yellow-rgb: 225, 198, 96;
@@ -276,9 +278,6 @@ body.theme-dark,
 body.theme-dark:is(.input-cupertino, .input-baseline, .input-fluent, .input-material, .input-tactile, .input-adwaita, .mod-macos, .is-mobile),
 body.theme-dark.input-cupertino.is-mobile {
   /* Public Obsidian variables inherited by native views and plugins. */
-  --accent-h: var(--zhiyu-dark-accent-h);
-  --accent-s: var(--zhiyu-dark-accent-s);
-  --accent-l: var(--zhiyu-dark-accent-l);
   --mono-rgb-0: var(--zhiyu-palette-mono-rgb-0);
   --mono-rgb-100: var(--zhiyu-palette-mono-rgb-100);
   --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
