@@ -1,33 +1,14 @@
 /* Raw light/dark palette -> Obsidian semantic variables -> components/plugins. */
 
-/* Perceptually balanced tab colors: brighter in light mode while preserving
-   at least 3:1 against the sidebar; dark colors stay soft and high-contrast. */
-@each $mode, $colors in (
-  light: (1: #3a9962, 2: #b17e43, 3: #598cc0, 4: #c86d84, 5: #39968e, 6: #a176cb, 7: #7b9237, 8: #c37460, 9: #7c83cd, 10: #c567b6),
-  dark: (1: #9cc9af, 2: #c9b49c, 3: #9cb3c9, 4: #c99ca7, 5: #9cc9c6, 6: #b39cc9, 7: #bec99c, 8: #c9a59c, 9: #9c9fc9, 10: #c99cc2)
-) {
-  body.theme-#{$mode} {
-    @each $index, $color in $colors {
-      --zhiyu-tab-color-#{$index}: #{$color};
-    }
-  }
-}
-
+/* Primary green is directly contrast-calibrated, not mixed with another color. */
 body.theme-light {
   /* Theme fallback. Obsidian writes a user's custom accent inline on body,
      so that value wins; Restore default removes it and reveals Zhiyu green. */
-  --accent-h: 140;
-  --accent-s: 48%;
-  --accent-l: 50%;
-  /* Foreground colors are independently tuned to reach 4.5:1 on white. */
-  --zhiyu-ink-cyan: #0c7f71;
-  --zhiyu-ink-blue: #3d6fd5;
-  --zhiyu-ink-purple: #7e5dae;
-  --zhiyu-ink-orange: #a9651f;
-  --zhiyu-ink-red: #c65045;
-  --zhiyu-ink-green: #278249;
-  --zhiyu-ink-link-gold: #b4570b;
-  --zhiyu-ink-link-gold-hover: #a94f05;
+  /* #3b8f55: ~4:1 on white; native custom-accent overrides remain supported. */
+  --accent-h: 138.571429;
+  --accent-s: 41.584158%;
+  --accent-l: 39.607843%;
+  /* Authored foreground/surface pairs live in zhiyu-fixed-palette.scss. */
   /* Raw palette values: edit colors here. */
   --zhiyu-palette-mono-rgb-0: 255, 255, 255;
   --zhiyu-palette-mono-rgb-100: 24, 26, 23;
@@ -40,36 +21,28 @@ body.theme-light {
   --zhiyu-palette-color-base-35: #e1e0dc;
   --zhiyu-palette-color-base-40: #cbc9c4;
   --zhiyu-palette-color-base-50: #a1a19d;
-  --zhiyu-palette-color-base-60: #8a8f89;
+  --zhiyu-palette-color-base-60: #727d6c;
   --zhiyu-palette-color-base-70: #5f625e;
-  /* One text hue/saturation; only lightness changes between text levels. */
+  /* Neutral body text; the faint tier has an independently audited value. */
   --zhiyu-text-hue: 100;
   --zhiyu-text-saturation: 6%;
   --zhiyu-text-primary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 22%);
-  --zhiyu-text-secondary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 38%);
-  --zhiyu-text-tertiary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 44%);
+  --zhiyu-text-secondary: #5c6458;
+  --zhiyu-text-tertiary: #5f655a;
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
-  --zhiyu-palette-background-modifier-hover: var(--zhiyu-palette-color-base-20);
-  --zhiyu-palette-background-modifier-active-hover: var(--zhiyu-palette-color-base-25);
+  --zhiyu-palette-background-modifier-hover: #f7f6f4;
+  --zhiyu-palette-background-modifier-active-hover: #f5f5f2;
   --zhiyu-palette-background-modifier-cover: rgba(24, 26, 23, 0.35);
   --zhiyu-palette-background-modifier-box-shadow: rgba(24, 26, 23, 0.12);
   --zhiyu-palette-background-modifier-border-hover: #d8dad5;
-  --zhiyu-palette-background-modifier-border-focus: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 70%, var(--zhiyu-palette-color-base-00));
-  --zhiyu-palette-text-accent: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 55%, var(--text-normal));
+  --zhiyu-palette-background-modifier-border-focus: var(--zhiyu-palette-interactive-accent);
+  --zhiyu-palette-text-accent: var(--zhiyu-palette-interactive-accent);
   --zhiyu-palette-text-muted: var(--zhiyu-text-secondary);
   --zhiyu-palette-text-faint: var(--zhiyu-text-tertiary);
-  --zhiyu-palette-text-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 45%, var(--text-normal));
+  --zhiyu-palette-text-accent-hover: var(--zhiyu-palette-interactive-accent);
   --zhiyu-palette-interactive-accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
-  --zhiyu-palette-interactive-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 82%, var(--text-normal));
-  --zhiyu-palette-text-selection: color-mix(in srgb, var(--zhiyu-palette-text-accent) 22%, var(--background-primary));
-  --zhiyu-palette-color-red-rgb: 229, 85, 73;
-  --zhiyu-palette-color-orange-rgb: 231, 148, 50;
-  --zhiyu-palette-color-yellow-rgb: 217, 177, 53;
-  --zhiyu-palette-color-green-rgb: 46, 159, 79;
-  --zhiyu-palette-color-cyan-rgb: 13, 159, 140;
-  --zhiyu-palette-color-blue-rgb: 62, 123, 248;
-  --zhiyu-palette-color-purple-rgb: 155, 116, 214;
-  --zhiyu-palette-color-pink-rgb: 213, 90, 145;
+  --zhiyu-palette-interactive-accent-hover: var(--zhiyu-palette-interactive-accent);
+  --zhiyu-palette-text-selection: var(--zhiyu-surface-green-hover);
   --zhiyu-palette-blockquote-background-color: #f7f6f0;
 }
 
@@ -99,17 +72,17 @@ body.theme-light.input-cupertino.is-mobile {
   --background-primary: var(--zhiyu-palette-color-base-00);
   --background-primary-alt: var(--zhiyu-palette-color-base-10);
   --background-secondary: var(--zhiyu-palette-color-base-10);
-  --background-secondary-alt: var(--zhiyu-palette-color-base-35);
+  --background-secondary-alt: #f5f5f2;
   --background-modifier-hover: var(--zhiyu-palette-background-modifier-hover);
   --background-modifier-active-hover: var(--zhiyu-palette-background-modifier-active-hover);
   --background-modifier-cover: var(--zhiyu-palette-background-modifier-cover);
   --background-modifier-box-shadow: var(--zhiyu-palette-background-modifier-box-shadow);
   --background-modifier-form-field: var(--zhiyu-palette-color-base-00);
   --background-modifier-form-field-hover: var(--background-modifier-hover);
-  --background-modifier-error: rgba(var(--color-red-rgb), 0.15);
-  --background-modifier-error-hover: rgba(var(--color-red-rgb), 0.23);
-  --background-modifier-success: rgba(var(--color-green-rgb), 0.15);
-  --background-modifier-success-hover: rgba(var(--color-green-rgb), 0.23);
+  --background-modifier-error: var(--zhiyu-surface-red);
+  --background-modifier-error-hover: var(--zhiyu-surface-red-hover);
+  --background-modifier-success: var(--zhiyu-surface-green);
+  --background-modifier-success-hover: var(--zhiyu-surface-green-hover);
   --background-modifier-message: var(--background-secondary);
   --background-modifier-border: var(--zhiyu-palette-color-base-30);
   --background-modifier-border-hover: var(--zhiyu-palette-background-modifier-border-hover);
@@ -121,8 +94,8 @@ body.theme-light.input-cupertino.is-mobile {
   --text-faint: var(--zhiyu-palette-text-faint);
   --text-accent: var(--zhiyu-palette-text-accent);
   --text-accent-hover: var(--zhiyu-palette-text-accent-hover);
-  --text-on-accent: var(--zhiyu-palette-color-base-100);
-  --text-on-accent-inverted: var(--zhiyu-palette-color-base-00);
+  --text-on-accent: #ffffff;
+  --text-on-accent-inverted: var(--zhiyu-palette-color-base-100);
   --link-color: var(--text-normal);
   --link-color-hover: var(--text-normal);
   --interactive-normal: var(--zhiyu-palette-color-base-00);
@@ -205,7 +178,7 @@ body.theme-light.input-cupertino.is-mobile {
   --link-external-color-hover: var(--text-normal);
   --checkbox-color: var(--interactive-accent);
   --checkbox-marker-color: var(--text-on-accent);
-  --checkbox-border-color: var(--background-modifier-border-hover);
+  --checkbox-border-color: var(--zhiyu-control-border);
   --checkbox-border-color-hover: var(--text-accent);
   --slider-track-background: var(--background-modifier-border);
   --slider-thumb-border-color: var(--background-modifier-border-hover);
@@ -213,9 +186,9 @@ body.theme-light.input-cupertino.is-mobile {
   --menu-border-color: var(--background-modifier-border);
   --table-selection: var(--background-modifier-active-hover);
   --table-selection-border-color: var(--interactive-accent);
-  --background-modifier-warning: rgba(var(--color-orange-rgb), 0.15);
-  --background-modifier-warning-hover: rgba(var(--color-orange-rgb), 0.23);
-  --text-highlight-bg: rgba(var(--color-yellow-rgb), 0.25);
+  --background-modifier-warning: var(--zhiyu-surface-orange);
+  --background-modifier-warning-hover: var(--zhiyu-surface-orange-hover);
+  --text-highlight-bg: var(--zhiyu-surface-yellow);
 }
 
 body.theme-dark {
@@ -229,8 +202,6 @@ body.theme-dark {
   --zhiyu-ink-orange: var(--color-orange);
   --zhiyu-ink-red: var(--color-red);
   --zhiyu-ink-green: var(--color-green);
-  --zhiyu-ink-link-gold: #ff943d;
-  --zhiyu-ink-link-gold-hover: #ffad68;
   /* Raw palette values: edit colors here. */
   --zhiyu-palette-mono-rgb-0: 23, 26, 22;
   --zhiyu-palette-mono-rgb-100: 241, 245, 238;
@@ -246,11 +217,11 @@ body.theme-dark {
   --zhiyu-palette-color-base-60: #899789;
   --zhiyu-palette-color-base-70: #b0bbae;
   --zhiyu-text-hue: 100;
-  /* Mirror the light text lightness (100 - L), retaining its hue/saturation. */
+  /* Body text retains its hue; secondary tiers are audited on dark surfaces. */
   --zhiyu-text-saturation: 6%;
   --zhiyu-text-primary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 78%);
-  --zhiyu-text-secondary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 62%);
-  --zhiyu-text-tertiary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 56%);
+  --zhiyu-text-secondary: #b1b9ad;
+  --zhiyu-text-tertiary: #aab1a6;
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
   --zhiyu-palette-background-modifier-hover: var(--zhiyu-palette-color-base-20);
   --zhiyu-palette-background-modifier-active-hover: var(--zhiyu-palette-color-base-25);
@@ -259,21 +230,13 @@ body.theme-dark {
   --zhiyu-palette-background-modifier-border-focus: var(--zhiyu-palette-interactive-accent);
   --zhiyu-palette-text-muted: var(--zhiyu-text-secondary);
   --zhiyu-palette-text-faint: var(--zhiyu-text-tertiary);
-  --zhiyu-palette-text-accent: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 82%, white);
-  --zhiyu-palette-text-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 70%, white);
+  --zhiyu-palette-text-accent: var(--zhiyu-palette-interactive-accent);
+  --zhiyu-palette-text-accent-hover: var(--zhiyu-palette-interactive-accent);
   --zhiyu-palette-text-on-accent: #182017;
   --zhiyu-palette-text-on-accent-inverted: #ffffff;
   --zhiyu-palette-interactive-accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
-  --zhiyu-palette-interactive-accent-hover: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 82%, white);
-  --zhiyu-palette-text-selection: color-mix(in srgb, var(--zhiyu-palette-interactive-accent) 22%, var(--zhiyu-palette-color-base-00));
-  --zhiyu-palette-color-red-rgb: 255, 133, 120;
-  --zhiyu-palette-color-orange-rgb: 240, 170, 90;
-  --zhiyu-palette-color-yellow-rgb: 225, 198, 96;
-  --zhiyu-palette-color-green-rgb: 98, 200, 117;
-  --zhiyu-palette-color-cyan-rgb: 79, 208, 188;
-  --zhiyu-palette-color-blue-rgb: 121, 167, 255;
-  --zhiyu-palette-color-purple-rgb: 186, 152, 237;
-  --zhiyu-palette-color-pink-rgb: 239, 130, 172;
+  --zhiyu-palette-interactive-accent-hover: var(--zhiyu-palette-interactive-accent);
+  --zhiyu-palette-text-selection: var(--zhiyu-surface-green-hover);
   --zhiyu-palette-blockquote-background-color: #373521;
 }
 
@@ -310,10 +273,10 @@ body.theme-dark.input-cupertino.is-mobile {
   --background-modifier-box-shadow: var(--zhiyu-palette-background-modifier-box-shadow);
   --background-modifier-form-field: var(--zhiyu-palette-color-base-20);
   --background-modifier-form-field-hover: var(--background-modifier-hover);
-  --background-modifier-error: rgba(var(--color-red-rgb), 0.15);
-  --background-modifier-error-hover: rgba(var(--color-red-rgb), 0.23);
-  --background-modifier-success: rgba(var(--color-green-rgb), 0.15);
-  --background-modifier-success-hover: rgba(var(--color-green-rgb), 0.23);
+  --background-modifier-error: var(--zhiyu-surface-red);
+  --background-modifier-error-hover: var(--zhiyu-surface-red-hover);
+  --background-modifier-success: var(--zhiyu-surface-green);
+  --background-modifier-success-hover: var(--zhiyu-surface-green-hover);
   --background-modifier-message: var(--background-secondary);
   --background-modifier-border: var(--zhiyu-palette-color-base-30);
   --background-modifier-border-hover: var(--zhiyu-palette-color-base-40);
@@ -406,7 +369,7 @@ body.theme-dark.input-cupertino.is-mobile {
   --link-external-color-hover: var(--text-normal);
   --checkbox-color: var(--interactive-accent);
   --checkbox-marker-color: var(--text-on-accent);
-  --checkbox-border-color: var(--background-modifier-border-hover);
+  --checkbox-border-color: var(--zhiyu-control-border);
   --checkbox-border-color-hover: var(--text-accent);
   --slider-track-background: var(--background-modifier-border);
   --slider-thumb-border-color: var(--background-modifier-border-hover);
@@ -415,9 +378,9 @@ body.theme-dark.input-cupertino.is-mobile {
   --table-selection: var(--background-modifier-active-hover);
   --table-selection-border-color: var(--interactive-accent);
   --dropdown-background: var(--interactive-normal);
-  --background-modifier-warning: rgba(var(--color-orange-rgb), 0.15);
-  --background-modifier-warning-hover: rgba(var(--color-orange-rgb), 0.23);
-  --text-highlight-bg: rgba(var(--color-yellow-rgb), 0.25);
+  --background-modifier-warning: var(--zhiyu-surface-orange);
+  --background-modifier-warning-hover: var(--zhiyu-surface-orange-hover);
+  --text-highlight-bg: var(--zhiyu-surface-yellow);
   --nav-item-children-margin-start: 12px;
   --nav-indentation-guide-width: 0px;
 }

@@ -378,7 +378,7 @@ body.is-phone {
       margin-inline: auto;
       inset: auto var(--navbar-side-offset) 16px;
       border-radius: 100vh;
-      background-color: rgb(from var(--background-primary) r g b / 50%);
+      background-color: var(--background-primary);
       padding: 8px 16px;
       width: fit-content;
       line-height: 1;

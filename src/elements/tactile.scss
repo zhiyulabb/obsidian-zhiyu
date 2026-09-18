@@ -30,8 +30,8 @@ body.input-tactile {
   }
 
   button.mod-cta {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
-    background-blend-mode: soft-light;
+    background-image: none;
+    background-blend-mode: normal;
   }
   .clickable-icon:hover {
     background-color: var(--interactive-normal);
@@ -110,8 +110,8 @@ body.input-tactile:not(.is-mobile) {
       --text-normal: var(--text-on-accent);
       color: var(--text-on-accent);
       background-color: var(--interactive-accent);
-      background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
-      background-blend-mode: soft-light;
+      background-image: none;
+      background-blend-mode: normal;
       box-shadow: var(--input-shadow);
     }
   }

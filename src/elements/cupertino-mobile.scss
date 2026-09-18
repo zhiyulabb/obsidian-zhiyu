@@ -67,7 +67,7 @@ body.input-cupertino.is-mobile {
   .pull-action.mod-activated {
     color: var(--text-normal);
     background-color: transparent;
-    backdrop-filter: var(--blur-l) brightness(1.1);
+    backdrop-filter: none;
   }
 }
 
@@ -170,7 +170,7 @@ body.input-cupertino.is-phone {
   --tab-switcher-preview-background-shadow: 0 4px 16px hsl(0 0% 0% / 0.2);
 
   .mobile-tab-switcher {
-    background: linear-gradient(hsl(from var(--mono-0) h s l / 0.5), var(--mobile-sidebar-background)) !important;
+    background: var(--mobile-sidebar-background) !important;
     backdrop-filter: var(--blur-l);
   }
 

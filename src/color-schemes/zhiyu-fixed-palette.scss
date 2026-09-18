@@ -1,0 +1,110 @@
+@use "sass:list";
+@use "sass:color";
+
+/* Explicit foreground, subtle surface and hover surface pairs.
+   Light colors are contrast-calibrated together, preserving their hues.
+   Primary text and primary fill use the same green, with no runtime mixing. */
+@each $mode, $colors in (
+  light: (
+    "red": (#d64a60, #fff0f3, #ffe2e8),
+    "orange": (#c46718, #fff3e7, #ffe6cc),
+    "yellow": (#a47b09, #fff9df, #fff0b8),
+    "green": (#3b8f55, #f2fbf5, #e8faec),
+    "cyan": (#087f8c, #e8f8fa, #d4eff2),
+    "blue": (#216ae8, #edf4ff, #dceaff),
+    "purple": (#8d4de0, #f5edff, #e9d9ff),
+    "pink": (#b13f79, #fcecf4, #f7dce9),
+    "indigo": (#5967d8, #eff0ff, #e0e3ff),
+    "lime": (#698718, #f4f9e4, #e7f0c7)
+  ),
+  dark: (
+    "red": (#f19e97, #30211f, #402927),
+    "orange": (#e7a875, #2e2219, #3e2c1e),
+    "yellow": (#cbb76a, #292517, #36301b),
+    "green": (#7acd95, #1c291f, #223628),
+    "cyan": (#66ccba, #172926, #1b3631),
+    "blue": (#85bcf5, #1c2631, #233242),
+    "purple": (#c1a9ee, #272330, #332c40),
+    "pink": (#e69dc6, #2e2028, #3d2934),
+    "indigo": (#a4b3f8, #212432, #2b2f42),
+    "lime": (#afc177, #242719, #2e331f)
+  )
+) {
+  body.theme-#{$mode} {
+    @each $hue, $values in $colors {
+      $foreground: list.nth($values, 1);
+      --zhiyu-ink-#{$hue}: #{list.nth($values, 1)};
+      --zhiyu-surface-#{$hue}: #{list.nth($values, 2)};
+      --zhiyu-surface-#{$hue}-hover: #{list.nth($values, 3)};
+      --zhiyu-palette-color-#{$hue}-rgb: #{color.channel($foreground, "red", $space: rgb)}, #{color.channel($foreground, "green", $space: rgb)}, #{color.channel($foreground, "blue", $space: rgb)};
+    }
+  }
+}
+
+body.theme-light {
+  --zhiyu-reading-blue: #37789a;
+  --zhiyu-reading-orange: #c16a20;
+  --zhiyu-reading-muted: #5f655a;
+  --zhiyu-reading-tag-bg: #edf6ef;
+  --zhiyu-codeblock-bg: #fffaeb;
+  --zhiyu-palette-text-selection: #d7ecdd;
+  /* Preserve heading colors from before the typography hue redesign. */
+  --zhiyu-heading-muted: #5c6458;
+  --zhiyu-heading-bg-1: #fff7f6;
+  --zhiyu-heading-bg-2: #fff8f2;
+  --zhiyu-heading-bg-3: #fbf9f0;
+  --zhiyu-heading-bg-4: #f2fbf5;
+  --zhiyu-heading-bg-5: #f4faff;
+  --zhiyu-heading-bg-6: #faf7ff;
+  --zhiyu-text-tertiary: #72788a;
+  --zhiyu-ink-muted-purple: #817083;
+  --zhiyu-highlight-yellow: #ffe7a3;
+  --zhiyu-highlight-green: #d4ebd9;
+  --zhiyu-highlight-blue: #dcecf6;
+  --zhiyu-inline-code-bg: #fff3cc;
+  --zhiyu-surface-tag: #f7f6f4;
+  --zhiyu-surface-tag-hover: #f5f5f2;
+  --zhiyu-control-border: #727d6c;
+  --zhiyu-on-solid: #ffffff;
+}
+
+/* The same named colors feed article styles, status colors and sidebar icons. */
+body:is(.theme-light, .theme-dark) {
+  --zhiyu-ink-link-gold: var(--zhiyu-ink-blue);
+  --zhiyu-ink-link-gold-hover: var(--zhiyu-ink-blue);
+  --zhiyu-tab-color-1: var(--zhiyu-ink-green);
+  --zhiyu-tab-color-2: var(--zhiyu-ink-orange);
+  --zhiyu-tab-color-3: var(--zhiyu-ink-blue);
+  --zhiyu-tab-color-4: var(--zhiyu-ink-red);
+  --zhiyu-tab-color-5: var(--zhiyu-ink-cyan);
+  --zhiyu-tab-color-6: var(--zhiyu-ink-purple);
+  --zhiyu-tab-color-7: var(--zhiyu-ink-lime);
+  --zhiyu-tab-color-8: var(--zhiyu-ink-yellow);
+  --zhiyu-tab-color-9: var(--zhiyu-ink-indigo);
+  --zhiyu-tab-color-10: var(--zhiyu-ink-pink);
+}
+body.theme-dark {
+  --zhiyu-reading-blue: #85bcf5;
+  --zhiyu-reading-orange: #e7a875;
+  --zhiyu-reading-muted: #aab1a6;
+  --zhiyu-reading-tag-bg: #1c291f;
+  --zhiyu-codeblock-bg: #242319;
+  --zhiyu-palette-text-selection: #294c35;
+  --zhiyu-heading-muted: #b1b9ad;
+  --zhiyu-heading-bg-1: #30211f;
+  --zhiyu-heading-bg-2: #2e2219;
+  --zhiyu-heading-bg-3: #292517;
+  --zhiyu-heading-bg-4: #1c291f;
+  --zhiyu-heading-bg-5: #1c2631;
+  --zhiyu-heading-bg-6: #272330;
+  --zhiyu-text-tertiary: #9faabd;
+  --zhiyu-ink-muted-purple: #bca4bf;
+  --zhiyu-highlight-yellow: #594c20;
+  --zhiyu-highlight-green: #234c36;
+  --zhiyu-highlight-blue: #263f53;
+  --zhiyu-inline-code-bg: #352f1b;
+  --zhiyu-surface-tag: #272c26;
+  --zhiyu-surface-tag-hover: #30362e;
+  --zhiyu-control-border: #899789;
+  --zhiyu-on-solid: #171a16;
+}

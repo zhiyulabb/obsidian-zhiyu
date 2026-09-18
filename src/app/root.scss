@@ -210,7 +210,7 @@ body.styled-scrollbars div:not(:hover)::-webkit-scrollbar-thumb {
 // Style Settings
 body:not(.accented-interface) {
   --interactive-accent: var(--color-base-100);
-  --interactive-accent-hover: rgb(from var(--color-base-100) r g b / 80%);
+  --interactive-accent-hover: var(--color-base-100);
   --text-on-accent: var(--color-base-00);
   --text-on-accent-inverted: var(--color-base-00);
 }

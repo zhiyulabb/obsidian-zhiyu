@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="../theme.css"><title>纸予 · 彩色批注配色</title>
+<style>
+html,body{height:auto;overflow:auto}body{padding:24px;margin:0;background:var(--background-secondary);color:var(--text-normal);font:15px/1.75 system-ui,sans-serif}
+header,main{max-width:1180px;margin:auto}header{margin-bottom:20px}header p{color:var(--text-muted)}
+main{display:grid;grid-template-columns:1.1fr 1fr;gap:24px}article{padding:26px;background:var(--background-primary);border-radius:12px}
+.label{font-size:12px;color:var(--text-muted);margin-bottom:18px}
+.markdown-rendered h1{font-size:28px}.markdown-rendered h2{font-size:24px}.markdown-rendered h3{font-size:21px}.markdown-rendered h4{font-size:19px}.markdown-rendered h5{font-size:17px}.markdown-rendered h6{font-size:15px}
+.markdown-rendered :is(h1,h2,h3,h4,h5,h6){margin:14px 0 6px;line-height:1.4}
+p{margin:10px 0}.markdown-rendered a.internal-link{color:var(--link-color)}.markdown-rendered a.external-link{color:var(--link-external-color)}
+code{font:14px/1.65 ui-monospace,monospace;border-radius:4px;padding:2px 5px}
+mark{padding:2px 4px;border-radius:3px}.markdown-rendered blockquote{background:var(--blockquote-background-color);color:var(--blockquote-color);margin:16px 0}
+pre{background:var(--code-background);color:var(--code-normal);padding:16px;border-radius:8px;white-space:pre-wrap}
+.token.keyword{color:var(--code-keyword)}.token.function{color:var(--code-function)}.token.string{color:var(--code-string)}.token.number{color:var(--code-value)}.token.comment{color:var(--code-comment)}
+.tag{background:var(--tag-background);color:var(--tag-color);padding:3px 8px;border-radius:6px}
+li::marker{color:var(--list-marker-color)}table{width:100%;border-collapse:collapse}th{color:var(--table-header-color);background:var(--table-header-background)}td,th{padding:6px;border:1px solid var(--background-modifier-border);text-align:left}
+.editor-example{padding:14px;background:var(--background-primary);border:1px solid var(--background-modifier-border);border-radius:8px}.cm-line{margin:5px 0}
+@media(max-width:800px){main{grid-template-columns:1fr}body{padding:14px}}
+</style>
+<body><header><b>纸予 · 阅读配色</b><p>蓝色斜体 · 橙色外链 · 黄色代码 · 原有标题 · 清晰高亮。主绿和引用块底色保留。隔离样式预览。</p></header>
+<main><article class="markdown-rendered">
+<div class="label">阅读模式 · 标题与文章</div>
+<h1>H1 把想法变成作品</h1><p>正文保留原来的颜色，让长文保持熟悉的阅读感。<strong>粗体保留主绿</strong>，<em>斜体以蓝色表达不同语气</em>。</p>
+<h2>H2 整理文章结构</h2><p>通过<a class="internal-link" href="#">内部链接</a>串联思路，参考<a class="external-link" href="#">外部文章与资料</a>，用 <code>inline_code</code> 标记概念。</p>
+<h3>H3 标注关键观点</h3><p><mark>普通高亮：黄色底</mark></p><p><mark><strong>粗体高亮：绿色底</strong></mark></p><p><mark><em>斜体高亮：蓝色底</em></mark></p>
+<h4>H4 检查表达细节</h4><p><strong><em>粗斜体通过字形强调</em></strong>，<del>删除线使用灰绿色</del>，颜色只负责辅助阅读。</p>
+<h5>H5 关联资料</h5><p><span class="tag">#写作方法</span> <span class="tag">#资料整理</span></p>
+<h6>H6 补充与注释</h6><blockquote>引用块保留你恢复的底色；引用文字使用冷灰色。</blockquote>
+</article><article>
+<div class="label">编辑模式 · 同一套颜色</div>
+<div class="markdown-source-view mod-cm6 editor-example">
+<div class="cm-line HyperMD-header HyperMD-header-1"><span class="cm-header-1"># H1 一级标题</span></div>
+<div class="cm-line HyperMD-header HyperMD-header-2"><span class="cm-header-2">## H2 二级标题</span></div>
+<div class="cm-line HyperMD-header HyperMD-header-3"><span class="cm-header-3">### H3 三级标题</span></div>
+<div class="cm-line HyperMD-header HyperMD-header-4"><span class="cm-header-4">#### H4 四级标题</span></div>
+<div class="cm-line HyperMD-header HyperMD-header-5"><span class="cm-header-5">##### H5 五级标题</span></div>
+<div class="cm-line HyperMD-header HyperMD-header-6"><span class="cm-header-6">###### H6 六级标题</span></div>
+<div class="cm-line"><span class="cm-strong">粗体</span> · <span class="cm-em">斜体</span> · <span class="cm-strong cm-em">粗斜体</span> · <span class="cm-strikethrough">删除线</span></div>
+<div class="cm-line"><span class="cm-inline-code">inline_code</span></div>
+<div class="cm-line"><span class="cm-highlight">普通高亮</span> · <span class="cm-highlight cm-strong">粗体高亮</span> · <span class="cm-highlight cm-em">斜体高亮</span></div>
+</div>
+<pre><span class="token comment">// 代码语法不再全部同色</span>
+<span class="token keyword">const</span> title = <span class="token string">"把想法变成文字"</span>;
+<span class="token function">publish</span>(title, <span class="token number">3</span>);</pre>
+<div class="markdown-rendered"><ul><li>列表标记：橙色</li><li>列表正文：原来的正文色</li></ul>
+<table><thead><tr><th>文章元素</th><th>视觉角色</th></tr></thead><tbody><tr><td>标题／表头</td><td>组织结构</td></tr><tr><td>高亮／粗体</td><td>提示重点</td></tr></tbody></table></div>
+</article></main>
+<script>document.body.className=new URLSearchParams(location.search).get('mode')==='dark'?'theme-dark':'theme-light';</script></body></html>

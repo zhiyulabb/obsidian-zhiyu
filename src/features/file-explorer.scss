@@ -65,8 +65,8 @@ body.nav-item-strong {
       box-shadow: var(--input-shadow-inset);
     }
     .tree-item-self.is-active {
-      background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
-      background-blend-mode: soft-light;
+      background-image: none;
+      background-blend-mode: normal;
       box-shadow: var(--input-shadow);
     }
     > .tree-item.nav-file > .tree-item-self:hover:not(.is-active),

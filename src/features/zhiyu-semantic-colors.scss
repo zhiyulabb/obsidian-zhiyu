@@ -13,29 +13,56 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light
   --text-success: var(--zhiyu-ink-green);
   --code-normal: var(--text-normal);
   --code-comment: var(--text-muted);
-  --code-function: var(--text-normal);
-  --code-important: var(--text-normal);
-  --code-keyword: var(--text-normal);
+  --code-function: var(--text-accent);
+  --code-important: var(--zhiyu-ink-red);
+  --code-keyword: var(--italic-color);
   --code-operator: var(--text-muted);
-  --code-property: var(--text-normal);
+  --code-property: var(--italic-color);
   --code-punctuation: var(--text-muted);
-  --code-string: var(--text-normal);
-  --code-tag: var(--text-normal);
-  --code-value: var(--text-normal);
+  --code-string: var(--text-accent);
+  --code-tag: var(--link-external-color);
+  --code-value: var(--link-external-color);
   --text-normal-editor: var(--text-normal);
+  --icon-opacity: 1;
+  --icon-opacity-hover: 1;
+  --icon-opacity-active: 1;
+  --link-unresolved-opacity: 1;
+  --input-border-color: var(--zhiyu-control-border);
+  --background-modifier-border-focus: var(--text-accent);
+  --table-selection-border-color: var(--text-accent);
+  --slider-thumb-border-color: var(--text-accent);
+  --indentation-guide-color: var(--color-base-35);
+  --indentation-guide-color-active: var(--color-base-60);
+  --scrollbar-bg: var(--background-secondary);
+  --scrollbar-thumb-bg: var(--zhiyu-control-border);
+  --scrollbar-active-thumb-bg: var(--text-muted);
+  --drag-ghost-background: var(--background-secondary);
+  --highlight-mix-blend-mode: normal;
+  --table-selection-blend-mode: normal;
+  --blur-s: none;
+  --blur-m: none;
+  --blur-l: none;
+  --toggle-thumb-color: var(--text-on-accent);
+  --slider-track-background: var(--color-base-35);
+  --slider-track-background-hover: var(--color-base-40);
+  --slider-track-background-active: var(--zhiyu-control-border);
   --bold-color: var(--text-accent);
-  --italic-color: var(--zhiyu-ink-cyan);
+  --italic-color: var(--zhiyu-reading-blue);
   --bold-italic-color: var(--text-normal);
-  --strikethrough-color: var(--text-faint);
-  --inline-code-color: var(--text-accent);
-  --normal-highlight-bg: color-mix(in srgb, var(--color-yellow) 20%, transparent);
-  --bold-highlight-bg: color-mix(in srgb, var(--color-green) 20%, transparent);
-  --italic-highlight-bg: color-mix(in srgb, var(--color-cyan) 20%, transparent);
+  --strikethrough-color: var(--zhiyu-reading-muted);
+  --inline-code-color: var(--zhiyu-ink-yellow);
+  --code-background: var(--zhiyu-codeblock-bg);
+  --normal-highlight-bg: var(--zhiyu-highlight-yellow);
+  --bold-highlight-bg: var(--zhiyu-highlight-green);
+  --italic-highlight-bg: var(--zhiyu-highlight-blue);
+  --text-highlight-bg: var(--normal-highlight-bg);
   --blockquote-color: var(--text-muted);
   --list-marker-color: var(--text-muted);
   --list-marker-color-hover: var(--text-normal);
   --checklist-done-color: var(--text-muted);
   --table-header-color: var(--text-normal);
+  --table-header-background: var(--background-secondary);
+  --hr-color: var(--background-modifier-border);
   --table-text-color: var(--text-normal);
   --text-highlight: var(--text-normal);
   --zhiyu-outline-color: var(--zhiyu-palette-text-accent);
@@ -62,21 +89,21 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light
   --h2-color: var(--text-normal);
   --h3-color: var(--text-normal);
   --h4-color: var(--text-normal);
-  --h5-color: var(--text-muted);
-  --h6-color: var(--text-muted);
-  --tag-color: var(--text-accent);
-  --tag-color-hover: var(--text-accent-hover);
-  --tag-background: color-mix(in srgb, var(--text-accent) 10%, var(--background-primary));
-  --tag-background-hover: color-mix(in srgb, var(--text-accent) 18%, var(--background-primary));
-  --tag-border-color: color-mix(in srgb, var(--text-accent) 25%, transparent);
+  --h5-color: var(--zhiyu-heading-muted);
+  --h6-color: var(--zhiyu-heading-muted);
+  --tag-color: var(--zhiyu-ink-green);
+  --tag-color-hover: var(--zhiyu-ink-green);
+  --tag-background: var(--zhiyu-reading-tag-bg);
+  --tag-background-hover: var(--zhiyu-surface-green-hover);
+  --tag-border-color: var(--zhiyu-control-border);
   --tag-border-color-hover: var(--text-accent);
   --pill-color: var(--text-normal);
   --pill-color-remove: var(--text-muted);
   --pill-background: var(--background-secondary);
   --link-color: var(--text-accent);
   --link-color-hover: var(--text-accent-hover);
-  --link-external-color: var(--zhiyu-ink-link-gold);
-  --link-external-color-hover: var(--zhiyu-ink-link-gold-hover);
+  --link-external-color: var(--zhiyu-reading-orange);
+  --link-external-color-hover: var(--zhiyu-reading-orange);
   --link-unresolved-color: var(--text-muted);
   --search-result-background: var(--background-secondary);
   --search-result-file-title-color: var(--text-normal);
@@ -88,10 +115,11 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light
 }
 
 /* Stable semantic identity, independent of sidebar tab ordering. */
-/* Inline code follows the same accent consumed by Prism; code blocks stay neutral. */
-body .markdown-rendered :not(pre) > code,
+/* Code surfaces use yellow; fenced blocks retain syntax-specific colors. */
+body .markdown-rendered code:not(pre code),
 body .markdown-source-view.mod-cm6 .cm-inline-code {
   color: var(--inline-code-color);
+  background-color: var(--zhiyu-inline-code-bg);
 }
 body .markdown-rendered strong em,
 body .markdown-rendered em strong,
@@ -106,6 +134,32 @@ body .markdown-rendered mark:has(em),
 body .markdown-rendered em mark { background-color: var(--italic-highlight-bg); }
 body .markdown-rendered mark :is(strong, em) { color: var(--text-normal); }
 
+/* Same roles in reading view and CodeMirror Live Preview/source mode. */
+@for $level from 1 through 6 {
+  body .markdown-rendered h#{$level},
+  body .markdown-source-view.mod-cm6 .HyperMD-header-#{$level},
+  body .markdown-source-view.mod-cm6 .cm-header-#{$level} {
+    color: var(--h#{$level}-color);
+  }
+}
+body .markdown-rendered em,
+body .markdown-source-view.mod-cm6 .cm-em { color: var(--italic-color); }
+body .markdown-rendered strong,
+body .markdown-source-view.mod-cm6 .cm-strong { color: var(--bold-color); }
+body .markdown-rendered strong em,
+body .markdown-rendered em strong,
+body .markdown-source-view.mod-cm6 .cm-strong.cm-em { color: var(--bold-italic-color); }
+body .markdown-rendered :is(del, s),
+body .markdown-source-view.mod-cm6 .cm-strikethrough { color: var(--strikethrough-color); }
+body .markdown-source-view.mod-cm6 .cm-highlight {
+  color: var(--text-normal);
+  background-color: var(--normal-highlight-bg);
+}
+body .markdown-source-view.mod-cm6 .cm-highlight.cm-strong { color: var(--text-normal); background-color: var(--bold-highlight-bg); }
+body .markdown-source-view.mod-cm6 .cm-highlight.cm-em { color: var(--text-normal); background-color: var(--italic-highlight-bg); }
+body .markdown-rendered mark :is(strong, em),
+body .markdown-rendered :is(strong, em) mark { color: var(--text-normal); }
+
 /* Ten-color positional palette for sidebar tabs, revealed on interaction. */
 body :is(.mod-left-split, .mod-right-split) .workspace-tab-header {
   @for $index from 1 through 10 {
@@ -119,13 +173,14 @@ body :is(.mod-left-split, .mod-right-split) .workspace-tab-header {
     color: var(--text-muted) !important;
   }
   &:is(:hover, :focus-visible, .is-active) {
-    color: var(--zhiyu-tab-accent);
+    color: var(--text-normal);
     .workspace-tab-header-inner-icon {
       color: var(--zhiyu-tab-accent) !important;
     }
   }
+  .workspace-tab-header-inner-title { color: var(--text-normal); }
   &.is-active {
-    background-color: color-mix(in srgb, var(--zhiyu-tab-accent) 10%, var(--background-secondary));
+    background-color: var(--zhiyu-surface-tag);
     box-shadow: inset 0 -2px var(--zhiyu-tab-accent);
   }
 }
@@ -147,12 +202,38 @@ body.theme-dark .nav-files-container .tree-item-self.is-active {
   background: transparent;
 }
 body:is(.theme-light, .theme-dark):is(.nav-item-baseline, :not(.css-settings-manager)) .nav-files-container > div .tree-item-self.is-active::before {
-  background-color: var(--interactive-accent);
+  background-color: var(--zhiyu-ink-green);
 }
 
 /* Callout titles otherwise inherit the status hue from the core stylesheet. */
 body .callout .callout-title-inner { color: var(--text-normal); }
 body .callout .callout-content { color: var(--text-normal); }
+
+/* Typed callouts have explicit foreground/background pairs in both modes. */
+body .callout:not([data-callout="note-toolbar"]) {
+  --zhiyu-callout-ink: var(--zhiyu-ink-blue);
+  --zhiyu-callout-surface: var(--zhiyu-surface-blue);
+  --zhiyu-callout-surface-hover: var(--zhiyu-surface-blue-hover);
+  background-color: var(--zhiyu-callout-surface);
+  border-color: var(--zhiyu-callout-ink);
+  .callout-icon, .callout-fold { color: var(--zhiyu-callout-ink); }
+  @each $hue, $types in (
+    "cyan": (abstract, summary, tldr, tip, hint, important),
+    "green": (success, check, done),
+    "orange": (question, help, faq, warning, caution, attention),
+    "red": (failure, fail, missing, danger, error, bug),
+    "purple": (example),
+    "blue": (note, info, todo, quote, cite)
+  ) {
+    @each $type in $types {
+      &[data-callout="#{$type}"] {
+        --zhiyu-callout-ink: var(--zhiyu-ink-#{$hue});
+        --zhiyu-callout-surface: var(--zhiyu-surface-#{$hue});
+        --zhiyu-callout-surface-hover: var(--zhiyu-surface-#{$hue}-hover);
+      }
+    }
+  }
+}
 
 body .mod-root .metadata-container .metadata-add-button {
   color: var(--text-muted);
@@ -170,10 +251,10 @@ body .metadata-property[data-property-key="tags"] .multi-select-pill {
   @each $index, $hue in (1: cyan, 2: blue, 0: purple) {
     &:nth-child(3n + #{$index}) {
       --pill-color: var(--text-normal);
-      --pill-background: color-mix(in srgb, var(--color-#{$hue}) 12%, var(--background-primary));
+      --pill-background: var(--zhiyu-surface-#{$hue});
       color: var(--pill-color);
       background-color: var(--pill-background);
-      &:hover { background-color: color-mix(in srgb, var(--color-#{$hue}) 20%, var(--background-primary)); }
+      &:hover { background-color: var(--zhiyu-surface-#{$hue}-hover); }
       .multi-select-pill-remove-button { color: inherit; }
     }
   }

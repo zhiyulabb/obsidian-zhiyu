@@ -1,5 +1,5 @@
 body:not(.is-mobile):not(.is-translucent).colorful-frame {
-  --colorful-frame-icon-color: #ffffff;
+  --colorful-frame-icon-color: var(--text-on-accent);
 
   // Non-labeled icon color
   &:is(.layout-cards, .layout-border) .workspace-ribbon,
@@ -8,7 +8,7 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   &.layout-cards .workspace-tabs .workspace-tab-header-container,
   &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container,
   &.layout-viewfinder .mod-root .workspace-tabs.mod-top .workspace-tab-header-container {
-    --icon-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
+    --icon-color: var(--colorful-frame-icon-color);
     --icon-color-hover: var(--colorful-frame-icon-color);
     --icon-color-active: var(--colorful-frame-icon-color);
     --icon-color-focused: var(--colorful-frame-icon-color);
@@ -19,9 +19,9 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   &.layout-cards .workspace-split .workspace-tabs .workspace-tab-header-container-inner,
   &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container-inner,
   &.layout-viewfinder .mod-root .workspace-tabs.mod-top .workspace-tab-header-container-inner {
-    --tab-text-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.5);
-    --tab-text-color-active: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
-    --tab-text-color-focused: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
+    --tab-text-color: var(--colorful-frame-icon-color);
+    --tab-text-color-active: var(--colorful-frame-icon-color);
+    --tab-text-color-focused: var(--colorful-frame-icon-color);
     --tab-text-color-focused-active: var(--colorful-frame-icon-color);
   }
 
@@ -94,20 +94,20 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
     .workspace-tabs:not(.mod-top)
     .workspace-tab-header-container:not(:hover)
     .workspace-tab-header {
-    background-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.5);
+    background-color: var(--colorful-frame-icon-color);
   }
 
   // Workspace: Use sidedock for tint
   &:is(.layout-macos, .layout-fusion).theme-light .mod-sidedock {
-    background-color: color-mix(in srgb, #fff, var(--colorful-frame-background, var(--color-accent)) 2%);
+    background-color: var(--background-secondary);
   }
   &:is(.layout-macos, .layout-fusion).theme-dark .mod-sidedock {
-    background-color: color-mix(in srgb, var(--background-modifier-cover), var(--colorful-frame-background, var(--color-accent)) 2%);
+    background-color: var(--background-secondary);
   }
 
   // Fix: Obsidian frame color bleed
   &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-cards, .layout-border, .layout-frame).is-frameless:not(.is-hidden-frameless) .titlebar {
-    --titlebar-text-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
+    --titlebar-text-color: var(--colorful-frame-icon-color);
     --titlebar-text-color-focused: var(--colorful-frame-icon-color);
     border-bottom: none;
     background: var(--colorful-frame-background, var(--color-accent));
@@ -115,7 +115,7 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
 
   // Fix: Window control icon color
   &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-frame).is-frameless .titlebar {
-    --titlebar-text-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
+    --titlebar-text-color: var(--colorful-frame-icon-color);
     --titlebar-text-color-focused: var(--colorful-frame-icon-color);
   }
 

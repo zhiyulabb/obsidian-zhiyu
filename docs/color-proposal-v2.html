@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../theme.css">
+<title>纸予 · 配色方案二对照</title>
+<style>
+html,body{height:auto;overflow:auto}
+body{margin:0;padding:24px;background:var(--background-secondary);color:var(--text-normal);font:15px/1.8 system-ui,sans-serif}
+.page-header,main,.footnote{max-width:1250px;margin-inline:auto}
+.page-header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:20px}
+.page-title{font-size:20px;font-weight:650}.page-description,.footnote{font-size:13px;color:var(--text-muted)}
+.controls{display:flex;gap:8px;flex-wrap:wrap}.controls button{height:auto;min-height:34px;padding:5px 12px;cursor:pointer}
+.controls button:focus-visible{outline:2px solid var(--text-accent);outline-offset:3px}
+main{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pane{min-width:0;background:var(--background-primary);border:1px solid var(--background-modifier-border);border-radius:12px;overflow:hidden}
+.pane-label{padding:12px 25px;background:var(--background-secondary);border-bottom:1px solid var(--background-modifier-border);font-size:13px;font-weight:600}
+.nav-sample{padding:12px 25px 0;color:var(--nav-item-color);font-size:13px}
+.nav-sample svg{width:14px;height:14px;vertical-align:-2px;margin-right:5px;stroke:currentColor;fill:none;stroke-width:1.5}
+.article{padding:12px 25px 25px}.note-title{color:var(--inline-title-color);font-size:24px;font-weight:650;margin:0 0 12px}
+.article p{margin:10px 0}.article :is(h1,h2,h3,h4,h5,h6){font-family:inherit;margin:14px 0 5px;line-height:1.45}
+.article h1{font-size:21px}.article h2{font-size:19px}.article h3{font-size:17px}.article h4{font-size:16px}.article h5{font-size:15px}.article h6{font-size:14px}
+.article .internal-link{color:var(--link-color);text-decoration:underline;text-underline-offset:3px}
+.article .external-link{color:var(--link-external-color);text-decoration:underline;text-underline-offset:3px}
+.article code{font:13px/1.65 ui-monospace,monospace;padding:2px 5px;border-radius:4px}
+.article pre{padding:12px 15px;border-radius:6px;background:var(--code-background);color:var(--code-normal);font:13px/1.8 ui-monospace,monospace;white-space:pre-wrap;margin:12px 0}
+.syntax-keyword{color:var(--code-keyword)}.syntax-function{color:var(--code-function)}.syntax-string{color:var(--code-string)}.syntax-value{color:var(--code-value)}.syntax-comment{color:var(--code-comment)}
+.article mark{border-radius:3px;padding:1px 4px}.highlight-row{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.article blockquote{background:var(--blockquote-background-color);color:var(--blockquote-color);margin:14px 0;padding:12px 22px 12px 30px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}.tag{color:var(--tag-color);background:var(--tag-background);padding:2px 9px;border-radius:6px;font-size:13px}
+.article li::marker{color:var(--list-marker-color)}.article ul{padding-left:22px;margin:8px 0}
+.article table{width:100%;border-collapse:collapse;font-size:13px}.article th,.article td{text-align:left;padding:5px 8px;border:1px solid var(--background-modifier-border)}
+.article th{color:var(--table-header-color);background:var(--table-header-background)}
+.selection-example{background:var(--text-selection);color:var(--text-normal);padding:2px 3px}
+.pane ::selection{background:var(--text-selection);color:var(--text-normal)}
+.footnote{margin-top:15px}.compact-headings{display:flex;gap:22px;align-items:baseline;flex-wrap:wrap}
+.only-proposal main{grid-template-columns:minmax(0,800px);justify-content:center}.only-proposal .current{display:none}
+/* Frozen approved reference, compared against the compiled theme on the left. */
+.proposal{
+ --inline-title-color:var(--text-normal);
+ --bold-italic-color:var(--text-normal);
+ --list-marker-color:var(--text-muted);
+ --table-header-color:var(--text-normal);
+ --table-header-background:var(--background-secondary);
+ --hr-color:var(--background-modifier-border);
+ --code-keyword:var(--italic-color);
+ --code-property:var(--italic-color);
+ --code-function:var(--text-accent);
+ --code-tag:var(--link-external-color);
+ --code-value:var(--link-external-color);
+ --code-string:var(--text-accent);
+}
+.theme-light .proposal{
+ --italic-color:#37789a;
+ --link-external-color:#c16a20;
+ --link-external-color-hover:#c16a20;
+ --strikethrough-color:#5f655a;
+ --inline-code-color:#a47b09;
+ --zhiyu-inline-code-bg:#fff3cc;
+ --code-background:#fffaeb;
+ --normal-highlight-bg:#ffe7a3;
+ --bold-highlight-bg:#d4ebd9;
+ --italic-highlight-bg:#dcecf6;
+ --text-highlight-bg:#ffe7a3;
+ --tag-color:#3b8f55;
+ --tag-background:#edf6ef;
+ --text-selection:#d7ecdd;
+}
+.theme-dark .proposal{
+ --italic-color:#85bcf5;
+ --link-external-color:#e7a875;
+ --link-external-color-hover:#e7a875;
+ --strikethrough-color:#aab1a6;
+ --inline-code-color:#cbb76a;
+ --zhiyu-inline-code-bg:#352f1b;
+ --code-background:#242319;
+ --normal-highlight-bg:#594c20;
+ --bold-highlight-bg:#234c36;
+ --italic-highlight-bg:#263f53;
+ --text-highlight-bg:#594c20;
+ --tag-color:#7acd95;
+ --tag-background:#1c291f;
+ --text-selection:#294c35;
+}
+@media(max-width:850px){main{grid-template-columns:1fr}.page-header{align-items:flex-start;flex-direction:column}body{padding:14px}.article{padding:14px 20px}.pane-label,.nav-sample{padding-inline:20px}}
+</style>
+<body class="theme-light">
+<header class="page-header"><div><div class="page-title">纸予 · 配色方案二</div><div class="page-description">已实施：左侧加载主题实际配色，右侧为已确认的方案参考。</div></div><div class="controls"><button type="button" id="mode">切换深色</button><button type="button" id="layout">只看新版</button></div></header>
+<main></main>
+<p class="footnote">主绿、正文、H1–H6、导航及引用块底色保持原样。选区为绿色；高亮为黄／绿／蓝。主绿约 4:1，不宣称整套普通文字达到 4.5:1。</p>
+<template id="content">
+<div class="nav-sample"><svg viewBox="0 0 20 18" aria-hidden="true"><path d="M2 4V2h6l2 2h8v12H2Z"/></svg><span class="nav-folder-title-content">写作工作区 / 创作方法</span></div>
+<div class="article markdown-rendered">
+<div class="note-title">把想法变成一篇好文章</div>
+<p class="body-sample">好文章不需要每句话都抢眼。先让正文安静下来，再让<strong>真正重要的观点</strong>被看见。</p>
+<h1>一、找到想表达的核心</h1>
+<p>用<em>斜体表达语气和补充说明</em>，用<strong>粗体标出重点</strong>。<strong><em>粗斜体仍然有分量，但不必多一种颜色。</em></strong></p>
+<h2>从资料中建立关联</h2>
+<p>通过<a href="#" class="internal-link">内部链接整理笔记</a>，再参考<a href="#" class="external-link">外部文章与资料</a>。两种链接有各自的颜色。</p>
+<p>把 <code>draft.publish()</code> 当成一个明确动作，而不是让代码抢走整页注意力。</p>
+<pre><span class="syntax-comment">// 从草稿到发布</span>
+<span class="syntax-keyword">const</span> title = <span class="syntax-string">"写出你的观点"</span>;
+<span class="syntax-function">publish</span>(title, <span class="syntax-value">3</span>);</pre>
+<h3>给重点留下清楚的标记</h3>
+<div class="highlight-row"><mark>普通高亮</mark><mark><strong>粗体高亮</strong></mark><mark><em>斜体高亮</em></mark></div>
+<p><del>删掉重复的信息和无效铺垫。</del> 留下有用的解释。</p>
+<blockquote>引用块保留原来的底色。颜色只负责辅助阅读，不替代内容本身。</blockquote>
+<h4>让结构服务于阅读</h4>
+<ul><li>正文与标题颜色不变</li><li>列表标记不与文字争夺注意力</li></ul>
+<div class="tags"><span class="tag">#创作方法</span><span class="tag">#写作笔记</span></div>
+<div class="compact-headings"><h5>H5 补充资料</h5><h6>H6 细节说明</h6></div>
+<table><thead><tr><th>检查项</th><th>说明</th></tr></thead><tbody><tr><td>内容层级</td><td>标题、正文、强调各有分工</td></tr></tbody></table>
+<p>选中文字时：<span class="selection-example">选区使用与主绿相关的底色</span></p>
+</div>
+</template>
+<script>
+const main=document.querySelector('main');
+for(const [kind,label] of [['current','主题实际配色'],['proposal','已确认参考 · 绿主调、蓝斜体、橙外链']]){
+ const pane=document.createElement('article');pane.className='pane '+kind;
+ const title=document.createElement('div');title.className='pane-label';title.textContent=label;pane.append(title,document.querySelector('#content').content.cloneNode(true));main.append(pane);
+}
+const mode=document.querySelector('#mode'),layout=document.querySelector('#layout');
+function setMode(dark){document.body.classList.toggle('theme-light',!dark);document.body.classList.toggle('theme-dark',dark);mode.textContent=dark?'切换浅色':'切换深色';}
+setMode(new URLSearchParams(location.search).get('mode')==='dark');
+mode.onclick=()=>setMode(document.body.classList.contains('theme-light'));
+layout.onclick=()=>{const only=document.body.classList.toggle('only-proposal');layout.textContent=only?'新旧对照':'只看新版';};
+document.querySelectorAll('a').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+window.verifyProposal=()=>{
+ const failures=[];const read=(pane,selector,prop='color')=>getComputedStyle(document.querySelector('.'+pane+' '+selector))[prop];
+ for(const selector of ['.body-sample','h1','h2','h3','h4','h5','h6','.nav-folder-title-content'])if(read('current',selector)!==read('proposal',selector))failures.push('changed protected '+selector);
+ if(read('current','blockquote','backgroundColor')!==read('proposal','blockquote','backgroundColor'))failures.push('changed quote background');
+ for(const selector of ['strong','em','strong em','.internal-link','.external-link','code','pre','del','.tag','.note-title','mark','mark:has(strong)','mark:has(em)','.selection-example','th','.syntax-keyword','.syntax-function','.syntax-string','.syntax-value','.syntax-comment'])for(const prop of ['color','backgroundColor'])if(read('current',selector,prop)!==read('proposal',selector,prop))failures.push('reference mismatch '+selector+' '+prop);
+ for(const token of ['--list-marker-color','--hr-color','--code-property','--code-tag']){const probe=document.createElement('span');probe.style.color='var('+token+')';document.querySelector('.current').append(probe);const actual=getComputedStyle(probe).color;document.querySelector('.proposal').append(probe);if(actual!==getComputedStyle(probe).color)failures.push('reference mismatch '+token);probe.remove();}
+ return {mode:document.body.classList.contains('theme-light')?'light':'dark',failures,colors:Object.fromEntries(['em','.external-link','code','pre','mark','.tag','.selection-example'].map(s=>[s,{color:read('proposal',s),background:read('proposal',s,'backgroundColor')}]))};
+};
+</script>
+</body></html>

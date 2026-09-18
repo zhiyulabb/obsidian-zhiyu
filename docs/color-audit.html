@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<title>纸予固定配色对比度检查</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../theme.css">
+<style>
+html, body { height: auto; overflow: auto; }
+body { padding: 32px; background: var(--background-primary); color: var(--text-normal); }
+#samples { display: grid; grid-template-columns: repeat(4, minmax(180px, 1fr)); gap: 12px; }
+.sample { padding: 14px; border-radius: 8px; font: 14px/1.6 sans-serif; }
+.sample small { display: block; color: inherit; }
+.surface-audit, .surface-audit * { animation: none !important; transition: none !important; }
+</style>
+<body class="theme-light">
+<h1>纸予 · 固定配色检查</h1>
+<p id="summary"></p><div id="samples"></div>
+<script>
+const hues = ['red','orange','yellow','green','cyan','blue','purple','pink','indigo','lime'];
+function luminance(rgb) {
+  const channels = rgb.slice(0, 3).map(v => {v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4;});
+  return channels[0] * .2126 + channels[1] * .7152 + channels[2] * .0722;
+}
+function ratio(fg, bg) { const a = luminance(fg), b = luminance(bg); return (Math.max(a,b)+.05)/(Math.min(a,b)+.05); }
+window.auditColors = function(mode = 'light', accent = null, classes = '') {
+  document.body.className = 'theme-' + mode + ' ' + classes;
+  document.body.removeAttribute('style');
+  if (accent) for (const [key, value] of Object.entries(accent)) document.body.style.setProperty('--accent-' + key, value);
+  const root = document.querySelector('#samples'); root.replaceChildren();
+  const results = [];
+  function pair(name, fg, bg, minimum = 4.5) {
+    const el = document.createElement('div'); el.className = 'sample';
+    el.style.color = `var(--${fg})`; el.style.backgroundColor = `var(--${bg})`;
+    el.textContent = name + ' · 文字 Aa'; root.append(el);
+    const style = getComputedStyle(el);
+    const parse = s => s.match(/[\d.]+/g).map(Number);
+    const foreground = parse(style.color), background = parse(style.backgroundColor);
+    const opaque = (foreground[3] ?? 1) === 1 && (background[3] ?? 1) === 1;
+    const value = ratio(foreground, background);
+    const entry = {name, fg: style.color, bg: style.backgroundColor, ratio: +value.toFixed(4), minimum, pass: opaque && value >= minimum};
+    results.push(entry);
+    const label = document.createElement('small'); label.textContent = `${value.toFixed(2)}:1 · ${entry.pass ? '通过' : '失败'}`; el.append(label);
+  }
+  const backgrounds = ['background-primary', 'background-secondary', 'background-secondary-alt', 'background-modifier-hover', 'background-modifier-active-hover', 'blockquote-background-color'];
+  for (const fg of ['text-normal','text-muted','text-faint','text-accent','text-accent-hover','italic-color','link-external-color','link-external-color-hover'])
+    for (const bg of backgrounds) pair(`${fg} / ${bg}`, fg, bg);
+  for (const hue of hues) {
+    for (const bg of [...backgrounds, `zhiyu-surface-${hue}`, `zhiyu-surface-${hue}-hover`]) pair(hue + ' / ' + bg, `zhiyu-ink-${hue}`, bg);
+    pair(hue + ' 实色文件夹', 'zhiyu-on-solid', `zhiyu-ink-${hue}`);
+    pair(hue + ' 提示块正文', 'text-normal', `zhiyu-surface-${hue}`);
+    pair(hue + ' 提示块辅助文字', 'text-muted', `zhiyu-surface-${hue}-hover`);
+  }
+  for (const bg of ['zhiyu-surface-tag','zhiyu-surface-tag-hover']) {
+    pair('标签 / ' + bg, 'tag-color', bg);
+    pair('标签边框 / ' + bg, 'tag-border-color', bg, 3);
+  }
+  for (const bg of ['normal-highlight-bg','bold-highlight-bg','italic-highlight-bg','text-selection']) pair('高亮文字 / ' + bg, 'text-normal', bg);
+  for (const fg of ['bold-color','italic-color','inline-code-color','link-color','link-external-color'])
+    for (const bg of ['code-background','text-selection','blockquote-background-color']) pair(`${fg} / ${bg}`, fg, bg);
+  for (const bg of ['interactive-accent','interactive-accent-hover']) pair('按钮文字 / ' + bg, 'text-on-accent', bg);
+  for (const bg of backgrounds) {
+    pair('焦点 / ' + bg, 'background-modifier-border-focus', bg, 3);
+    pair('控件边界 / ' + bg, 'zhiyu-control-border', bg, 3);
+    pair('图标 / ' + bg, 'icon-color', bg, 3);
+  }
+  for (let i=1; i<=10; i++) for (const bg of ['background-secondary','zhiyu-surface-tag']) pair('Tab ' + i + ' / ' + bg, `zhiyu-tab-color-${i}`, bg, 3);
+  document.querySelector('#summary').textContent = `${mode}：${results.filter(x=>x.pass).length}/${results.length} 通过。使用浏览器计算样式，原始比值不四舍五入判定。`;
+  return {mode, count:results.length, failures:results.filter(x=>!x.pass), minimumText:Math.min(...results.filter(x=>x.minimum===4.5).map(x=>x.ratio)), minimumUI:Math.min(...results.filter(x=>x.minimum===3).map(x=>x.ratio))};
+};
+window.auditComponents = function(mode = 'light') {
+  auditColors(mode);
+  document.body.classList.add('colorful-headings-text', 'colorful-headings-background', 'callouts-padded');
+  const fixture = document.createElement('section');
+  fixture.innerHTML = `<div class="markdown-rendered"><h1>标题</h1><mark>高亮 <strong>粗体</strong></mark></div>
+    <div class="mod-left-split"><div class="workspace-tab-header is-active"><span class="workspace-tab-header-inner-icon">图标</span><span class="workspace-tab-header-inner-title">标签文字</span></div></div>
+    <div class="callout" data-callout="warning"><span class="callout-icon">图标</span><span class="callout-title-inner">警告</span><div class="callout-content">正文</div></div>
+    <div class="metadata-property" data-property-key="tags"><span class="multi-select-pill">属性标签</span></div>`;
+  document.body.append(fixture);
+  const rows = [];
+  for (const [selector, backgroundSelector, minimum] of [
+    ['h1','h1',4.5], ['mark strong','mark',4.5],
+    ['.workspace-tab-header-inner-icon','.workspace-tab-header',3],
+    ['.workspace-tab-header-inner-title','.workspace-tab-header',4.5],
+    ['.callout-icon','.callout',3], ['.callout-title-inner','.callout',4.5],
+    ['.callout-content','.callout-content',4.5], ['.multi-select-pill','.multi-select-pill',4.5]
+  ]) {
+    const el = fixture.querySelector(selector), bg = fixture.querySelector(backgroundSelector);
+    const cs = getComputedStyle(el), bs = getComputedStyle(bg);
+    const foreground = cs.color.match(/[\d.]+/g).map(Number), background = bs.backgroundColor.match(/[\d.]+/g).map(Number);
+    const value = ratio(foreground,background);
+    rows.push({selector, ratio:+value.toFixed(4), minimum, pass:value >= minimum && cs.opacity === '1' && (background[3] ?? 1) === 1});
+  }
+  const noHeadingOverlay = getComputedStyle(fixture.querySelector('h1'),'::after').content === 'none';
+  fixture.remove(); document.body.classList.remove('colorful-headings-text', 'colorful-headings-background', 'callouts-padded');
+  return {mode, count:rows.length, noHeadingOverlay, failures:rows.filter(x=>!x.pass)};
+};
+window.auditSurfaces = function(mode = 'light', classes = '') {
+  auditColors(mode, null, classes);
+  const fixture = document.createElement('section');
+  fixture.className = 'surface-audit';
+  fixture.innerHTML = `<div class="workspace"><div class="workspace-ribbon"></div>
+    <div class="mod-sidedock mod-left-split"><div class="workspace-tabs"><div class="workspace-leaf-content"><div class="view-content">侧栏</div></div></div></div>
+    <div class="canvas-control-group">Canvas</div><div class="canvas-card-menu">Canvas 菜单</div></div>
+    <div class="modal-container"><div class="modal">弹窗</div><div class="modal mod-sidebar-layout mod-settings"><div class="vertical-tab-header">设置侧栏</div><div class="vertical-tab-nav-item"><span class="vertical-tab-nav-item-icon">设置图标</span></div></div></div>
+    <div class="menu">菜单</div><div class="suggestion-container">建议</div><div class="popover">浮层</div>
+    <div class="notice">通知</div><div class="cm-tooltip">提示</div><div class="status-bar">状态栏</div>
+    <div class="nav-files-container"><div><div class="tree-item-self is-active">选中文件</div></div></div>
+    <button>按钮</button><input type="text" placeholder="输入框">`;
+  document.body.append(fixture);
+  const failures = []; let checks = 0;
+  const opaque = color => /^rgb\(/.test(color) || (/^rgba\(/.test(color) && Number(color.match(/[\d.]+/g)[3]) === 1);
+  const tokens = ['background-primary','background-secondary','background-modifier-hover','background-modifier-active-hover',
+    'background-modifier-border','background-modifier-border-focus','modal-background','menu-background','blur-background',
+    'text-normal','text-muted','text-faint','text-accent','interactive-accent','interactive-accent-hover','tag-background',
+    'tag-background-hover','tag-border-color','text-selection','table-selection','text-highlight-bg','blockquote-background-color',
+    'scrollbar-bg','scrollbar-thumb-bg','scrollbar-active-thumb-bg','indentation-guide-color','indentation-guide-color-active',
+    'drag-ghost-background','toggle-thumb-color','slider-track-background','slider-track-background-hover','slider-track-background-active'];
+  const probe = document.createElement('span'); fixture.append(probe);
+  for(const token of tokens) {
+    probe.style.backgroundColor = `var(--${token})`;
+    const value = getComputedStyle(probe).backgroundColor; checks++;
+    if(!opaque(value)) failures.push({token, value});
+  }
+  for(const selector of ['.modal','.menu','.suggestion-container','.popover','.notice','.cm-tooltip','.status-bar',
+    '.canvas-control-group','.canvas-card-menu','.tree-item-self','button','input','.mod-sidedock > div','.workspace-ribbon','.vertical-tab-nav-item-icon']) {
+    const el=fixture.querySelector(selector), cs=getComputedStyle(el);
+    checks += 3;
+    if(cs.opacity !== '1') failures.push({selector, opacity:cs.opacity});
+    if(cs.backgroundImage !== 'none') failures.push({selector, backgroundImage:cs.backgroundImage});
+    if(cs.backdropFilter !== 'none') failures.push({selector, backdropFilter:cs.backdropFilter});
+    const values=cs.backgroundColor.match(/[\d.]+/g)?.map(Number) ?? [];
+    checks++;
+    if(values.length===4 && values[3] > 0 && values[3] < 1) failures.push({selector, background:cs.backgroundColor});
+  }
+  for(const token of ['highlight-mix-blend-mode','table-selection-blend-mode']) {
+    checks++; const value=getComputedStyle(document.body).getPropertyValue('--'+token).trim();
+    if(value!=='normal')failures.push({token,value});
+  }
+  fixture.remove();
+  return {mode,classes,checks,failures};
+};
+window.auditTypography = function(mode='light') {
+  document.body.className='theme-'+mode; document.body.removeAttribute('style');
+  const fixture=document.createElement('section');
+  const cases=[...Array.from({length:6},(_,i)=>[`h${i+1}`,`<h${i+1}>标题</h${i+1}>`,`<span class="cm-header-${i+1}">标题</span>`,`h${i+1}-color`]),
+    ['bold','<strong>粗体</strong>','<span class="cm-strong">粗体</span>','bold-color'],
+    ['italic','<em>斜体</em>','<span class="cm-em">斜体</span>','italic-color'],
+    ['bold-italic','<strong><em>粗斜体</em></strong>','<span class="cm-strong cm-em">粗斜体</span>','bold-italic-color'],
+    ['strike','<del>删除</del>','<span class="cm-strikethrough">删除</span>','strikethrough-color'],
+    ['code','<code>代码</code>','<span class="cm-inline-code">代码</span>','inline-code-color'],
+    ['highlight','<mark>高亮</mark>','<span class="cm-highlight">高亮</span>','text-normal'],
+    ['bold-highlight','<mark><strong>高亮</strong></mark>','<span class="cm-highlight cm-strong">高亮</span>','text-normal'],
+    ['italic-highlight','<mark><em>高亮</em></mark>','<span class="cm-highlight cm-em">高亮</span>','text-normal'],
+    ['bold-italic-highlight','<mark><strong><em>高亮</em></strong></mark>','<span class="cm-highlight cm-strong cm-em">高亮</span>','text-normal']];
+  document.body.append(fixture);const rows=[];
+  for(const [name,reading,editing,token]of cases){
+    fixture.innerHTML=`<div class="markdown-rendered">${reading}</div><div class="markdown-source-view mod-cm6">${editing}</div><i></i>`;
+    const r=fixture.querySelector('.markdown-rendered'),e=fixture.querySelector('.markdown-source-view').firstElementChild,probe=fixture.querySelector('i');
+    probe.style.color=`var(--${token})`;const expected=getComputedStyle(probe).color;
+    const reader=getComputedStyle(r.querySelector('*:last-child:not(:has(*))')).color,editor=getComputedStyle(e).color;
+    rows.push({name,reader,editor,expected,pass:reader===expected&&editor===expected});
+    if(name.includes('highlight')||name==='code'){
+      const bgToken=name==='code'?'zhiyu-inline-code-bg':name==='bold-highlight'?'bold-highlight-bg':name.includes('italic-highlight')?'italic-highlight-bg':'normal-highlight-bg';
+      probe.style.backgroundColor=`var(--${bgToken})`;const expectedBg=getComputedStyle(probe).backgroundColor;
+      rows.push({name:name+'-background',pass:getComputedStyle(r.firstElementChild).backgroundColor===expectedBg&&getComputedStyle(e).backgroundColor===expectedBg});
+    }
+  }
+  fixture.remove();return {mode,checks:rows.length,failures:rows.filter(x=>!x.pass)};
+};
+window.auditPrimary = function(mode='light') {
+  document.body.className='theme-'+mode; document.body.removeAttribute('style');
+  const probe=document.createElement('span');document.body.append(probe);
+  const read=token=>{probe.style.color=`var(--${token})`;return getComputedStyle(probe).color.match(/[\d.]+/g).map(Number);};
+  const primary=read('interactive-accent');
+  const tokens=['text-accent','bold-color','link-color','interactive-accent-hover'];
+  const failures=tokens.filter(token=>read(token).some((v,i)=>Math.abs(v-primary[i])>.001));
+  const expected=mode==='light'?[59,143,85]:[122,205,149];
+  if(primary.slice(0,3).some((v,i)=>Math.abs(v-expected[i])>.6))failures.push('unexpected-primary');
+  const quote=read('blockquote-background-color');
+  const expectedQuote=mode==='light'?[247,246,240]:[55,53,33];
+  if(quote.slice(0,3).some((v,i)=>v!==expectedQuote[i]))failures.push('quote-background-changed');
+  const whiteRatio=ratio(primary,[255,255,255]);
+  if(mode==='light' && (whiteRatio<3.98 || whiteRatio>4.02))failures.push('primary-outside-requested-contrast-range');
+  probe.remove();return {mode,primary,whiteRatio,checks:tokens.length+2+(mode==='light'?1:0),failures};
+};
+window.auditHarmony = function(mode='light') {
+  document.body.className='theme-'+mode; document.body.removeAttribute('style');
+  const probe=document.createElement('span');document.body.append(probe);
+  const colors=[];
+  for(const hue of hues) {
+    probe.style.color=`var(--zhiyu-ink-${hue})`;
+    const computed=getComputedStyle(probe).color;
+    const [r,g,b]=computed.match(/[\d.]+/g).slice(0,3).map(Number).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;});
+    const l=Math.cbrt(.4122214708*r+.5363325363*g+.0514459929*b),m=Math.cbrt(.2119034982*r+.6806995451*g+.1073969566*b),s=Math.cbrt(.0883024619*r+.2817188376*g+.6299787005*b);
+    const L=.2104542553*l+.793617785*m-.0040720468*s,a=1.9779984951*l-2.428592205*m+.4505937099*s,B=.0259040371*l+.7827717662*m-.808675766*s;
+    // The new palette intentionally varies lightness/chroma by role.
+    const C=Math.hypot(a,B);
+    const expected={light:['d64a60','c46718','a47b09','3b8f55','087f8c','216ae8','8d4de0','b13f79','5967d8','698718'],dark:['f19e97','e7a875','cbb76a','7acd95','66ccba','85bcf5','c1a9ee','e69dc6','a4b3f8','afc177']}[mode][hues.indexOf(hue)];
+    const rgb=expected.match(/../g).map(x=>parseInt(x,16));
+    const pass=computed===`rgb(${rgb.join(', ')})`;
+    colors.push({hue,color:computed,L:+L.toFixed(4),C:+C.toFixed(4),pass});
+  }
+  const aliases=[];
+  for(const hue of hues.slice(0,8)){probe.style.color=`var(--color-${hue})`;aliases.push({hue,pass:getComputedStyle(probe).color===colors.find(c=>c.hue===hue).color});}
+  probe.remove();return {mode,colors,aliasFailures:aliases.filter(x=>!x.pass),failures:colors.filter(x=>!x.pass)};
+};
+auditColors();
+</script>
+</body>
+</html>
