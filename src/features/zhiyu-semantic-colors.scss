@@ -33,7 +33,7 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light
   --slider-thumb-border-color: var(--text-accent);
   --indentation-guide-color: var(--color-base-35);
   --indentation-guide-color-active: var(--color-base-60);
-  --scrollbar-bg: var(--background-secondary);
+  --scrollbar-bg: transparent;
   --scrollbar-thumb-bg: var(--zhiyu-scrollbar-thumb);
   --scrollbar-active-thumb-bg: var(--zhiyu-scrollbar-thumb-active);
   --drag-ghost-background: var(--background-secondary);
