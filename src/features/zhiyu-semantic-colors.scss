@@ -210,7 +210,8 @@ body.theme-dark .nav-files-container .tree-item-self.is-active {
   background: transparent;
 }
 body:is(.theme-light, .theme-dark):is(.nav-item-baseline, :not(.css-settings-manager)) .nav-files-container > div .tree-item-self.is-active::before {
-  background-color: var(--zhiyu-ink-green);
+  /* The active-file dot follows the user's configured primary accent. */
+  background-color: var(--interactive-accent);
 }
 
 /* Callout titles otherwise inherit the status hue from the core stylesheet. */

@@ -31,6 +31,15 @@ body:is(.theme-light, .theme-dark) .tooltip {
   color: var(--text-normal);
 }
 
+/* Native Obsidian notices are system feedback, not translucent surfaces.
+   Keep them on the remembered near-black surface in both color modes. */
+body:is(.theme-light, .theme-dark) .notice {
+  background-color: var(--zhiyu-notice-background) !important;
+  color: var(--zhiyu-notice-foreground) !important;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 /* The settings icon grid had one legacy hard-coded dark tile. */
 body.input-cupertino .modal.mod-settings [data-setting-id="command-palette"] .vertical-tab-nav-item-icon {
   --setting-nav-icon-background: var(--color-base-10);

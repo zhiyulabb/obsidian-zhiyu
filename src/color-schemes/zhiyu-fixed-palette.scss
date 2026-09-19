@@ -65,6 +65,8 @@ body.theme-light {
   --zhiyu-surface-tag-hover: #f5f5f2;
   --zhiyu-control-border: #727d6c;
   --zhiyu-on-solid: #ffffff;
+  --zhiyu-notice-background: #171a16;
+  --zhiyu-notice-foreground: #f1f5ee;
   /* Context-inspector palette, contrast-adjusted for the light graph canvas. */
   --zhiyu-graph-blue: #217ed1;
   --zhiyu-graph-purple: #9d56d9;
@@ -112,6 +114,8 @@ body.theme-dark {
   --zhiyu-surface-tag-hover: var(--zhiyu-palette-color-base-25);
   --zhiyu-control-border: #899789;
   --zhiyu-on-solid: #171a16;
+  --zhiyu-notice-background: #171a16;
+  --zhiyu-notice-foreground: #f1f5ee;
   /* Bright reference colors stay luminous on the dark graph canvas. */
   --zhiyu-graph-blue: #3392ff;
   --zhiyu-graph-purple: #c27bff;
