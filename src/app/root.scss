@@ -203,8 +203,17 @@ body:not(.mod-macos):not(.is-mobile) {
 }
 
 // Scrollbar
-body.styled-scrollbars div:not(:hover)::-webkit-scrollbar-thumb {
+body.styled-scrollbars div::-webkit-scrollbar-track {
   background-color: transparent;
+}
+
+body.styled-scrollbars div::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg);
+}
+
+body.styled-scrollbars div::-webkit-scrollbar-thumb:hover,
+body.styled-scrollbars div::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-active-thumb-bg);
 }
 
 // Style Settings
