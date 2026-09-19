@@ -34,8 +34,8 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light
   --indentation-guide-color: var(--color-base-35);
   --indentation-guide-color-active: var(--color-base-60);
   --scrollbar-bg: var(--background-secondary);
-  --scrollbar-thumb-bg: var(--zhiyu-control-border);
-  --scrollbar-active-thumb-bg: var(--text-muted);
+  --scrollbar-thumb-bg: var(--zhiyu-scrollbar-thumb);
+  --scrollbar-active-thumb-bg: var(--zhiyu-scrollbar-thumb-active);
   --drag-ghost-background: var(--background-secondary);
   --highlight-mix-blend-mode: normal;
   --table-selection-blend-mode: normal;
