@@ -45,13 +45,16 @@
       > tbody {
         --table-header-border-color: var(--table-border-color);
 
-        background-color: var(--background-primary-alt);
         position: relative;
       }
 
-      > thead:not(:only-child) > tr > th,
-      > thead:not(:only-child) > tr > th .table-cell-wrapper {
-        border-radius: var(--radius-s);
+      /* Only the header is filled; the body stays transparent and is held by
+         the 1px cell borders. The header hands its bottom edge to the first
+         body row so the two borders don't stack into a 2px line. */
+      > thead:not(:only-child) > tr > th {
+        --table-header-border-color: var(--table-border-color);
+
+        border-bottom: none;
       }
 
       > tbody > tr:not(:last-child) > th,
@@ -67,20 +70,20 @@
         border-right: none;
       }
 
-      > :is(thead, tbody) > tr:first-child > :is(th, td):first-child,
-      > :is(thead, tbody) > tr:first-child > :is(th, td):first-child .table-cell-wrapper {
+      > :is(thead, tbody):first-child > tr:first-child > :is(th, td):first-child,
+      > :is(thead, tbody):first-child > tr:first-child > :is(th, td):first-child .table-cell-wrapper {
         border-top-left-radius: var(--radius-s);
       }
-      > :is(thead, tbody) > tr:first-child > :is(th, td):last-child,
-      > :is(thead, tbody) > tr:first-child > :is(th, td):last-child .table-cell-wrapper {
+      > :is(thead, tbody):first-child > tr:first-child > :is(th, td):last-child,
+      > :is(thead, tbody):first-child > tr:first-child > :is(th, td):last-child .table-cell-wrapper {
         border-top-right-radius: var(--radius-s);
       }
-      > :is(thead, tbody) > tr:last-child > :is(th, td):first-child,
-      > :is(thead, tbody) > tr:last-child > :is(th, td):first-child .table-cell-wrapper {
+      > :is(thead, tbody):last-child > tr:last-child > :is(th, td):first-child,
+      > :is(thead, tbody):last-child > tr:last-child > :is(th, td):first-child .table-cell-wrapper {
         border-bottom-left-radius: var(--radius-s);
       }
-      > :is(thead, tbody) > tr:last-child > :is(th, td):last-child,
-      > :is(thead, tbody) > tr:last-child > :is(th, td):last-child .table-cell-wrapper {
+      > :is(thead, tbody):last-child > tr:last-child > :is(th, td):last-child,
+      > :is(thead, tbody):last-child > tr:last-child > :is(th, td):last-child .table-cell-wrapper {
         border-bottom-right-radius: var(--radius-s);
       }
     }
@@ -93,20 +96,20 @@
         border-left: none;
       }
 
-      > :is(thead, tbody) > tr:first-child > :is(th, td):first-child,
-      > :is(thead, tbody) > tr:first-child > :is(th, td):first-child .table-cell-wrapper {
+      > :is(thead, tbody):first-child > tr:first-child > :is(th, td):first-child,
+      > :is(thead, tbody):first-child > tr:first-child > :is(th, td):first-child .table-cell-wrapper {
         border-top-right-radius: var(--radius-s);
       }
-      > :is(thead, tbody) > tr:first-child > :is(th, td):last-child,
-      > :is(thead, tbody) > tr:first-child > :is(th, td):last-child .table-cell-wrapper {
+      > :is(thead, tbody):first-child > tr:first-child > :is(th, td):last-child,
+      > :is(thead, tbody):first-child > tr:first-child > :is(th, td):last-child .table-cell-wrapper {
         border-top-left-radius: var(--radius-s);
       }
-      > :is(thead, tbody) > tr:last-child > :is(th, td):first-child,
-      > :is(thead, tbody) > tr:last-child > :is(th, td):first-child .table-cell-wrapper {
+      > :is(thead, tbody):last-child > tr:last-child > :is(th, td):first-child,
+      > :is(thead, tbody):last-child > tr:last-child > :is(th, td):first-child .table-cell-wrapper {
         border-bottom-right-radius: var(--radius-s);
       }
-      > :is(thead, tbody) > tr:last-child > :is(th, td):last-child,
-      > :is(thead, tbody) > tr:last-child > :is(th, td):last-child .table-cell-wrapper {
+      > :is(thead, tbody):last-child > tr:last-child > :is(th, td):last-child,
+      > :is(thead, tbody):last-child > tr:last-child > :is(th, td):last-child .table-cell-wrapper {
         border-bottom-left-radius: var(--radius-s);
       }
     }
