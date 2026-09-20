@@ -218,6 +218,12 @@ body:is(.theme-light, .theme-dark):is(.nav-item-baseline, :not(.css-settings-man
 body .callout .callout-title-inner { color: var(--text-normal); }
 body .callout .callout-content { color: var(--text-normal); }
 
+/* System notices stay readable over every light/dark input style. */
+body .notice {
+  background-color: #1f211e !important;
+  color: #fff !important;
+}
+
 /* Typed callouts have explicit foreground/background pairs in both modes. */
 body .callout:not([data-callout="note-toolbar"]) {
   --zhiyu-callout-ink: var(--zhiyu-ink-blue);
