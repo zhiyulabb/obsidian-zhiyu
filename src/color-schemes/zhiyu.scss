@@ -214,15 +214,13 @@ body.theme-dark {
   --zhiyu-palette-color-base-30: #403c36;
   --zhiyu-palette-color-base-35: #49443e;
   --zhiyu-palette-color-base-40: #58524a;
-  --zhiyu-palette-color-base-50: #687565;
-  --zhiyu-palette-color-base-60: #899789;
-  --zhiyu-palette-color-base-70: #b0bbae;
-  --zhiyu-text-hue: 100;
-  /* Body text retains its hue; secondary tiers are audited on dark surfaces. */
-  --zhiyu-text-saturation: 6%;
-  --zhiyu-text-primary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 78%);
-  --zhiyu-text-secondary: #b1b9ad;
-  --zhiyu-text-tertiary: #aab1a6;
+  --zhiyu-palette-color-base-50: #6e6c66;
+  --zhiyu-palette-color-base-60: #918f88;
+  --zhiyu-palette-color-base-70: #b8b6af;
+  /* Neutral warm grays match the light theme's paper-like text treatment. */
+  --zhiyu-text-primary: #cecdc7;
+  --zhiyu-text-secondary: #b8b6af;
+  --zhiyu-text-tertiary: #aaa8a1;
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
   --zhiyu-palette-background-modifier-hover: var(--zhiyu-palette-color-base-25);
   --zhiyu-palette-background-modifier-active-hover: var(--zhiyu-palette-color-base-30);
