@@ -1,40 +1,64 @@
 /* Raw light/dark palette -> Obsidian semantic variables -> components/plugins. */
 
-/* Primary green is directly contrast-calibrated, not mixed with another color. */
+/* Claude Design neutral swatches; 050 is slightly lifted for shared surfaces. */
+body:is(.theme-light, .theme-dark) {
+  --zhiyu-gray-000: #ffffff;
+  --zhiyu-gray-050: #fdfcfa;
+  --zhiyu-gray-100: #f5f4ed;
+  --zhiyu-gray-150: #f0eee6;
+  --zhiyu-gray-200: #e8e6dc;
+  --zhiyu-gray-250: #dedcd1;
+  --zhiyu-gray-300: #d1cfc5;
+  --zhiyu-gray-350: #c2c0b6;
+  --zhiyu-gray-400: #b0aea5;
+  --zhiyu-gray-450: #9c9a92;
+  --zhiyu-gray-500: #87867f;
+  --zhiyu-gray-550: #73726c;
+  --zhiyu-gray-600: #5e5d59;
+  --zhiyu-gray-650: #4d4c48;
+  --zhiyu-gray-700: #3d3d3a;
+  --zhiyu-gray-750: #30302e;
+  --zhiyu-gray-800: #262624;
+  --zhiyu-gray-850: #1f1e1d;
+  --zhiyu-gray-900: #1a1918;
+  --zhiyu-gray-950: #141413;
+  --zhiyu-gray-1000: #000000;
+}
+
+/* The brand accent stays #ff6924 in both modes; accent foregrounds stay white. */
 body.theme-light {
   /* Theme fallback. Obsidian writes a user's custom accent inline on body,
-     so that value wins; Restore default removes it and reveals Zhiyu green. */
-  /* #3b8f55: ~4:1 on white; native custom-accent overrides remain supported. */
-  --accent-h: 138.571429;
-  --accent-s: 41.584158%;
-  --accent-l: 39.607843%;
+     so that value wins; Restore default reveals Zhiyu orange. */
+  --accent-h: 18.90411;
+  --accent-s: 100%;
+  --accent-l: 57.058824%;
   /* Authored foreground/surface pairs live in zhiyu-fixed-palette.scss. */
   /* Raw palette values: edit colors here. */
   --zhiyu-palette-mono-rgb-0: 255, 255, 255;
-  --zhiyu-palette-mono-rgb-100: 24, 26, 23;
-  --zhiyu-palette-color-base-00: #ffffff;
-  --zhiyu-palette-color-base-05: #fcfbfa;
-  --zhiyu-palette-color-base-10: #f6f5f3;
-  --zhiyu-palette-color-base-20: #f1f1ef;
-  --zhiyu-palette-color-base-25: #ecece9;
-  --zhiyu-palette-color-base-30: #e8e8e6;
-  --zhiyu-palette-color-base-35: #e1e0dc;
-  --zhiyu-palette-color-base-40: #cbc9c4;
-  --zhiyu-palette-color-base-50: #a1a19d;
-  --zhiyu-palette-color-base-60: #727d6c;
-  --zhiyu-palette-color-base-70: #5f625e;
-  /* Neutral body text; the faint tier has an independently audited value. */
-  --zhiyu-text-hue: 100;
-  --zhiyu-text-saturation: 6%;
-  --zhiyu-text-primary: hsl(var(--zhiyu-text-hue) var(--zhiyu-text-saturation) 22%);
-  --zhiyu-text-secondary: #5c6458;
-  --zhiyu-text-tertiary: #5f655a;
+  --zhiyu-palette-mono-rgb-100: 20, 20, 19;
+  --zhiyu-palette-color-base-00: var(--zhiyu-gray-050);
+  --zhiyu-palette-color-base-05: var(--zhiyu-gray-100);
+  --zhiyu-palette-color-base-10: var(--zhiyu-gray-150);
+  --zhiyu-palette-color-base-20: var(--zhiyu-gray-200);
+  --zhiyu-palette-color-base-25: var(--zhiyu-gray-250);
+  --zhiyu-palette-color-base-30: var(--zhiyu-gray-300);
+  --zhiyu-palette-color-base-35: var(--zhiyu-gray-350);
+  --zhiyu-palette-color-base-40: var(--zhiyu-gray-400);
+  --zhiyu-palette-color-base-50: var(--zhiyu-gray-500);
+  --zhiyu-palette-color-base-60: var(--zhiyu-gray-600);
+  --zhiyu-palette-color-base-70: var(--zhiyu-gray-750);
+  /* Match Claude's primary, secondary and tertiary foreground roles. */
+  --zhiyu-text-primary: var(--zhiyu-gray-950);
+  --zhiyu-text-secondary: var(--zhiyu-gray-750);
+  --zhiyu-text-tertiary: var(--zhiyu-gray-600);
+  --zhiyu-chrome-text: var(--zhiyu-gray-550);
+  --zhiyu-chrome-hover: var(--zhiyu-gray-600);
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
-  --zhiyu-palette-background-modifier-hover: #ecece9;
-  --zhiyu-palette-background-modifier-active-hover: #e8e8e6;
-  --zhiyu-palette-background-modifier-cover: rgba(24, 26, 23, 0.35);
-  --zhiyu-palette-background-modifier-box-shadow: rgba(24, 26, 23, 0.12);
-  --zhiyu-palette-background-modifier-border-hover: #d8dad5;
+  --zhiyu-palette-background-modifier-hover: var(--zhiyu-gray-150);
+  --zhiyu-palette-background-modifier-active-hover: var(--zhiyu-gray-200);
+  --zhiyu-palette-background-modifier-cover: rgba(20, 20, 19, 0.35);
+  --zhiyu-palette-background-modifier-box-shadow: rgba(20, 20, 19, 0.12);
+  --zhiyu-palette-background-modifier-border-hover: var(--zhiyu-gray-300);
   --zhiyu-palette-background-modifier-border-focus: var(--zhiyu-palette-interactive-accent);
   --zhiyu-palette-text-accent: var(--zhiyu-palette-interactive-accent);
   --zhiyu-palette-text-muted: var(--zhiyu-text-secondary);
@@ -42,8 +66,8 @@ body.theme-light {
   --zhiyu-palette-text-accent-hover: var(--zhiyu-palette-interactive-accent);
   --zhiyu-palette-interactive-accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
   --zhiyu-palette-interactive-accent-hover: var(--zhiyu-palette-interactive-accent);
-  --zhiyu-palette-text-selection: var(--zhiyu-surface-green-hover);
-  --zhiyu-palette-blockquote-background-color: #f7f6f0;
+  --zhiyu-palette-text-selection: var(--zhiyu-surface-orange-hover);
+  --zhiyu-palette-blockquote-background-color: var(--zhiyu-gray-100);
 }
 
 body.theme-light,
@@ -70,9 +94,9 @@ body.theme-light.input-cupertino.is-mobile {
   --color-base-70: var(--zhiyu-palette-color-base-70);
   --color-base-100: var(--zhiyu-palette-color-base-100);
   --background-primary: var(--zhiyu-palette-color-base-00);
-  --background-primary-alt: var(--zhiyu-palette-color-base-10);
-  --background-secondary: var(--zhiyu-palette-color-base-10);
-  --background-secondary-alt: #f5f5f2;
+  --background-primary-alt: var(--zhiyu-palette-color-base-05);
+  --background-secondary: var(--zhiyu-palette-color-base-05);
+  --background-secondary-alt: var(--zhiyu-palette-color-base-10);
   --background-modifier-hover: var(--zhiyu-palette-background-modifier-hover);
   --background-modifier-active-hover: var(--zhiyu-palette-background-modifier-active-hover);
   --background-modifier-cover: var(--zhiyu-palette-background-modifier-cover);
@@ -84,7 +108,7 @@ body.theme-light.input-cupertino.is-mobile {
   --background-modifier-success: var(--zhiyu-surface-green);
   --background-modifier-success-hover: var(--zhiyu-surface-green-hover);
   --background-modifier-message: var(--background-secondary);
-  --background-modifier-border: var(--zhiyu-palette-color-base-30);
+  --background-modifier-border: var(--zhiyu-gray-200);
   --background-modifier-border-hover: var(--zhiyu-palette-background-modifier-border-hover);
   --background-modifier-border-focus: var(--zhiyu-palette-background-modifier-border-focus);
   --divider-color: var(--background-modifier-border);
@@ -138,14 +162,14 @@ body.theme-light.input-cupertino.is-mobile {
   --modal-background: var(--zhiyu-palette-color-base-00);
   --menu-background: var(--zhiyu-palette-color-base-00);
   --modal-border-color: var(--background-modifier-border);
-  --raised-background: var(--zhiyu-palette-color-base-00);
+  --raised-background: var(--zhiyu-gray-000);
   --blur-background: var(--zhiyu-palette-color-base-00);
   --settings-background: var(--zhiyu-palette-color-base-00);
-  --setting-items-background: var(--zhiyu-palette-color-base-10);
+  --setting-items-background: var(--background-secondary);
   --setting-items-border-color: var(--background-modifier-border);
   --setting-items-border-width: 0px;
   --setting-nav-icon-background: var(--zhiyu-palette-color-base-50);
-  --modal-sidebar-background: var(--zhiyu-palette-color-base-10);
+  --modal-sidebar-background: var(--background-secondary);
   --mobile-sidebar-background: var(--zhiyu-palette-color-base-00);
   --menu-item-background-hover: var(--background-modifier-hover);
   --menu-item-background-selected: var(--interactive-accent);
@@ -186,16 +210,16 @@ body.theme-light.input-cupertino.is-mobile {
   --menu-border-color: var(--background-modifier-border);
   --table-selection: var(--background-modifier-active-hover);
   --table-selection-border-color: var(--interactive-accent);
-  --background-modifier-warning: var(--zhiyu-surface-orange);
-  --background-modifier-warning-hover: var(--zhiyu-surface-orange-hover);
+  --background-modifier-warning: var(--zhiyu-surface-yellow);
+  --background-modifier-warning-hover: var(--zhiyu-surface-yellow-hover);
   --text-highlight-bg: var(--zhiyu-surface-yellow);
 }
 
 body.theme-dark {
   /* Dark-mode fallback; a user-selected accent still wins as an inline value. */
-  --accent-h: 140;
-  --accent-s: 45%;
-  --accent-l: 64%;
+  --accent-h: 18.90411;
+  --accent-s: 100%;
+  --accent-l: 57.058824%;
   --zhiyu-ink-cyan: var(--color-cyan);
   --zhiyu-ink-blue: var(--color-blue);
   --zhiyu-ink-purple: var(--color-purple);
@@ -203,24 +227,25 @@ body.theme-dark {
   --zhiyu-ink-red: var(--color-red);
   --zhiyu-ink-green: var(--color-green);
   /* Raw palette values: edit colors here. */
-  --zhiyu-palette-mono-rgb-0: 28, 27, 25;
-  --zhiyu-palette-mono-rgb-100: 241, 245, 238;
-  /* Warm paper neutrals; green belongs to semantic accents, not surfaces. */
-  --zhiyu-palette-color-base-00: #1c1b19;
-  --zhiyu-palette-color-base-05: #201f1c;
-  --zhiyu-palette-color-base-10: #242320;
-  --zhiyu-palette-color-base-20: #2d2b28;
-  --zhiyu-palette-color-base-25: #34312d;
-  --zhiyu-palette-color-base-30: #403c36;
-  --zhiyu-palette-color-base-35: #49443e;
-  --zhiyu-palette-color-base-40: #58524a;
-  --zhiyu-palette-color-base-50: #6e6c66;
-  --zhiyu-palette-color-base-60: #918f88;
-  --zhiyu-palette-color-base-70: #b8b6af;
-  /* Neutral warm grays match the light theme's paper-like text treatment. */
-  --zhiyu-text-primary: #cecdc7;
-  --zhiyu-text-secondary: #b8b6af;
-  --zhiyu-text-tertiary: #aaa8a1;
+  --zhiyu-palette-mono-rgb-0: 20, 20, 19;
+  --zhiyu-palette-mono-rgb-100: 250, 249, 245;
+  /* Dark mode uses the same exact swatches with reversed surface hierarchy. */
+  --zhiyu-palette-color-base-00: var(--zhiyu-gray-950);
+  --zhiyu-palette-color-base-05: var(--zhiyu-gray-900);
+  --zhiyu-palette-color-base-10: var(--zhiyu-gray-850);
+  --zhiyu-palette-color-base-20: var(--zhiyu-gray-800);
+  --zhiyu-palette-color-base-25: var(--zhiyu-gray-750);
+  --zhiyu-palette-color-base-30: var(--zhiyu-gray-700);
+  --zhiyu-palette-color-base-35: var(--zhiyu-gray-650);
+  --zhiyu-palette-color-base-40: var(--zhiyu-gray-600);
+  --zhiyu-palette-color-base-50: var(--zhiyu-gray-500);
+  --zhiyu-palette-color-base-60: var(--zhiyu-gray-400);
+  --zhiyu-palette-color-base-70: var(--zhiyu-gray-300);
+  --zhiyu-text-primary: var(--zhiyu-gray-050);
+  --zhiyu-text-secondary: var(--zhiyu-gray-300);
+  --zhiyu-text-tertiary: var(--zhiyu-gray-450);
+  --zhiyu-chrome-text: var(--zhiyu-gray-450);
+  --zhiyu-chrome-hover: var(--zhiyu-gray-300);
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
   --zhiyu-palette-background-modifier-hover: var(--zhiyu-palette-color-base-25);
   --zhiyu-palette-background-modifier-active-hover: var(--zhiyu-palette-color-base-30);
@@ -231,12 +256,12 @@ body.theme-dark {
   --zhiyu-palette-text-faint: var(--zhiyu-text-tertiary);
   --zhiyu-palette-text-accent: var(--zhiyu-palette-interactive-accent);
   --zhiyu-palette-text-accent-hover: var(--zhiyu-palette-interactive-accent);
-  --zhiyu-palette-text-on-accent: #182017;
+  --zhiyu-palette-text-on-accent: #ffffff;
   --zhiyu-palette-text-on-accent-inverted: #ffffff;
   --zhiyu-palette-interactive-accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
   --zhiyu-palette-interactive-accent-hover: var(--zhiyu-palette-interactive-accent);
-  --zhiyu-palette-text-selection: var(--zhiyu-surface-green-hover);
-  --zhiyu-palette-blockquote-background-color: #373521;
+  --zhiyu-palette-text-selection: var(--zhiyu-surface-orange-hover);
+  --zhiyu-palette-blockquote-background-color: var(--zhiyu-gray-800);
 }
 
 body.theme-dark,
@@ -296,7 +321,7 @@ body.theme-dark.input-cupertino.is-mobile {
   --interactive-accent: var(--zhiyu-palette-interactive-accent);
   --interactive-accent-hover: var(--zhiyu-palette-interactive-accent-hover);
   --interactive-success: var(--text-success);
-  --icon-color: var(--zhiyu-palette-text-muted);
+  --icon-color: var(--zhiyu-palette-text-faint);
   --icon-color-hover: var(--zhiyu-palette-color-base-100);
   --icon-color-focused: var(--text-accent);
   --text-selection: var(--zhiyu-palette-text-selection);
@@ -377,8 +402,8 @@ body.theme-dark.input-cupertino.is-mobile {
   --table-selection: var(--background-modifier-active-hover);
   --table-selection-border-color: var(--interactive-accent);
   --dropdown-background: var(--interactive-normal);
-  --background-modifier-warning: var(--zhiyu-surface-orange);
-  --background-modifier-warning-hover: var(--zhiyu-surface-orange-hover);
+  --background-modifier-warning: var(--zhiyu-surface-yellow);
+  --background-modifier-warning-hover: var(--zhiyu-surface-yellow-hover);
   --text-highlight-bg: var(--zhiyu-surface-yellow);
   --nav-item-children-margin-start: 12px;
   --nav-indentation-guide-width: 0px;

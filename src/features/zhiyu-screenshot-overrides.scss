@@ -12,7 +12,7 @@ body.input-cupertino:not(.is-mobile) .modal.mod-settings .vertical-tab-nav-item:
   color: var(--nav-item-color-hover, var(--text-normal));
 }
 
-/* Keep the selected settings item green on desktop, tablet, and mobile. */
+/* Keep the selected settings item on the theme accent across layouts. */
 body.input-cupertino .modal.mod-settings .vertical-tab-nav-item.is-active {
   background-color: var(--nav-item-background-active) !important;
   color: var(--nav-item-color-active, var(--text-on-accent)) !important;
@@ -27,7 +27,6 @@ body:is(.theme-light, .theme-dark) .nav-files-container > div .tree-item-self:ho
 
 /* Native file-info tooltips use accent text by default, but Zhiyu uses a light card surface. */
 body:is(.theme-light, .theme-dark) .tooltip {
-  --text-on-accent: var(--text-normal);
   color: var(--text-normal);
 }
 

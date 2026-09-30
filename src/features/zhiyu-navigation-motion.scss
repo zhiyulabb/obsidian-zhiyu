@@ -1,0 +1,97 @@
+/* Keep navigation feedback independent of palette adjustments.
+   Use the theme's existing timing and icon press scale. */
+body:not(.reduce-motion, .is-mobile, .is-grabbing) .workspace {
+  :is(.workspace-tab-header, .view-header .clickable-icon, .workspace-ribbon .clickable-icon, .nav-action-button, .sidebar-toggle-button .clickable-icon):not([aria-disabled="true"]) {
+    transition:
+      all var(--anim-duration-moderate) var(--anim-motion-baseline),
+      color var(--anim-duration-fast),
+      background-color var(--anim-duration-fast),
+      box-shadow var(--anim-duration-fast);
+
+    svg.svg-icon {
+      transition:
+        all var(--anim-duration-moderate) var(--anim-motion-baseline),
+        color var(--anim-duration-fast);
+    }
+
+    &:is(:hover, :focus-visible) svg.svg-icon {
+      translate: 0 -1px;
+    }
+
+    &:active svg.svg-icon {
+      translate: 0 0;
+      scale: 0.75;
+      transition-duration: var(--anim-duration-fast);
+    }
+  }
+
+  .workspace-tab-header :is(.workspace-tab-header-inner-icon, .workspace-tab-header-inner-title) {
+    transition: color var(--anim-duration-fast);
+  }
+
+  /* File and folder rows share the toolbar's motion timing without moving
+     the tree layout or changing its selected-note colors. */
+  .nav-files-container :is(.nav-file-title, .nav-folder-title) {
+    transform-origin: left center;
+    transition:
+      color var(--anim-duration-fast),
+      background-color var(--anim-duration-fast),
+      box-shadow var(--anim-duration-fast),
+      scale var(--anim-duration-moderate) var(--anim-motion-baseline);
+
+    > .tree-item-inner {
+      transition: translate var(--anim-duration-moderate) var(--anim-motion-baseline);
+    }
+
+    &:is(:hover, :focus-visible) > .tree-item-inner {
+      translate: 2px 0;
+    }
+
+    &:active {
+      scale: 0.985;
+      transition-duration: var(--anim-duration-fast);
+    }
+
+    .collapse-icon svg.svg-icon {
+      transition:
+        transform var(--anim-duration-moderate) var(--anim-motion-baseline),
+        scale var(--anim-duration-fast);
+    }
+
+    .collapse-icon:active svg.svg-icon {
+      scale: 0.85;
+    }
+  }
+}
+
+/* Settings live outside the workspace, but use the same navigation feedback. */
+body:not(.reduce-motion, .is-mobile, .is-grabbing) .modal.mod-settings .vertical-tab-nav-item {
+  transform-origin: left center;
+  transition:
+    color var(--anim-duration-fast),
+    background-color var(--anim-duration-fast),
+    box-shadow var(--anim-duration-fast),
+    scale var(--anim-duration-moderate) var(--anim-motion-baseline);
+
+  :is(.vertical-tab-nav-item-title, .vertical-tab-nav-item-icon) {
+    transition: translate var(--anim-duration-moderate) var(--anim-motion-baseline);
+  }
+
+  &:is(:hover, :focus-visible) :is(.vertical-tab-nav-item-title, .vertical-tab-nav-item-icon) {
+    translate: 2px 0;
+  }
+
+  &:active {
+    scale: 0.985;
+    transition-duration: var(--anim-duration-fast);
+  }
+
+  .vertical-tab-nav-item-icon svg {
+    transition: scale var(--anim-duration-moderate) var(--anim-motion-baseline);
+  }
+
+  &:active .vertical-tab-nav-item-icon svg {
+    scale: 0.85;
+    transition-duration: var(--anim-duration-fast);
+  }
+}

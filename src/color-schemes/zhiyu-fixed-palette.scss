@@ -1,33 +1,32 @@
 @use "sass:list";
 @use "sass:color";
 
-/* Explicit foreground, subtle surface and hover surface pairs.
-   Light colors are contrast-calibrated together, preserving their hues.
-   Primary text and primary fill use the same green, with no runtime mixing. */
+/* Muted semantic companions to the #ff6924 brand accent.
+   Each ink has a matching subtle surface and hover surface. */
 @each $mode, $colors in (
   light: (
-    "red": (#d64a60, #fff0f3, #ffe2e8),
-    "orange": (#c46718, #fff3e7, #ffe6cc),
-    "yellow": (#a47b09, #fff9df, #fff0b8),
-    "green": (#3b8f55, #f2fbf5, #e8faec),
-    "cyan": (#087f8c, #e8f8fa, #d4eff2),
-    "blue": (#216ae8, #edf4ff, #dceaff),
-    "purple": (#8d4de0, #f5edff, #e9d9ff),
-    "pink": (#b13f79, #fcecf4, #f7dce9),
-    "indigo": (#5967d8, #eff0ff, #e0e3ff),
-    "lime": (#698718, #f4f9e4, #e7f0c7)
+    "red": (#c64b43, #fceeea, #f7ddd6),
+    "orange": (#b96a36, #fff1e8, #ffe0cf),
+    "yellow": (#a47e37, #faf5e6, #f2e7c9),
+    "green": (#4d7e69, #eff5f1, #dfece4),
+    "cyan": (#42788b, #edf4f6, #dceaf0),
+    "blue": (#496f9f, #edf2f8, #dde7f2),
+    "purple": (#826797, #f3eef6, #e7deed),
+    "pink": (#a65f7b, #f8eef2, #efdee6),
+    "indigo": (#657296, #eff1f7, #e0e5ef),
+    "lime": (#788247, #f3f5e9, #e7ebd3)
   ),
   dark: (
-    "red": (#f19e97, #30211f, #402927),
-    "orange": (#e7a875, #2e2219, #3e2c1e),
-    "yellow": (#cbb76a, #292517, #36301b),
-    "green": (#7acd95, #1c291f, #223628),
-    "cyan": (#66ccba, #172926, #1b3631),
-    "blue": (#85bcf5, #1c2631, #233242),
-    "purple": (#c1a9ee, #272330, #332c40),
-    "pink": (#e69dc6, #2e2028, #3d2934),
-    "indigo": (#a4b3f8, #212432, #2b2f42),
-    "lime": (#afc177, #242719, #2e331f)
+    "red": (#e69b8f, #322321, #442d29),
+    "orange": (#e8ad7f, #32251e, #493125),
+    "yellow": (#d6bd7e, #2e291e, #3e3524),
+    "green": (#93bea8, #232e28, #2d3d33),
+    "cyan": (#91bfca, #222c30, #2c3a40),
+    "blue": (#9bbadd, #252b34, #303a48),
+    "purple": (#beadd4, #2c2732, #3a3243),
+    "pink": (#d6a3b8, #31262b, #423139),
+    "indigo": (#acb7d7, #282c35, #343a49),
+    "lime": (#bbc593, #2b2e22, #393e2c)
   )
 ) {
   body.theme-#{$mode} {
@@ -42,48 +41,49 @@
 }
 
 body.theme-light {
-  --zhiyu-reading-blue: #37789a;
-  --zhiyu-reading-orange: #c16a20;
-  --zhiyu-reading-muted: #5f655a;
-  --zhiyu-reading-tag-bg: #edf6ef;
-  --zhiyu-codeblock-bg: #fffaeb;
-  --zhiyu-palette-text-selection: #d7ecdd;
+  --zhiyu-reading-blue: var(--zhiyu-ink-blue);
+  --zhiyu-reading-orange: var(--zhiyu-ink-orange);
+  --zhiyu-reading-emphasis: #ea743e;
+  --zhiyu-reading-muted: var(--zhiyu-text-tertiary);
+  --zhiyu-codeblock-bg: var(--zhiyu-gray-100);
+  --zhiyu-palette-text-selection: #ffe0cf;
   /* Preserve heading colors from before the typography hue redesign. */
-  --zhiyu-heading-muted: #5c6458;
+  --zhiyu-heading-muted: var(--zhiyu-text-secondary);
   --zhiyu-heading-bg-1: #fff7f6;
   --zhiyu-heading-bg-2: #fff8f2;
   --zhiyu-heading-bg-3: #fbf9f0;
-  --zhiyu-heading-bg-4: #f2fbf5;
+  --zhiyu-heading-bg-4: var(--zhiyu-surface-orange);
   --zhiyu-heading-bg-5: #f4faff;
   --zhiyu-heading-bg-6: #faf7ff;
   --zhiyu-ink-muted-purple: #817083;
-  --zhiyu-highlight-yellow: #ffe7a3;
-  --zhiyu-highlight-green: #d4ebd9;
-  --zhiyu-highlight-blue: #dcecf6;
-  --zhiyu-inline-code-bg: #fff3cc;
-  --zhiyu-surface-tag: #f7f6f4;
-  --zhiyu-surface-tag-hover: #f5f5f2;
-  --zhiyu-control-border: #727d6c;
-  /* Scrollbars are neutral chrome, independent from the green control palette. */
-  --zhiyu-scrollbar-thumb: #dedcd7;
-  --zhiyu-scrollbar-thumb-active: #73736f;
+  --zhiyu-highlight-yellow: #f5e6b8;
+  --zhiyu-highlight-orange: #ffdfcd;
+  --zhiyu-highlight-green: var(--zhiyu-surface-green-hover);
+  --zhiyu-highlight-blue: #dde7f2;
+  --zhiyu-inline-code-bg: var(--zhiyu-surface-orange);
+  --zhiyu-surface-tag: var(--zhiyu-gray-100);
+  --zhiyu-surface-tag-hover: var(--zhiyu-gray-200);
+  --zhiyu-control-border: var(--zhiyu-gray-400);
+  /* Scrollbars stay neutral alongside the orange controls. */
+  --zhiyu-scrollbar-thumb: var(--zhiyu-gray-300);
+  --zhiyu-scrollbar-thumb-active: var(--zhiyu-gray-550);
   --zhiyu-on-solid: #ffffff;
-  --zhiyu-notice-background: #171a16;
-  --zhiyu-notice-foreground: #f1f5ee;
+  --zhiyu-notice-background: var(--zhiyu-gray-950);
+  --zhiyu-notice-foreground: var(--zhiyu-gray-050);
   /* Context-inspector palette, contrast-adjusted for the light graph canvas. */
-  --zhiyu-graph-blue: #217ed1;
-  --zhiyu-graph-purple: #9d56d9;
-  --zhiyu-graph-pink: #d5458f;
-  --zhiyu-graph-yellow: #9a7500;
-  --zhiyu-graph-green: #008a62;
-  --zhiyu-graph-gray: #6d6963;
+  --zhiyu-graph-blue: var(--zhiyu-ink-blue);
+  --zhiyu-graph-purple: var(--zhiyu-ink-purple);
+  --zhiyu-graph-pink: var(--zhiyu-ink-pink);
+  --zhiyu-graph-yellow: var(--zhiyu-ink-yellow);
+  --zhiyu-graph-green: var(--zhiyu-ink-green);
+  --zhiyu-graph-gray: var(--zhiyu-gray-400);
 }
 
 /* The same named colors feed article styles, status colors and sidebar icons. */
 body:is(.theme-light, .theme-dark) {
   --zhiyu-ink-link-gold: var(--zhiyu-ink-blue);
   --zhiyu-ink-link-gold-hover: var(--zhiyu-ink-blue);
-  --zhiyu-tab-color-1: var(--zhiyu-ink-green);
+  --zhiyu-tab-color-1: var(--interactive-accent);
   --zhiyu-tab-color-2: var(--zhiyu-ink-orange);
   --zhiyu-tab-color-3: var(--zhiyu-ink-blue);
   --zhiyu-tab-color-4: var(--zhiyu-ink-red);
@@ -95,38 +95,39 @@ body:is(.theme-light, .theme-dark) {
   --zhiyu-tab-color-10: var(--zhiyu-ink-pink);
 }
 body.theme-dark {
-  --zhiyu-reading-blue: #85bcf5;
-  --zhiyu-reading-orange: #e7a875;
-  --zhiyu-reading-muted: #aaa8a1;
-  --zhiyu-reading-tag-bg: #1c291f;
-  --zhiyu-codeblock-bg: #29251e;
-  --zhiyu-palette-text-selection: #294c35;
-  --zhiyu-heading-muted: #b8b6af;
+  --zhiyu-reading-blue: var(--zhiyu-ink-blue);
+  --zhiyu-reading-orange: var(--zhiyu-ink-orange);
+  --zhiyu-reading-emphasis: #ea743e;
+  --zhiyu-reading-muted: var(--zhiyu-text-tertiary);
+  --zhiyu-codeblock-bg: var(--zhiyu-gray-850);
+  --zhiyu-palette-text-selection: #493125;
+  --zhiyu-heading-muted: var(--zhiyu-text-secondary);
   --zhiyu-heading-bg-1: #30211f;
   --zhiyu-heading-bg-2: #2e2219;
   --zhiyu-heading-bg-3: #292517;
-  --zhiyu-heading-bg-4: #1c291f;
+  --zhiyu-heading-bg-4: var(--zhiyu-surface-orange);
   --zhiyu-heading-bg-5: #1c2631;
   --zhiyu-heading-bg-6: #272330;
   --zhiyu-ink-muted-purple: #bca4bf;
-  --zhiyu-highlight-yellow: #594c20;
-  --zhiyu-highlight-green: #234c36;
-  --zhiyu-highlight-blue: #263f53;
-  --zhiyu-inline-code-bg: #383021;
+  --zhiyu-highlight-yellow: #4b4025;
+  --zhiyu-highlight-orange: #513525;
+  --zhiyu-highlight-green: var(--zhiyu-surface-green-hover);
+  --zhiyu-highlight-blue: #303c50;
+  --zhiyu-inline-code-bg: var(--zhiyu-surface-orange);
   --zhiyu-surface-tag: var(--zhiyu-palette-color-base-20);
   --zhiyu-surface-tag-hover: var(--zhiyu-palette-color-base-25);
-  --zhiyu-control-border: #899789;
-  /* Keep dark-mode scrollbar chrome warm-neutral instead of green-gray. */
-  --zhiyu-scrollbar-thumb: #35322e;
-  --zhiyu-scrollbar-thumb-active: #8a867f;
-  --zhiyu-on-solid: #171a16;
-  --zhiyu-notice-background: #171a16;
-  --zhiyu-notice-foreground: #f1f5ee;
+  --zhiyu-control-border: var(--zhiyu-gray-500);
+  /* Dark-mode scrollbars share the imported neutral swatches. */
+  --zhiyu-scrollbar-thumb: var(--zhiyu-gray-700);
+  --zhiyu-scrollbar-thumb-active: var(--zhiyu-gray-500);
+  --zhiyu-on-solid: #ffffff;
+  --zhiyu-notice-background: var(--zhiyu-gray-950);
+  --zhiyu-notice-foreground: var(--zhiyu-gray-050);
   /* Bright reference colors stay luminous on the dark graph canvas. */
-  --zhiyu-graph-blue: #3392ff;
-  --zhiyu-graph-purple: #c27bff;
-  --zhiyu-graph-pink: #fc64b6;
-  --zhiyu-graph-yellow: #fdc800;
-  --zhiyu-graph-green: #00d492;
-  --zhiyu-graph-gray: #413c36;
+  --zhiyu-graph-blue: var(--zhiyu-ink-blue);
+  --zhiyu-graph-purple: var(--zhiyu-ink-purple);
+  --zhiyu-graph-pink: var(--zhiyu-ink-pink);
+  --zhiyu-graph-yellow: var(--zhiyu-ink-yellow);
+  --zhiyu-graph-green: var(--zhiyu-ink-green);
+  --zhiyu-graph-gray: var(--zhiyu-gray-700);
 }

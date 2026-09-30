@@ -3,34 +3,37 @@
 body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) {
   --titlebar-background: var(--background-secondary);
   --titlebar-background-focused: var(--background-secondary);
-  --titlebar-text-color: var(--text-muted);
-  --titlebar-text-color-focused: var(--text-normal);
+  --titlebar-text-color: var(--zhiyu-chrome-text);
+  --titlebar-text-color-focused: var(--zhiyu-chrome-hover);
   --titlebar-border-color: var(--background-modifier-border);
   --text-accent: var(--zhiyu-palette-text-accent);
   --text-accent-hover: var(--zhiyu-palette-text-accent-hover);
+  --text-on-accent: #ffffff;
   --text-error: var(--zhiyu-ink-red);
-  --text-warning: var(--zhiyu-ink-orange);
+  --text-warning: var(--zhiyu-ink-yellow);
   --text-success: var(--zhiyu-ink-green);
   --code-normal: var(--text-normal);
   --code-comment: var(--text-muted);
-  --code-function: var(--text-accent);
-  --code-important: var(--zhiyu-ink-red);
+  --code-function: var(--zhiyu-ink-blue);
+  --code-important: var(--zhiyu-reading-emphasis);
   --code-keyword: var(--italic-color);
   --code-operator: var(--text-muted);
   --code-property: var(--italic-color);
   --code-punctuation: var(--text-muted);
-  --code-string: var(--text-accent);
+  --code-string: var(--zhiyu-ink-cyan);
   --code-tag: var(--link-external-color);
   --code-value: var(--link-external-color);
   --text-normal-editor: var(--text-normal);
   --icon-opacity: 1;
   --icon-opacity-hover: 1;
   --icon-opacity-active: 1;
+  --icon-color: var(--zhiyu-chrome-text);
+  --icon-color-hover: var(--zhiyu-chrome-hover);
   --link-unresolved-opacity: 1;
   --input-border-color: var(--zhiyu-control-border);
-  --background-modifier-border-focus: var(--text-accent);
-  --table-selection-border-color: var(--text-accent);
-  --slider-thumb-border-color: var(--text-accent);
+  --background-modifier-border-focus: var(--interactive-accent);
+  --table-selection-border-color: var(--interactive-accent);
+  --slider-thumb-border-color: var(--interactive-accent);
   --indentation-guide-color: var(--color-base-35);
   --indentation-guide-color-active: var(--color-base-60);
   --scrollbar-bg: transparent;
@@ -42,33 +45,33 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light
   --blur-s: none;
   --blur-m: none;
   --blur-l: none;
-  --toggle-thumb-color: var(--text-on-accent);
+  --toggle-thumb-color: #ffffff;
   --slider-track-background: var(--color-base-35);
   --slider-track-background-hover: var(--color-base-40);
   --slider-track-background-active: var(--zhiyu-control-border);
-  --bold-color: var(--text-accent);
+  --bold-color: var(--zhiyu-reading-emphasis);
   --italic-color: var(--zhiyu-reading-blue);
   --bold-italic-color: var(--text-normal);
   --strikethrough-color: var(--zhiyu-reading-muted);
-  --inline-code-color: var(--zhiyu-ink-yellow);
+  --inline-code-color: var(--zhiyu-reading-orange);
   --code-background: var(--zhiyu-codeblock-bg);
   --normal-highlight-bg: var(--zhiyu-highlight-yellow);
-  --bold-highlight-bg: var(--zhiyu-highlight-green);
+  --bold-highlight-bg: var(--zhiyu-highlight-orange);
   --italic-highlight-bg: var(--zhiyu-highlight-blue);
   --text-highlight-bg: var(--normal-highlight-bg);
   --blockquote-color: var(--text-muted);
   --list-marker-color: var(--text-muted);
   --list-marker-color-hover: var(--text-normal);
-  --checklist-done-color: var(--text-muted);
+  --checklist-done-color: var(--zhiyu-gray-500);
   --table-header-color: var(--text-normal);
   --table-header-background: var(--background-secondary);
   --hr-color: var(--background-modifier-border);
   --table-text-color: var(--text-normal);
   --text-highlight: var(--text-normal);
-  --zhiyu-outline-color: var(--zhiyu-palette-text-accent);
-  --zhiyu-tags-color: var(--zhiyu-ink-cyan);
-  --zhiyu-backlink-color: var(--zhiyu-ink-blue);
-  --zhiyu-outgoing-color: var(--zhiyu-ink-purple);
+  --zhiyu-outline-color: var(--zhiyu-chrome-text);
+  --zhiyu-tags-color: var(--zhiyu-ink-blue);
+  --zhiyu-backlink-color: var(--zhiyu-chrome-text);
+  --zhiyu-outgoing-color: var(--zhiyu-chrome-text);
   --metadata-label-text-color: var(--text-muted);
   --metadata-input-text-color: var(--text-normal);
   --metadata-label-text-color-hover: var(--text-normal);
@@ -76,14 +79,16 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light
   --metadata-input-background-active: var(--background-modifier-hover);
   --metadata-border-color: var(--background-modifier-border);
   --metadata-divider-color: var(--background-modifier-border);
-  --nav-item-color: var(--text-muted);
-  --nav-heading-color: var(--text-normal);
-  --nav-heading-color-hover: var(--text-normal);
-  --collapse-icon-color: var(--text-muted);
-  --collapse-icon-color-collapsed: var(--text-accent);
-  --tab-text-color: var(--text-muted);
-  --tab-text-color-active: var(--text-normal);
-  --tab-text-color-focused-active: var(--text-normal);
+  --nav-item-color: var(--zhiyu-chrome-text);
+  --nav-item-color-hover: var(--zhiyu-chrome-hover);
+  --nav-heading-color: var(--zhiyu-chrome-text);
+  --nav-heading-color-hover: var(--zhiyu-chrome-hover);
+  --collapse-icon-color: var(--zhiyu-chrome-text);
+  --collapse-icon-color-collapsed: var(--zhiyu-chrome-text);
+  --tab-text-color: var(--zhiyu-chrome-text);
+  --tab-text-color-focused: var(--zhiyu-chrome-text);
+  --tab-text-color-active: var(--zhiyu-chrome-hover);
+  --tab-text-color-focused-active: var(--zhiyu-chrome-hover);
   --inline-title-color: var(--text-normal);
   --h1-color: var(--text-normal);
   --h2-color: var(--text-normal);
@@ -91,30 +96,48 @@ body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light
   --h4-color: var(--text-normal);
   --h5-color: var(--zhiyu-heading-muted);
   --h6-color: var(--zhiyu-heading-muted);
-  --tag-color: var(--zhiyu-ink-green);
-  --tag-color-hover: var(--zhiyu-ink-green);
-  --tag-background: var(--zhiyu-reading-tag-bg);
-  --tag-background-hover: var(--zhiyu-surface-green-hover);
-  --tag-border-color: var(--zhiyu-control-border);
-  --tag-border-color-hover: var(--text-accent);
+  --tag-color: var(--zhiyu-ink-blue);
+  --tag-color-hover: var(--zhiyu-ink-blue);
+  --tag-background: var(--zhiyu-surface-blue);
+  --tag-background-hover: var(--zhiyu-surface-blue-hover);
+  --tag-border-color: var(--zhiyu-surface-blue-hover);
+  --tag-border-color-hover: var(--zhiyu-ink-blue);
   --pill-color: var(--text-normal);
   --pill-color-remove: var(--text-muted);
   --pill-background: var(--background-secondary);
   --link-color: var(--text-accent);
   --link-color-hover: var(--text-accent-hover);
-  --link-external-color: var(--zhiyu-reading-orange);
-  --link-external-color-hover: var(--zhiyu-reading-orange);
+  --link-external-color: var(--text-accent);
+  --link-external-color-hover: var(--text-accent-hover);
   --link-unresolved-color: var(--text-muted);
   --search-result-background: var(--background-secondary);
   --search-result-file-title-color: var(--text-normal);
   --search-result-file-matched-text-color: var(--text-normal);
   --graph-text: var(--text-muted);
   --graph-line: var(--zhiyu-graph-gray);
-  --graph-node: var(--zhiyu-graph-green);
+  --graph-node: var(--interactive-accent);
   --graph-node-focused: var(--zhiyu-graph-yellow);
-  --graph-node-tag: var(--zhiyu-graph-green);
+  --graph-node-tag: var(--zhiyu-graph-blue);
   --graph-node-attachment: var(--zhiyu-graph-purple);
   --graph-node-unresolved: var(--zhiyu-graph-pink);
+}
+
+/* Both sidebar toggles share the neutral navigation icon tier. */
+body:is(.theme-light, .theme-dark) .sidebar-toggle-button {
+  --icon-color: var(--zhiyu-chrome-text);
+  --icon-color-hover: var(--zhiyu-chrome-hover);
+  --icon-color-active: var(--zhiyu-chrome-hover);
+  --icon-color-focused: var(--zhiyu-chrome-hover);
+
+  .clickable-icon {
+    color: var(--zhiyu-chrome-text) !important;
+
+    &:is(:hover, :focus-visible, :active) {
+      color: var(--zhiyu-chrome-hover) !important;
+    }
+
+    svg.svg-icon { color: inherit !important; }
+  }
 }
 
 /* Search result titles must use document text, not the white-on-accent active-nav color. */
@@ -122,13 +145,22 @@ body:is(.theme-light, .theme-dark) .search-result-file-title {
   color: var(--search-result-file-title-color) !important;
 }
 
-/* Stable semantic identity, independent of sidebar tab ordering. */
-/* Code surfaces use yellow; fenced blocks retain syntax-specific colors. */
+/* Reading roles use the palette independently of the user's UI accent. */
+/* Paths and other inline code use warm orange; fenced blocks keep syntax colors. */
 body .markdown-rendered code:not(pre code),
 body .markdown-source-view.mod-cm6 .cm-inline-code {
   color: var(--inline-code-color);
   background-color: var(--zhiyu-inline-code-bg);
 }
+/* Prism renders Markdown in its own wrapper and otherwise paints code with --text-accent. */
+body .zhiyu-md-content code:not(pre code) {
+  color: var(--inline-code-color);
+  background-color: var(--zhiyu-inline-code-bg);
+}
+body .zhiyu-md-content strong { color: var(--bold-color); }
+body .zhiyu-md-content em { color: var(--italic-color); }
+body .zhiyu-md-content :is(strong em, em strong) { color: var(--bold-italic-color); }
+body .zhiyu-md-content :is(h1, h2, h3, h4, h5, h6) :is(strong, em) { color: inherit; }
 body .markdown-rendered strong em,
 body .markdown-rendered em strong,
 body .markdown-source-view .cm-strong.cm-em { color: var(--bold-italic-color); }
@@ -175,36 +207,87 @@ body :is(.mod-left-split, .mod-right-split) .workspace-tab-header {
       --zhiyu-tab-accent: var(--zhiyu-tab-color-#{$index});
     }
   }
-  color: var(--text-muted);
+  color: var(--zhiyu-chrome-text);
   .workspace-tab-header-inner-icon {
     /* Override Baseline's inherited !important icon color, not all UI icons. */
-    color: var(--text-muted) !important;
+    color: var(--zhiyu-chrome-text) !important;
   }
   &:is(:hover, :focus-visible, .is-active) {
-    color: var(--text-normal);
+    color: var(--zhiyu-chrome-hover);
     .workspace-tab-header-inner-icon {
       color: var(--zhiyu-tab-accent) !important;
     }
   }
-  .workspace-tab-header-inner-title { color: var(--text-normal); }
+  .workspace-tab-header-inner-title { color: inherit; }
   &.is-active {
     background-color: var(--zhiyu-surface-tag);
     box-shadow: inset 0 -2px var(--zhiyu-tab-accent);
   }
 }
 
-/* Dark navigation uses pale text on dark surfaces, never button-on-accent ink.
-   Scope to file navigation/backlinks so green action buttons stay readable. */
+/* Auxiliary navigation has its own subdued text tier. */
+body:is(.theme-light, .theme-dark) :is(
+  .nav-files-container,
+  .workspace-leaf-content[data-type="outline"],
+  .workspace-leaf-content[data-type="backlink"],
+  .workspace-leaf-content[data-type="outgoing-link"],
+  .backlink-pane,
+  .embedded-backlinks
+) {
+  --text-normal: var(--zhiyu-chrome-text);
+  --text-muted: var(--zhiyu-chrome-text);
+  --search-result-file-title-color: var(--zhiyu-chrome-text);
+  --link-color: var(--zhiyu-chrome-text);
+  --link-color-hover: var(--zhiyu-chrome-hover);
+}
+
+body:is(.theme-light, .theme-dark) :is(
+  .view-header,
+  .vertical-tab-nav-item,
+  .menu
+) {
+  --text-normal: var(--zhiyu-chrome-text);
+  --text-muted: var(--zhiyu-chrome-text);
+}
+
+/* Settings navigation uses the same resting text/icon tier as the file tree. */
+body:is(.theme-light, .theme-dark) .modal.mod-settings {
+  .vertical-tab-nav-item:not(.is-active):not(:hover):not(:focus-visible) {
+    color: var(--zhiyu-chrome-text);
+
+    .vertical-tab-nav-item-icon { color: inherit !important; }
+  }
+
+  .vertical-tab-header-group-title {
+    color: var(--zhiyu-chrome-text);
+  }
+}
+
+body:is(.theme-light, .theme-dark) .menu .menu-item.is-selected:not(.is-warning) {
+  color: var(--text-on-accent);
+  .menu-item-icon { color: inherit; }
+}
+
+/* Give light file navigation a clearer hover/selection text tier. */
+body.theme-light:not(.nav-item-strong) .nav-files-container {
+  --nav-item-color-hover: var(--zhiyu-gray-650);
+  --nav-item-color-active: var(--zhiyu-gray-650);
+
+  :is(.nav-file-title, .nav-folder-title):is(:hover, :focus-visible, .is-active) {
+    color: var(--zhiyu-gray-650) !important;
+  }
+}
+
+/* Active dark file navigation uses the stronger chrome tier on a dark surface. */
 body.theme-dark .nav-files-container > div,
 body.theme-dark .backlink-pane,
 body.theme-dark .embedded-backlinks {
-  --nav-item-color-active: var(--text-normal);
+  --nav-item-color-active: var(--zhiyu-chrome-hover);
   --nav-item-background-active: transparent;
-  --search-result-file-title-color: var(--text-normal);
 }
 body.theme-dark .nav-files-container .tree-item-self.is-active,
-body.theme-dark :is(.backlink-pane, .embedded-backlinks) .search-result-file-title {
-  color: var(--text-normal);
+body.theme-dark :is(.backlink-pane, .embedded-backlinks) .search-result-file-title:hover {
+  color: var(--zhiyu-chrome-hover);
 }
 body.theme-dark .nav-files-container .tree-item-self.is-active {
   background: transparent;
@@ -250,11 +333,61 @@ body .callout:not([data-callout="note-toolbar"]) {
   }
 }
 
+/* Properties use a quieter text tier than the note body. */
+body.theme-light .mod-root .metadata-container {
+  --zhiyu-metadata-text: var(--zhiyu-gray-600);
+}
+body.theme-dark .mod-root .metadata-container {
+  --zhiyu-metadata-text: var(--zhiyu-gray-350);
+}
+body:is(.theme-light, .theme-dark) .mod-root .metadata-container {
+  --text-normal: var(--zhiyu-metadata-text);
+  --text-muted: var(--zhiyu-chrome-text);
+  --text-faint: var(--zhiyu-chrome-text);
+  --metadata-label-text-color: var(--zhiyu-chrome-text);
+  --metadata-label-text-color-hover: var(--zhiyu-metadata-text);
+  --metadata-input-text-color: var(--zhiyu-metadata-text);
+  --icon-color: var(--zhiyu-chrome-text);
+  --icon-color-hover: var(--zhiyu-chrome-hover);
+  --pill-color: var(--zhiyu-metadata-text);
+  --pill-color-remove: var(--zhiyu-chrome-text);
+}
+
 body .mod-root .metadata-container .metadata-add-button {
   color: var(--text-muted);
   background-color: var(--background-modifier-hover);
   &:hover { color: var(--text-normal); background-color: var(--background-modifier-active-hover); }
   &:active { color: var(--text-on-accent); background-color: var(--interactive-accent); }
+}
+
+body:not(.metadata-block, .metadata-cupertino) .mod-root {
+  .markdown-source-view .metadata-container .metadata-add-button,
+  .markdown-preview-view .metadata-container .metadata-add-button {
+    box-sizing: border-box;
+    height: 32px;
+    min-height: 32px;
+    margin-top: 10px;
+    margin-inline-start: 4px;
+    padding: 4px 12px;
+    border-radius: var(--radius-s);
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    font-weight: var(--font-medium);
+    text-transform: none;
+    box-shadow: none;
+
+    .text-button-icon { color: inherit; }
+
+    &:hover {
+      background-color: var(--interactive-accent-hover);
+      color: var(--text-on-accent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--interactive-accent);
+      outline-offset: 2px;
+    }
+  }
 }
 
 body .metadata-property {
