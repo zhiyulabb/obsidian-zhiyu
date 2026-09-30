@@ -1,6 +1,10 @@
 /* Functional colors derive from the palette; no component owns raw colors. */
 /* Shared typography contract: interface, editor and variable-aware plugins. */
 body:is(.theme-light, .theme-dark):is(.theme-light, .theme-dark):is(.theme-light, .theme-dark) {
+  /* Resolve public text roles here too, above the optional legacy schemes. */
+  --text-normal: var(--zhiyu-text-primary);
+  --text-muted: var(--zhiyu-text-secondary);
+  --text-faint: var(--zhiyu-text-tertiary);
   --titlebar-background: var(--background-secondary);
   --titlebar-background-focused: var(--background-secondary);
   --titlebar-text-color: var(--zhiyu-chrome-text);
@@ -338,7 +342,7 @@ body.theme-light .mod-root .metadata-container {
   --zhiyu-metadata-text: var(--zhiyu-gray-600);
 }
 body.theme-dark .mod-root .metadata-container {
-  --zhiyu-metadata-text: var(--zhiyu-gray-350);
+  --zhiyu-metadata-text: var(--zhiyu-text-secondary);
 }
 body:is(.theme-light, .theme-dark) .mod-root .metadata-container {
   --text-normal: var(--zhiyu-metadata-text);

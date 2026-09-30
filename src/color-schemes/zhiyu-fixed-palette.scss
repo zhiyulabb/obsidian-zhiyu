@@ -5,7 +5,7 @@
    Each ink has a matching subtle surface and hover surface. */
 @each $mode, $colors in (
   light: (
-    "red": (#c64b43, #fceeea, #f7ddd6),
+    "red": (#b53333, #fceeea, #f7ddd6),
     "orange": (#b96a36, #fff1e8, #ffe0cf),
     "yellow": (#a47e37, #faf5e6, #f2e7c9),
     "green": (#4d7e69, #eff5f1, #dfece4),
@@ -17,7 +17,7 @@
     "lime": (#788247, #f3f5e9, #e7ebd3)
   ),
   dark: (
-    "red": (#e69b8f, #322321, #442d29),
+    "red": (#df6666, #322321, #442d29),
     "orange": (#e8ad7f, #32251e, #493125),
     "yellow": (#d6bd7e, #2e291e, #3e3524),
     "green": (#93bea8, #232e28, #2d3d33),
@@ -43,7 +43,7 @@
 body.theme-light {
   --zhiyu-reading-blue: var(--zhiyu-ink-blue);
   --zhiyu-reading-orange: var(--zhiyu-ink-orange);
-  --zhiyu-reading-emphasis: #ea743e;
+  --zhiyu-reading-emphasis: var(--interactive-accent);
   --zhiyu-reading-muted: var(--zhiyu-text-tertiary);
   --zhiyu-codeblock-bg: var(--zhiyu-gray-100);
   --zhiyu-palette-text-selection: #ffe0cf;
@@ -97,9 +97,9 @@ body:is(.theme-light, .theme-dark) {
 body.theme-dark {
   --zhiyu-reading-blue: var(--zhiyu-ink-blue);
   --zhiyu-reading-orange: var(--zhiyu-ink-orange);
-  --zhiyu-reading-emphasis: #ea743e;
+  --zhiyu-reading-emphasis: var(--interactive-accent);
   --zhiyu-reading-muted: var(--zhiyu-text-tertiary);
-  --zhiyu-codeblock-bg: var(--zhiyu-gray-850);
+  --zhiyu-codeblock-bg: var(--zhiyu-gray-800);
   --zhiyu-palette-text-selection: #493125;
   --zhiyu-heading-muted: var(--zhiyu-text-secondary);
   --zhiyu-heading-bg-1: #30211f;
@@ -116,7 +116,7 @@ body.theme-dark {
   --zhiyu-inline-code-bg: var(--zhiyu-surface-orange);
   --zhiyu-surface-tag: var(--zhiyu-palette-color-base-20);
   --zhiyu-surface-tag-hover: var(--zhiyu-palette-color-base-25);
-  --zhiyu-control-border: var(--zhiyu-gray-500);
+  --zhiyu-control-border: var(--zhiyu-gray-550);
   /* Dark-mode scrollbars share the imported neutral swatches. */
   --zhiyu-scrollbar-thumb: var(--zhiyu-gray-700);
   --zhiyu-scrollbar-thumb-active: var(--zhiyu-gray-500);

@@ -1,0 +1,1038 @@
+{
+  "source": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/css/claude-brand.shared.16c15049c.min.css",
+  "retrieved_on": "2026-10-01",
+  "notes": [
+    "Source colors are preserved, including original gray-050 #faf9f5. These are website theme scopes, not selectable Obsidian modes.",
+    "Deleted legacy variables are excluded. No Obsidian styles are modified."
+  ],
+  "swatches": {
+    "transparent": "transparent",
+    "gray-000": "#ffffff",
+    "oat": "#e3dacc",
+    "mineral": "#629987",
+    "cactus": "#bcd1ca",
+    "sky": "#6a9bcc",
+    "heather": "#cbcadb",
+    "fig": "#c46686",
+    "peach": "#ebc9b7",
+    "clay": "#d97757",
+    "gray-1000": "#000000",
+    "olive": "#788c5d",
+    "gray-500": "#87867f",
+    "gray-900": "#1a1918",
+    "gray-750": "#30302e",
+    "gray-050": "#faf9f5",
+    "gray-350": "#c2c0b6",
+    "gray-950": "#141413",
+    "gray-150": "#f0eee6",
+    "clay-interactive": "#c96442",
+    "gray-100": "#f5f4ed",
+    "gray-200": "#e8e6dc",
+    "gray-250": "#dedcd1",
+    "gray-300": "#d1cfc5",
+    "gray-400": "#b0aea5",
+    "gray-450": "#9c9a92",
+    "gray-550": "#73726c",
+    "gray-600": "#5e5d59",
+    "gray-650": "#4d4c48",
+    "gray-700": "#3d3d3a",
+    "gray-800": "#262624",
+    "gray-850": "#1f1e1d",
+    "plum": "#827dbd",
+    "coral": "#ebcece"
+  },
+  "themes": {
+    "light": {
+      "background-primary": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "foreground-primary": {
+        "source": "var(--swatch--gray-950)",
+        "resolved": "#141413"
+      },
+      "foreground-tertiary": {
+        "source": "var(--swatch--gray-600)",
+        "resolved": "#5e5d59"
+      },
+      "background-secondary": {
+        "source": "var(--swatch--gray-100)",
+        "resolved": "#f5f4ed"
+      },
+      "border-primary": {
+        "source": "var(--swatch--gray-400)",
+        "resolved": "#b0aea5"
+      },
+      "border-tertiary": {
+        "source": "var(--swatch--gray-200)",
+        "resolved": "#e8e6dc"
+      },
+      "white": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "background-tertiary": {
+        "source": "var(--swatch--gray-150)",
+        "resolved": "#f0eee6"
+      },
+      "border-secondary": {
+        "source": "var(--swatch--gray-300)",
+        "resolved": "#d1cfc5"
+      },
+      "foreground-secondary": {
+        "source": "var(--swatch--gray-750)",
+        "resolved": "#30302e"
+      },
+      "heroes-accent": {
+        "source": "var(--swatch--clay)",
+        "resolved": "#d97757"
+      },
+      "text-accent": {
+        "source": "var(--swatch--clay)",
+        "resolved": "#d97757"
+      },
+      "switch--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#d1cfc5"
+      },
+      "switch--border-active": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "switch--background": {
+        "source": "var(--_theme---background-tertiary)",
+        "resolved": "#f0eee6"
+      },
+      "switch--background-active": {
+        "source": "#2c84db",
+        "resolved": "#2c84db"
+      },
+      "switch--dot-border": {
+        "source": "var(--_theme---border-primary)",
+        "resolved": "#b0aea5"
+      },
+      "switch--dot-border-active": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "switch--dot-background": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "switch--dot-background-active": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "error-text": {
+        "source": "#b53333",
+        "resolved": "#b53333"
+      },
+      "button-tertiary--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#d1cfc5"
+      },
+      "selection--background": {
+        "source": "color-mix(in srgb,var(--swatch--clay)50%,transparent)",
+        "resolved": "color-mix(in srgb,#d9775750%,transparent)"
+      },
+      "pictogram-accent": {
+        "source": "var(--swatch--gray-250)",
+        "resolved": "#dedcd1"
+      },
+      "selection--text": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#141413"
+      },
+      "button-brand--background": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--border": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--icon": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--background-hover": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--text-hover": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--border-hover": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--icon-hover": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-primary--background": {
+        "source": "var(--swatch--gray-950)",
+        "resolved": "#141413"
+      },
+      "button-primary--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-primary--border": {
+        "source": "var(--_theme---foreground-secondary)",
+        "resolved": "#30302e"
+      },
+      "button-primary--icon": {
+        "source": "var(--_theme---button-primary--text)",
+        "resolved": "#faf9f5"
+      },
+      "button-primary--background-hover": {
+        "source": "var(--swatch--gray-850)",
+        "resolved": "#1f1e1d"
+      },
+      "button-primary--text-hover": {
+        "source": "var(--_theme---button-primary--text)",
+        "resolved": "#faf9f5"
+      },
+      "button-primary--border-hover": {
+        "source": "var(--_theme---button-primary--border)",
+        "resolved": "#30302e"
+      },
+      "button-primary--icon-hover": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-secondary--background": {
+        "source": "var(--swatch--gray-200)",
+        "resolved": "#e8e6dc"
+      },
+      "button-secondary--text": {
+        "source": "var(--swatch--gray-650)",
+        "resolved": "#4d4c48"
+      },
+      "button-secondary--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#d1cfc5"
+      },
+      "button-secondary--icon": {
+        "source": "var(--_theme---button-secondary--text)",
+        "resolved": "#4d4c48"
+      },
+      "button-secondary--background-hover": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "button-secondary--text-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#141413"
+      },
+      "button-secondary--border-hover": {
+        "source": "var(--_theme---button-secondary--background)",
+        "resolved": "#e8e6dc"
+      },
+      "button-secondary--icon-hover": {
+        "source": "var(--_theme---foreground-secondary)",
+        "resolved": "#30302e"
+      },
+      "button-tertiary--background": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--text": {
+        "source": "var(--swatch--gray-600)",
+        "resolved": "#5e5d59"
+      },
+      "button-tertiary--icon": {
+        "source": "var(--_theme---button-tertiary--text)",
+        "resolved": "#5e5d59"
+      },
+      "button-tertiary--background-hover": {
+        "source": "var(--_theme---button-tertiary--background)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--text-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#141413"
+      },
+      "button-tertiary--border-hover": {
+        "source": "var(--_theme---button-tertiary--border)",
+        "resolved": "#d1cfc5"
+      },
+      "button-tertiary--icon-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#141413"
+      }
+    },
+    "dark-1": {
+      "background-primary": {
+        "source": "var(--swatch--gray-800)",
+        "resolved": "#262624"
+      },
+      "foreground-primary": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "foreground-tertiary": {
+        "source": "var(--swatch--gray-400)",
+        "resolved": "#b0aea5"
+      },
+      "background-secondary": {
+        "source": "var(--swatch--gray-750)",
+        "resolved": "#30302e"
+      },
+      "border-primary": {
+        "source": "var(--swatch--gray-500)",
+        "resolved": "#87867f"
+      },
+      "border-tertiary": {
+        "source": "var(--swatch--gray-650)",
+        "resolved": "#4d4c48"
+      },
+      "white": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#262624"
+      },
+      "background-tertiary": {
+        "source": "var(--swatch--gray-700)",
+        "resolved": "#3d3d3a"
+      },
+      "border-secondary": {
+        "source": "var(--swatch--gray-600)",
+        "resolved": "#5e5d59"
+      },
+      "foreground-secondary": {
+        "source": "var(--swatch--gray-300)",
+        "resolved": "#d1cfc5"
+      },
+      "heroes-accent": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "text-accent": {
+        "source": "var(--swatch--clay)",
+        "resolved": "#d97757"
+      },
+      "switch--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#5e5d59"
+      },
+      "switch--border-active": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "switch--background": {
+        "source": "var(--_theme---background-tertiary)",
+        "resolved": "#3d3d3a"
+      },
+      "switch--background-active": {
+        "source": "#2c84db",
+        "resolved": "#2c84db"
+      },
+      "switch--dot-border": {
+        "source": "var(--_theme---border-primary)",
+        "resolved": "#87867f"
+      },
+      "switch--dot-border-active": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "switch--dot-background": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "switch--dot-background-active": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "error-text": {
+        "source": "#df6666",
+        "resolved": "#df6666"
+      },
+      "button-tertiary--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#5e5d59"
+      },
+      "selection--background": {
+        "source": "color-mix(in srgb,var(--swatch--clay)50%,transparent)",
+        "resolved": "color-mix(in srgb,#d9775750%,transparent)"
+      },
+      "pictogram-accent": {
+        "source": "var(--swatch--gray-650)",
+        "resolved": "#4d4c48"
+      },
+      "selection--text": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--background": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--border": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--icon": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--background-hover": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--text-hover": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--border-hover": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--icon-hover": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-primary--background": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-primary--text": {
+        "source": "var(--swatch--gray-950)",
+        "resolved": "#141413"
+      },
+      "button-primary--border": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "button-primary--icon": {
+        "source": "var(--_theme---button-primary--text)",
+        "resolved": "#141413"
+      },
+      "button-primary--background-hover": {
+        "source": "var(--swatch--gray-850)",
+        "resolved": "#1f1e1d"
+      },
+      "button-primary--text-hover": {
+        "source": "var(--_theme---button-primary--text)",
+        "resolved": "#141413"
+      },
+      "button-primary--border-hover": {
+        "source": "var(--_theme---button-primary--border)",
+        "resolved": "transparent"
+      },
+      "button-primary--icon-hover": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#262624"
+      },
+      "button-secondary--background": {
+        "source": "var(--swatch--gray-650)",
+        "resolved": "#4d4c48"
+      },
+      "button-secondary--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-secondary--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#5e5d59"
+      },
+      "button-secondary--icon": {
+        "source": "var(--_theme---button-secondary--text)",
+        "resolved": "#faf9f5"
+      },
+      "button-secondary--background-hover": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "button-secondary--text-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-secondary--border-hover": {
+        "source": "var(--_theme---button-secondary--background)",
+        "resolved": "#4d4c48"
+      },
+      "button-secondary--icon-hover": {
+        "source": "var(--_theme---foreground-secondary)",
+        "resolved": "#d1cfc5"
+      },
+      "button-tertiary--background": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#262624"
+      },
+      "button-tertiary--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--icon": {
+        "source": "var(--_theme---button-tertiary--text)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--background-hover": {
+        "source": "var(--_theme---button-tertiary--background)",
+        "resolved": "#262624"
+      },
+      "button-tertiary--text-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--border-hover": {
+        "source": "var(--_theme---button-tertiary--border)",
+        "resolved": "#5e5d59"
+      },
+      "button-tertiary--icon-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      }
+    },
+    "dark-2": {
+      "background-primary": {
+        "source": "var(--swatch--gray-850)",
+        "resolved": "#1f1e1d"
+      },
+      "foreground-primary": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "foreground-tertiary": {
+        "source": "var(--swatch--gray-450)",
+        "resolved": "#9c9a92"
+      },
+      "background-secondary": {
+        "source": "var(--swatch--gray-800)",
+        "resolved": "#262624"
+      },
+      "border-primary": {
+        "source": "var(--swatch--gray-550)",
+        "resolved": "#73726c"
+      },
+      "border-tertiary": {
+        "source": "var(--swatch--gray-700)",
+        "resolved": "#3d3d3a"
+      },
+      "white": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#1f1e1d"
+      },
+      "background-tertiary": {
+        "source": "var(--swatch--gray-750)",
+        "resolved": "#30302e"
+      },
+      "border-secondary": {
+        "source": "var(--swatch--gray-650)",
+        "resolved": "#4d4c48"
+      },
+      "foreground-secondary": {
+        "source": "var(--swatch--gray-350)",
+        "resolved": "#c2c0b6"
+      },
+      "heroes-accent": {
+        "source": "#c46849",
+        "resolved": "#c46849"
+      },
+      "text-accent": {
+        "source": "var(--swatch--clay)",
+        "resolved": "#d97757"
+      },
+      "switch--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#4d4c48"
+      },
+      "switch--border-active": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "switch--background": {
+        "source": "var(--_theme---background-tertiary)",
+        "resolved": "#30302e"
+      },
+      "switch--background-active": {
+        "source": "#2c84db",
+        "resolved": "#2c84db"
+      },
+      "switch--dot-border": {
+        "source": "var(--_theme---border-primary)",
+        "resolved": "#73726c"
+      },
+      "switch--dot-border-active": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "switch--dot-background": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "switch--dot-background-active": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "error-text": {
+        "source": "#df6666",
+        "resolved": "#df6666"
+      },
+      "button-tertiary--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#4d4c48"
+      },
+      "selection--background": {
+        "source": "color-mix(in srgb,var(--swatch--clay)50%,transparent)",
+        "resolved": "color-mix(in srgb,#d9775750%,transparent)"
+      },
+      "pictogram-accent": {
+        "source": "var(--swatch--gray-700)",
+        "resolved": "#3d3d3a"
+      },
+      "selection--text": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--background": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--border": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--icon": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--background-hover": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--text-hover": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--border-hover": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--icon-hover": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-primary--background": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-primary--text": {
+        "source": "var(--swatch--gray-950)",
+        "resolved": "#141413"
+      },
+      "button-primary--border": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "button-primary--icon": {
+        "source": "var(--_theme---button-primary--text)",
+        "resolved": "#141413"
+      },
+      "button-primary--background-hover": {
+        "source": "var(--swatch--gray-850)",
+        "resolved": "#1f1e1d"
+      },
+      "button-primary--text-hover": {
+        "source": "var(--_theme---button-primary--text)",
+        "resolved": "#141413"
+      },
+      "button-primary--border-hover": {
+        "source": "var(--_theme---button-primary--border)",
+        "resolved": "transparent"
+      },
+      "button-primary--icon-hover": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#1f1e1d"
+      },
+      "button-secondary--background": {
+        "source": "var(--swatch--gray-700)",
+        "resolved": "#3d3d3a"
+      },
+      "button-secondary--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-secondary--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#4d4c48"
+      },
+      "button-secondary--icon": {
+        "source": "var(--_theme---button-secondary--text)",
+        "resolved": "#faf9f5"
+      },
+      "button-secondary--background-hover": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "button-secondary--text-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-secondary--border-hover": {
+        "source": "var(--_theme---button-secondary--background)",
+        "resolved": "#3d3d3a"
+      },
+      "button-secondary--icon-hover": {
+        "source": "var(--_theme---foreground-secondary)",
+        "resolved": "#c2c0b6"
+      },
+      "button-tertiary--background": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#1f1e1d"
+      },
+      "button-tertiary--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--icon": {
+        "source": "var(--_theme---button-tertiary--text)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--background-hover": {
+        "source": "var(--_theme---button-tertiary--background)",
+        "resolved": "#1f1e1d"
+      },
+      "button-tertiary--text-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--border-hover": {
+        "source": "var(--_theme---button-tertiary--border)",
+        "resolved": "#4d4c48"
+      },
+      "button-tertiary--icon-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      }
+    },
+    "dark-3": {
+      "background-primary": {
+        "source": "var(--swatch--gray-950)",
+        "resolved": "#141413"
+      },
+      "foreground-primary": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "foreground-tertiary": {
+        "source": "var(--swatch--gray-500)",
+        "resolved": "#87867f"
+      },
+      "background-secondary": {
+        "source": "var(--swatch--gray-900)",
+        "resolved": "#1a1918"
+      },
+      "border-primary": {
+        "source": "var(--swatch--gray-600)",
+        "resolved": "#5e5d59"
+      },
+      "border-tertiary": {
+        "source": "var(--swatch--gray-750)",
+        "resolved": "#30302e"
+      },
+      "white": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#141413"
+      },
+      "background-tertiary": {
+        "source": "var(--swatch--gray-850)",
+        "resolved": "#1f1e1d"
+      },
+      "border-secondary": {
+        "source": "var(--swatch--gray-700)",
+        "resolved": "#3d3d3a"
+      },
+      "foreground-secondary": {
+        "source": "var(--swatch--gray-400)",
+        "resolved": "#b0aea5"
+      },
+      "heroes-accent": {
+        "source": "#c46849",
+        "resolved": "#c46849"
+      },
+      "text-accent": {
+        "source": "var(--swatch--clay)",
+        "resolved": "#d97757"
+      },
+      "switch--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#3d3d3a"
+      },
+      "switch--border-active": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "switch--background": {
+        "source": "var(--_theme---background-tertiary)",
+        "resolved": "#1f1e1d"
+      },
+      "switch--background-active": {
+        "source": "#2c84db",
+        "resolved": "#2c84db"
+      },
+      "switch--dot-border": {
+        "source": "var(--_theme---border-primary)",
+        "resolved": "#5e5d59"
+      },
+      "switch--dot-border-active": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "switch--dot-background": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "switch--dot-background-active": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "error-text": {
+        "source": "#df6666",
+        "resolved": "#df6666"
+      },
+      "button-tertiary--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#3d3d3a"
+      },
+      "selection--background": {
+        "source": "color-mix(in srgb,var(--swatch--clay)50%,transparent)",
+        "resolved": "color-mix(in srgb,#d9775750%,transparent)"
+      },
+      "pictogram-accent": {
+        "source": "var(--swatch--gray-750)",
+        "resolved": "#30302e"
+      },
+      "selection--text": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--background": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--border": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--icon": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--background-hover": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--text-hover": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-brand--border-hover": {
+        "source": "var(--swatch--clay-interactive)",
+        "resolved": "#c96442"
+      },
+      "button-brand--icon-hover": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-primary--background": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-primary--text": {
+        "source": "var(--swatch--gray-950)",
+        "resolved": "#141413"
+      },
+      "button-primary--border": {
+        "source": "var(--swatch--transparent)",
+        "resolved": "transparent"
+      },
+      "button-primary--icon": {
+        "source": "var(--_theme---button-primary--text)",
+        "resolved": "#141413"
+      },
+      "button-primary--background-hover": {
+        "source": "var(--swatch--gray-850)",
+        "resolved": "#1f1e1d"
+      },
+      "button-primary--text-hover": {
+        "source": "var(--_theme---button-primary--text)",
+        "resolved": "#141413"
+      },
+      "button-primary--border-hover": {
+        "source": "var(--_theme---button-primary--border)",
+        "resolved": "transparent"
+      },
+      "button-primary--icon-hover": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#141413"
+      },
+      "button-secondary--background": {
+        "source": "var(--swatch--gray-750)",
+        "resolved": "#30302e"
+      },
+      "button-secondary--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-secondary--border": {
+        "source": "var(--_theme---border-secondary)",
+        "resolved": "#3d3d3a"
+      },
+      "button-secondary--icon": {
+        "source": "var(--_theme---button-secondary--text)",
+        "resolved": "#faf9f5"
+      },
+      "button-secondary--background-hover": {
+        "source": "var(--swatch--gray-000)",
+        "resolved": "#ffffff"
+      },
+      "button-secondary--text-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-secondary--border-hover": {
+        "source": "var(--_theme---button-secondary--background)",
+        "resolved": "#30302e"
+      },
+      "button-secondary--icon-hover": {
+        "source": "var(--_theme---foreground-secondary)",
+        "resolved": "#b0aea5"
+      },
+      "button-tertiary--background": {
+        "source": "var(--_theme---background-primary)",
+        "resolved": "#141413"
+      },
+      "button-tertiary--text": {
+        "source": "var(--swatch--gray-050)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--icon": {
+        "source": "var(--_theme---button-tertiary--text)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--background-hover": {
+        "source": "var(--_theme---button-tertiary--background)",
+        "resolved": "#141413"
+      },
+      "button-tertiary--text-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      },
+      "button-tertiary--border-hover": {
+        "source": "var(--_theme---button-tertiary--border)",
+        "resolved": "#3d3d3a"
+      },
+      "button-tertiary--icon-hover": {
+        "source": "var(--_theme---foreground-primary)",
+        "resolved": "#faf9f5"
+      }
+    }
+  },
+  "font_families": {
+    "--_text-style---font-family": "var(--_typography---font--primary-family)",
+    "--_text-style---logographic-family": "var(--_typography---font--logographic-family)",
+    "--_typography---font--logographic-family": "\"Noto Sans\",Arial,sans-serif",
+    "--_typography---font--primary-family": "\"Anthropic Sans\",Arial,sans-serif",
+    "--_typography---font--mono-family": "\"Anthropic Mono\",Arial,sans-serif",
+    "--_typography---font--secondary-family": "\"Anthropic Serif\",Georgia,sans-serif"
+  },
+  "literal_colors": [
+    "#0000",
+    "#000000",
+    "#0000000a",
+    "#0000000d",
+    "#0000001a",
+    "#00000026",
+    "#000000e6",
+    "#0006",
+    "#0082f3",
+    "#141413",
+    "#146ef5",
+    "#1a1918",
+    "#1f1e1d",
+    "#222222",
+    "#2226",
+    "#262624",
+    "#2895f7",
+    "#2c84db",
+    "#30302e",
+    "#333333",
+    "#3336",
+    "#3898ec",
+    "#3d3d3a",
+    "#4d4c48",
+    "#5d6c7b",
+    "#5e5d59",
+    "#629987",
+    "#629eda29",
+    "#6a9bcc",
+    "#73726c",
+    "#758696",
+    "#75869600",
+    "#788c5d",
+    "#827dbd",
+    "#87867f",
+    "#8a8a8a80",
+    "#9292920f",
+    "#999999",
+    "#9c9a92",
+    "#aaadb0",
+    "#b0aea5",
+    "#b53333",
+    "#bcd1ca",
+    "#c2c0b6",
+    "#c46686",
+    "#c46849",
+    "#c8c8c8",
+    "#c8c8c800",
+    "#c96442",
+    "#cbcadb",
+    "#cccccc",
+    "#d1cfc5",
+    "#d8d8d8",
+    "#d97757",
+    "#dddddd",
+    "#dedcd1",
+    "#df6666",
+    "#e2e2e2",
+    "#e3dacc",
+    "#e5e0d8",
+    "#e8e6dc",
+    "#ea384c",
+    "#ebc9b7",
+    "#ebcece",
+    "#eeeeee",
+    "#f0d5c7",
+    "#f0eee6",
+    "#f3dbcf",
+    "#f3f3f3",
+    "#f5f4ed",
+    "#faf9f5",
+    "#fafafa",
+    "#ffdede",
+    "#fff0",
+    "#fff6",
+    "#ffff00",
+    "#ffffff",
+    "#ffffff26"
+  ]
+}

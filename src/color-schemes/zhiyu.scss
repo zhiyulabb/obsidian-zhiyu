@@ -216,6 +216,8 @@ body.theme-light.input-cupertino.is-mobile {
 }
 
 body.theme-dark {
+  /* Use Claude's dark-2 roles; keep the lifted light-mode paper unchanged. */
+  --zhiyu-gray-050: #faf9f5;
   /* Dark-mode fallback; a user-selected accent still wins as an inline value. */
   --accent-h: 18.90411;
   --accent-s: 100%;
@@ -227,25 +229,25 @@ body.theme-dark {
   --zhiyu-ink-red: var(--color-red);
   --zhiyu-ink-green: var(--color-green);
   /* Raw palette values: edit colors here. */
-  --zhiyu-palette-mono-rgb-0: 20, 20, 19;
+  --zhiyu-palette-mono-rgb-0: 31, 30, 29;
   --zhiyu-palette-mono-rgb-100: 250, 249, 245;
   /* Dark mode uses the same exact swatches with reversed surface hierarchy. */
-  --zhiyu-palette-color-base-00: var(--zhiyu-gray-950);
-  --zhiyu-palette-color-base-05: var(--zhiyu-gray-900);
-  --zhiyu-palette-color-base-10: var(--zhiyu-gray-850);
-  --zhiyu-palette-color-base-20: var(--zhiyu-gray-800);
+  --zhiyu-palette-color-base-00: var(--zhiyu-gray-850);
+  --zhiyu-palette-color-base-05: var(--zhiyu-gray-800);
+  --zhiyu-palette-color-base-10: var(--zhiyu-gray-800);
+  --zhiyu-palette-color-base-20: var(--zhiyu-gray-750);
   --zhiyu-palette-color-base-25: var(--zhiyu-gray-750);
   --zhiyu-palette-color-base-30: var(--zhiyu-gray-700);
   --zhiyu-palette-color-base-35: var(--zhiyu-gray-650);
-  --zhiyu-palette-color-base-40: var(--zhiyu-gray-600);
+  --zhiyu-palette-color-base-40: var(--zhiyu-gray-550);
   --zhiyu-palette-color-base-50: var(--zhiyu-gray-500);
-  --zhiyu-palette-color-base-60: var(--zhiyu-gray-400);
-  --zhiyu-palette-color-base-70: var(--zhiyu-gray-300);
-  --zhiyu-text-primary: var(--zhiyu-gray-050);
-  --zhiyu-text-secondary: var(--zhiyu-gray-300);
-  --zhiyu-text-tertiary: var(--zhiyu-gray-450);
-  --zhiyu-chrome-text: var(--zhiyu-gray-450);
-  --zhiyu-chrome-hover: var(--zhiyu-gray-300);
+  --zhiyu-palette-color-base-60: var(--zhiyu-text-tertiary);
+  --zhiyu-palette-color-base-70: var(--zhiyu-text-secondary);
+  --zhiyu-text-primary: var(--zhiyu-gray-200);
+  --zhiyu-text-secondary: var(--zhiyu-gray-400);
+  --zhiyu-text-tertiary: var(--zhiyu-gray-500);
+  --zhiyu-chrome-text: var(--zhiyu-text-tertiary);
+  --zhiyu-chrome-hover: var(--zhiyu-text-secondary);
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
   --zhiyu-palette-background-modifier-hover: var(--zhiyu-palette-color-base-25);
   --zhiyu-palette-background-modifier-active-hover: var(--zhiyu-palette-color-base-30);
@@ -303,7 +305,7 @@ body.theme-dark.input-cupertino.is-mobile {
   --background-modifier-success-hover: var(--zhiyu-surface-green-hover);
   --background-modifier-message: var(--background-secondary);
   --background-modifier-border: var(--zhiyu-palette-color-base-30);
-  --background-modifier-border-hover: var(--zhiyu-palette-color-base-40);
+  --background-modifier-border-hover: var(--zhiyu-gray-650);
   --background-modifier-border-focus: var(--zhiyu-palette-background-modifier-border-focus);
   --divider-color: var(--background-modifier-border);
   --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-dark-opacity));
