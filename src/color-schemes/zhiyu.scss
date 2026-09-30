@@ -47,10 +47,10 @@ body.theme-light {
   --zhiyu-palette-color-base-50: var(--zhiyu-gray-500);
   --zhiyu-palette-color-base-60: var(--zhiyu-gray-600);
   --zhiyu-palette-color-base-70: var(--zhiyu-gray-750);
-  /* Match Claude's primary, secondary and tertiary foreground roles. */
+  /* Neutral text tiers: keep supporting copy visibly quieter than primary text. */
   --zhiyu-text-primary: var(--zhiyu-gray-950);
-  --zhiyu-text-secondary: var(--zhiyu-gray-750);
-  --zhiyu-text-tertiary: var(--zhiyu-gray-600);
+  --zhiyu-text-secondary: var(--zhiyu-gray-500);
+  --zhiyu-text-tertiary: var(--zhiyu-gray-500);
   --zhiyu-chrome-text: var(--zhiyu-gray-550);
   --zhiyu-chrome-hover: var(--zhiyu-gray-600);
   --zhiyu-palette-color-base-100: var(--zhiyu-text-primary);
@@ -167,7 +167,7 @@ body.theme-light.input-cupertino.is-mobile {
   --settings-background: var(--zhiyu-palette-color-base-00);
   --setting-items-background: var(--background-secondary);
   --setting-items-border-color: var(--background-modifier-border);
-  --setting-items-border-width: 0px;
+  --setting-items-border-width: 1px;
   --setting-nav-icon-background: var(--zhiyu-palette-color-base-50);
   --modal-sidebar-background: var(--background-secondary);
   --mobile-sidebar-background: var(--zhiyu-palette-color-base-00);
@@ -361,7 +361,7 @@ body.theme-dark.input-cupertino.is-mobile {
   --settings-background: var(--zhiyu-palette-color-base-00);
   --setting-items-background: var(--zhiyu-palette-color-base-10);
   --setting-items-border-color: var(--background-modifier-border);
-  --setting-items-border-width: 0px;
+  --setting-items-border-width: 1px;
   --setting-nav-icon-background: var(--zhiyu-palette-color-base-40);
   --modal-sidebar-background: var(--zhiyu-palette-color-base-10);
   --mobile-sidebar-background: var(--zhiyu-palette-color-base-00);

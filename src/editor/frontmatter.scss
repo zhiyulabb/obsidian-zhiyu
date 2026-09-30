@@ -74,7 +74,7 @@
     width: calc(100% + 16px) !important;
   }
 
-  // Keep the property card filled while leaving its outer edge borderless.
+  // Keep the filled property card outlined with the shared neutral border.
   // Keep the other Style Settings layouts and the Properties sidebar intact.
   body:not(.metadata-block, .metadata-cupertino) .mod-root {
     .markdown-source-view .metadata-container,
@@ -89,7 +89,7 @@
       width: 100%;
       padding: 14px 16px 16px;
       margin-bottom: 28px;
-      border: 0;
+      border: 1px solid var(--background-modifier-border);
       border-radius: var(--radius-m);
       background-color: var(--background-primary-alt);
 
