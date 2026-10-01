@@ -112,7 +112,6 @@ body.theme-light.input-cupertino.is-mobile {
   --background-modifier-border-hover: var(--zhiyu-palette-background-modifier-border-hover);
   --background-modifier-border-focus: var(--zhiyu-palette-background-modifier-border-focus);
   --divider-color: var(--background-modifier-border);
-  --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-light-opacity));
   --text-normal: var(--zhiyu-palette-color-base-100);
   --text-muted: var(--zhiyu-palette-text-muted);
   --text-faint: var(--zhiyu-palette-text-faint);
@@ -308,7 +307,6 @@ body.theme-dark.input-cupertino.is-mobile {
   --background-modifier-border-hover: var(--zhiyu-gray-650);
   --background-modifier-border-focus: var(--zhiyu-palette-background-modifier-border-focus);
   --divider-color: var(--background-modifier-border);
-  --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-dark-opacity));
   --text-normal: var(--zhiyu-palette-color-base-100);
   --text-muted: var(--zhiyu-palette-text-muted);
   --text-faint: var(--zhiyu-palette-text-faint);

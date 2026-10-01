@@ -131,3 +131,26 @@ body.theme-dark {
   --zhiyu-graph-green: var(--zhiyu-ink-green);
   --zhiyu-graph-gray: var(--zhiyu-gray-700);
 }
+
+/* Website swatches adapted into status roles; the site has no success/warning roles. */
+body:is(.theme-light, .theme-dark) {
+  --zhiyu-swatch-mineral: #629987;
+  --zhiyu-swatch-cactus: #bcd1ca;
+  --zhiyu-swatch-oat: #e3dacc;
+  --zhiyu-ink-green: var(--zhiyu-status-success);
+  --zhiyu-ink-yellow: var(--zhiyu-status-warning);
+  --zhiyu-surface-green: color-mix(in srgb, var(--zhiyu-status-success) 10%, var(--background-primary));
+  --zhiyu-surface-green-hover: color-mix(in srgb, var(--zhiyu-status-success) 18%, var(--background-primary));
+  --zhiyu-surface-yellow: color-mix(in srgb, var(--zhiyu-status-warning) 10%, var(--background-primary));
+  --zhiyu-surface-yellow-hover: color-mix(in srgb, var(--zhiyu-status-warning) 18%, var(--background-primary));
+  --zhiyu-palette-color-green-rgb: 98, 153, 135;
+  --zhiyu-palette-color-yellow-rgb: 227, 218, 204;
+}
+body.theme-light {
+  --zhiyu-status-success: color-mix(in srgb, var(--zhiyu-swatch-mineral) 75%, var(--zhiyu-gray-650));
+  --zhiyu-status-warning: color-mix(in srgb, var(--zhiyu-swatch-oat) 40%, var(--zhiyu-gray-650));
+}
+body.theme-dark {
+  --zhiyu-status-success: var(--zhiyu-swatch-cactus);
+  --zhiyu-status-warning: var(--zhiyu-swatch-oat);
+}

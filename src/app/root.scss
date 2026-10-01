@@ -57,7 +57,6 @@ body,
 }
 
 .theme-light {
-  --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-light-opacity));
 
   --color-red-rgb: 254, 112, 112;
   --color-orange-rgb: 242, 154, 100;
@@ -80,7 +79,6 @@ body,
   --code-value: #a626a4;
 }
 .theme-dark {
-  --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-dark-opacity));
 
   --color-red-rgb: 217, 90, 95;
   --color-orange-rgb: 219, 134, 80;
@@ -111,7 +109,7 @@ body:not(.is-mobile) {
   --icon-xl: calc(32px + var(--icon-size-modifier));
 
   .app-container {
-    transition: var(--anim-duration-moderate);
+    transition: background-color var(--anim-duration-moderate);
     align-items: center;
   }
 
@@ -119,26 +117,16 @@ body:not(.is-mobile) {
     background: var(--background-secondary);
   }
   .workspace {
-    transition: var(--anim-duration-moderate);
+    transition: background-color var(--anim-duration-moderate), padding-left 0.1s ease-in;
   }
 
   .workspace-split {
-    transition: var(--anim-duration-moderate);
+    transition: background-color var(--anim-duration-moderate);
     background-color: transparent;
   }
 }
 
-// Translucent window
-@media (prefers-color-scheme: light) {
-  .theme-dark {
-    --workspace-background-translucent: var(--background-secondary);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  .theme-light {
-    --workspace-background-translucent: var(--background-secondary);
-  }
-}
+// Translucent window: use Obsidian's native background variable.
 .is-translucent {
   --blur-s: none !important;
   --blur-m: none !important;
