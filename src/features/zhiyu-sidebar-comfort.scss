@@ -1,0 +1,62 @@
+// A lighter, warm gray frame preserves Zhiyu's warm reading palette.
+body.theme-dark {
+  --zhiyu-chrome-text: #b2ada4;
+  --zhiyu-chrome-hover: #cecdc7;
+  --titlebar-background: #393530;
+  --titlebar-background-focused: #393530;
+
+  .workspace {
+    background-color: #393530 !important;
+  }
+
+  .workspace-split.mod-root .workspace-tab-container {
+    background-color: var(--background-primary);
+  }
+
+  .titlebar-button-container.mod-right,
+  .sidebar-toggle-button {
+    background-color: transparent !important;
+  }
+
+  .workspace-tab-header-container {
+    background-color: #393530;
+  }
+
+  &.is-translucent {
+    --workspace-background-translucent: rgba(57, 53, 48, 0.88);
+  }
+
+  &:not(.is-translucent) :is(.mod-sidedock, .workspace-ribbon) {
+    background-color: #393530;
+  }
+
+  .mod-right-split .zhiyu-md-content strong {
+    color: var(--text-normal);
+  }
+}
+
+// Tab silhouettes must switch together with their active editor surface.
+body.theme-dark:not(.is-mobile) .workspace .mod-root {
+  .workspace-tab-header,
+  .workspace-tab-header::before,
+  .workspace-tab-header::after,
+  .workspace-tab-header-container,
+  .workspace-tab-container {
+    transition: none !important;
+  }
+}
+
+body.theme-dark.is-frameless {
+  .workspace-ribbon.mod-left::before {
+    background-color: transparent !important;
+  }
+
+  .titlebar {
+    background-color: #393530;
+  }
+
+  .sidebar-toggle-button,
+  .titlebar-button-container.mod-right {
+    background-color: transparent !important;
+  }
+}
