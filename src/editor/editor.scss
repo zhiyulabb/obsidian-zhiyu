@@ -203,7 +203,8 @@
     corner-shape: var(--corner-shape);
     padding: 2px 4px;
   }
-  .markdown-rendered pre .copy-code-button {
+  .markdown-rendered pre .copy-code-button,
+  .markdown-source-view.mod-cm6 .code-block-flair {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -212,6 +213,7 @@
     padding: 6px;
     font-size: 0;
     color: var(--icon-color);
+    box-sizing: border-box;
 
     &::before {
       content: "";
