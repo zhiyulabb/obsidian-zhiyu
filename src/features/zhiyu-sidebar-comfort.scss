@@ -36,7 +36,7 @@ body.theme-dark {
 }
 
 // Tab silhouettes must switch together with their active editor surface.
-body.theme-dark:not(.is-mobile) .workspace .mod-root {
+body:is(.theme-light, .theme-dark):not(.is-mobile) .workspace .mod-root {
   .workspace-tab-header,
   .workspace-tab-header::before,
   .workspace-tab-header::after,
