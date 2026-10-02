@@ -1,0 +1,8 @@
+// Keep provider forms open; input controls retain their own borders.
+.modal.zhiyu-provider-modal {
+  .setting-item,
+  .setting-items {
+    border: none !important;
+    box-shadow: none;
+  }
+}
