@@ -13,6 +13,7 @@ body:is(.theme-light, .theme-dark) :is(.mod-left-split, .mod-right-split) {
 }
 
 body.theme-dark {
+  --zhiyu-reading-emphasis: #ea7d43;
   --zhiyu-chrome-text: #b2ada4;
   --zhiyu-chrome-hover: #cecdc7;
   --titlebar-background: #393530;
@@ -43,9 +44,6 @@ body.theme-dark {
     background-color: #393530;
   }
 
-  .mod-right-split .zhiyu-md-content strong {
-    color: var(--text-normal);
-  }
 }
 
 // Tab silhouettes must switch together with their active editor surface.
