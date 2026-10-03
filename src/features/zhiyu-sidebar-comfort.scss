@@ -5,7 +5,7 @@ body.theme-light {
 }
 
 body.theme-dark {
-  --bold-color: oklch(from var(--interactive-accent) 0.792088 0.115 h) !important;
+  --bold-color: oklch(from var(--interactive-accent) 0.75 0.135 h) !important;
 }
 
 // Sidebar interactions use vivid accents rather than muted reading inks.
