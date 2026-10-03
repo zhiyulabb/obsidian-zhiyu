@@ -1,4 +1,13 @@
 // A lighter, warm gray frame preserves Zhiyu's warm reading palette.
+// Preserve the chosen accent hue while moderating emphasis for each surface.
+body.theme-light {
+  --bold-color: color-mix(in oklch, var(--interactive-accent) 92%, var(--text-normal)) !important;
+}
+
+body.theme-dark {
+  --bold-color: color-mix(in oklch, var(--interactive-accent) 88%, var(--background-primary)) !important;
+}
+
 // Sidebar interactions use vivid accents rather than muted reading inks.
 body:is(.theme-light, .theme-dark) :is(.mod-left-split, .mod-right-split) {
   --zhiyu-tab-color-2: #ed8736;
@@ -13,7 +22,6 @@ body:is(.theme-light, .theme-dark) :is(.mod-left-split, .mod-right-split) {
 }
 
 body.theme-dark {
-  --zhiyu-reading-emphasis: #ea7d43;
   --zhiyu-chrome-text: #b2ada4;
   --zhiyu-chrome-hover: #cecdc7;
   --titlebar-background: #393530;
