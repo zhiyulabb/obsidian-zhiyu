@@ -25,13 +25,13 @@ body:is(.theme-light, .theme-dark) {
   --zhiyu-gray-1000: #000000;
 }
 
-/* The brand accent stays #ff6924 in both modes; accent foregrounds stay white. */
+/* Light brand accent #f54e00; softer dark accent #ff6924; foregrounds stay white. */
 body.theme-light {
   /* Theme fallback. Obsidian writes a user's custom accent inline on body,
      so that value wins; Restore default reveals Zhiyu orange. */
-  --accent-h: 18.90411;
+  --accent-h: 19.10204082;
   --accent-s: 100%;
-  --accent-l: 57.058824%;
+  --accent-l: 48.03921569%;
   /* Authored foreground/surface pairs live in zhiyu-fixed-palette.scss. */
   /* Raw palette values: edit colors here. */
   --zhiyu-palette-mono-rgb-0: 255, 255, 255;
@@ -176,8 +176,9 @@ body.theme-light.input-cupertino.is-mobile {
   --table-row-background-hover: var(--background-modifier-hover);
   --table-row-alt-background-hover: var(--background-modifier-hover);
   --checkbox-color-hover: var(--interactive-accent-hover);
-  --nav-item-children-margin-start: 12px;
-  --nav-indentation-guide-width: 0px;
+  --nav-item-children-margin-start: calc(12px + var(--icon-s) / 2 - var(--nav-indentation-guide-width) / 2);
+  --nav-indentation-guide-width: 1px;
+  --nav-indentation-guide-color: var(--background-modifier-border);
   --nav-item-background-hover: var(--background-modifier-hover);
   --nav-item-background-active: var(--interactive-accent);
   --nav-item-color-hover: var(--text-normal);
@@ -218,9 +219,9 @@ body.theme-dark {
   /* Use Claude's dark-2 roles; keep the lifted light-mode paper unchanged. */
   --zhiyu-gray-050: #faf9f5;
   /* Dark-mode fallback; a user-selected accent still wins as an inline value. */
-  --accent-h: 18.90411;
-  --accent-s: 100%;
-  --accent-l: 57.058824%;
+  --accent-h: 18.90410959;
+  --accent-s: 100.00000000%;
+  --accent-l: 57.05882353%;
   --zhiyu-ink-cyan: var(--color-cyan);
   --zhiyu-ink-blue: var(--color-blue);
   --zhiyu-ink-purple: var(--color-purple);
@@ -405,6 +406,7 @@ body.theme-dark.input-cupertino.is-mobile {
   --background-modifier-warning: var(--zhiyu-surface-yellow);
   --background-modifier-warning-hover: var(--zhiyu-surface-yellow-hover);
   --text-highlight-bg: var(--zhiyu-surface-yellow);
-  --nav-item-children-margin-start: 12px;
-  --nav-indentation-guide-width: 0px;
+  --nav-item-children-margin-start: calc(12px + var(--icon-s) / 2 - var(--nav-indentation-guide-width) / 2);
+  --nav-indentation-guide-width: 1px;
+  --nav-indentation-guide-color: var(--background-modifier-border);
 }
